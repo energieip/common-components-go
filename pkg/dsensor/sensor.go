@@ -17,12 +17,10 @@ const (
 
 //Sensor driver representation
 type Sensor struct {
-	ID                         string  `json:"ID,omitempty"`
 	IP                         string  `json:"ip"`
 	Mac                        string  `json:"mac"`
 	Group                      int     `json:"group"`
 	Protocol                   string  `json:"protocol"`
-	Topic                      string  `json:"topic"`
 	SwitchMac                  string  `json:"switchMac"`
 	IsConfigured               bool    `json:"isConfigured"`
 	SoftwareVersion            float32 `json:"softwareVersion"`

@@ -14,7 +14,6 @@ type Switch struct {
 	Mac                   string `json:"mac"`
 	Protocol              string `json:"protocol"`
 	IP                    string `json:"ip"`
-	Topic                 string `json:"topic"`
 	LastSystemUpgradeDate string `json:"lastUpgradeDate"`
 	IsConfigured          *bool  `json:"isConfigured"`
 	FriendlyName          string `json:"friendlyName"`

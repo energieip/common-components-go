@@ -17,7 +17,6 @@ const (
 
 //Led led driver representation
 type Led struct {
-	ID                string  `json:"ID,omitempty"`
 	Mac               string  `json:"mac"`
 	IP                string  `json:"ip"`
 	Group             int     `json:"group"`

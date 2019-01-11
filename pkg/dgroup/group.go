@@ -37,8 +37,7 @@ type GroupConfig struct {
 
 //GroupStatus status dump to the server
 type GroupStatus struct {
-	ID                 string   `json:"ID,omitempty"` //database id
-	Group              int      `json:"group"`        //groupID
+	Group              int      `json:"group"` //groupID
 	SensorRule         string   `json:"sensorRule"`
 	Auto               bool     `json:"auto"`
 	SlopeStart         int      `json:"slopeStart"`
