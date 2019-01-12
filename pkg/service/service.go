@@ -39,6 +39,8 @@ type ServiceConfig struct {
 	NetworkBroker Broker      `json:"networkBroker"`
 	DB            DBConnector `json:"db"`
 	LogLevel      string      `json:"logLevel"`
+	Certificate   string      `json:"certificate"`
+	Key           string      `json:"key"`
 }
 
 //DBConnector description
