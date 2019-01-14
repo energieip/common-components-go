@@ -3,6 +3,8 @@ package dswitch
 import (
 	"encoding/json"
 
+	"github.com/energieip/common-components-go/pkg/dblind"
+
 	"github.com/energieip/common-components-go/pkg/dgroup"
 	"github.com/energieip/common-components-go/pkg/dled"
 	"github.com/energieip/common-components-go/pkg/dsensor"
@@ -27,6 +29,8 @@ type SwitchConfig struct {
 	Groups        map[int]dgroup.GroupConfig     `json:"groups"`
 	LedsSetup     map[string]dled.LedSetup       `json:"ledsSetup"`
 	LedsConfig    map[string]dled.LedConf        `json:"ledsConfig"`
+	BlindsSetup   map[string]dblind.BlindSetup   `json:"blindsSetup"`
+	BlindssConfig map[string]dblind.BlindConf    `json:"blindsConfig"`
 	SensorsSetup  map[string]dsensor.SensorSetup `json:"sensorsSetup"`
 	SensorsConfig map[string]dsensor.SensorConf  `json:"sensorsConfig"`
 }
@@ -38,6 +42,7 @@ type SwitchStatus struct {
 	Services  map[string]service.ServiceStatus `json:"services"`
 	Leds      map[string]dled.Led              `json:"leds"`
 	Sensors   map[string]dsensor.Sensor        `json:"sensors"`
+	Blinds    map[string]dblind.Blind          `json:"blinds"`
 	Groups    map[int]dgroup.GroupStatus       `json:"groups"`
 }
 
