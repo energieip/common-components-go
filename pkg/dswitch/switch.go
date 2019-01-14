@@ -30,7 +30,7 @@ type SwitchConfig struct {
 	LedsSetup     map[string]dled.LedSetup       `json:"ledsSetup"`
 	LedsConfig    map[string]dled.LedConf        `json:"ledsConfig"`
 	BlindsSetup   map[string]dblind.BlindSetup   `json:"blindsSetup"`
-	BlindssConfig map[string]dblind.BlindConf    `json:"blindsConfig"`
+	BlindsConfig  map[string]dblind.BlindConf    `json:"blindsConfig"`
 	SensorsSetup  map[string]dsensor.SensorSetup `json:"sensorsSetup"`
 	SensorsConfig map[string]dsensor.SensorConf  `json:"sensorsConfig"`
 }
