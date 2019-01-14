@@ -1,5 +1,5 @@
 hash: 89054e5a24f1f42e911f9fb9b6f85ea7af55ee5c90c00662b2962f9b7df49257
-updated: 2019-01-11T09:33:17.072279266+01:00
+updated: 2019-01-14T17:08:07.610470441+01:00
 imports:
 - name: github.com/cenkalti/backoff
   version: 1e4cf3da559842a91afcb6ea6141451e6c30c618
@@ -23,7 +23,7 @@ imports:
 - name: github.com/romana/rlog
   version: f018bc92e7d71f27c04e04cbf008860416c21d01
 - name: github.com/sirupsen/logrus
-  version: eef6b768ab01a0598a0a6db97bad2a37d31df1d1
+  version: 78fb3852d92683dc28da6cc3d5f965100677c27d
 - name: golang.org/x/crypto
   version: ff983b9c42bc9fbf91556e191cc8efb585c16908
   subpackages:
@@ -37,7 +37,7 @@ imports:
   - proxy
   - websocket
 - name: golang.org/x/sys
-  version: 48ac38b7c8cbedd50b1613c0fccacfc7d88dfcdf
+  version: 2be51725563103c17124a318f1745b66f2347acb
   subpackages:
   - unix
   - windows

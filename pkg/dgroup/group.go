@@ -30,8 +30,11 @@ type GroupConfig struct {
 	RuleBrightness     *int     `json:"ruleBrightness,omitempty"`
 	RulePresence       *int     `json:"rulePresence,omitempty"`
 	SetpointLeds       *int     `json:"setpointLeds,omitempty"`
+	SetpointBlinds     *int     `json:"setpointBlinds,omitempty"`
+	SetpointSlatBlinds *int     `json:"setpointSlatBlinds,omitempty"`
 	FriendlyName       *string  `json:"friendlyName,omitempty"`
-	Leds               []string `json:"leds"` //Mac address list
+	Leds               []string `json:"leds"`   //Mac address list
+	Blinds             []string `json:"blinds"` //Mac address list
 	Sensors            []string `json:"sensors"`
 }
 
@@ -56,6 +59,7 @@ type GroupStatus struct {
 	Presence           bool     `json:"presence"`
 	TimeToLeave        int      `json:"timeToLeave"`
 	Leds               []string `json:"leds"` //Mac address list
+	Blinds             []string `json:"blinds"`
 	Sensors            []string `json:"sensors"`
 	FriendlyName       string   `json:"friendlyName"`
 }
