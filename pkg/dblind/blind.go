@@ -37,17 +37,17 @@ type Blind struct {
 
 //ActionProfile
 type ActionProfile struct {
-	Action int  `json:"action"`
-	Tempo  *int `json:"tempo,omitempty"`
+	Action   int  `json:"action"`
+	Duration *int `json:"duration,omitempty"`
 }
 
 //BlindProfile constructor recommendation
 type BlindProfile struct {
-	UP         []ActionProfile `json:"up"`
-	Down       []ActionProfile `json:"down"`
-	Stop       []ActionProfile `json:"stop"`
-	WindowOpen bool            `json:"windowOpen,omitempty"`
-	SlatTempo  int             `json:"slatTempo,omitempty"`
+	UP           []ActionProfile `json:"up"`
+	Down         []ActionProfile `json:"down"`
+	Stop         []ActionProfile `json:"stop"`
+	WindowOpen   bool            `json:"windowOpen,omitempty"`
+	SlatDuration int             `json:"slatDuration,omitempty"`
 }
 
 //BlindSetup initial setup send by the server when the driver is authorized
