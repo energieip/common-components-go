@@ -25,12 +25,11 @@ const (
 
 //Service description
 type Service struct {
-	Name        string        `json:"name"`
-	Systemd     []string      `json:"systemd"` //systemd service
-	Version     string        `json:"version"`
-	PackageName string        `json:"packageName"` //DebianPackageName
-	Config      ServiceConfig `json:"config"`
-	ConfigPath  string        `json:"configPath"`
+	Name        string   `json:"name"`
+	Systemd     []string `json:"systemd"` //systemd service
+	Version     string   `json:"version"`
+	PackageName string   `json:"packageName"` //DebianPackageName
+	ConfigPath  string   `json:"configPath"`
 }
 
 //ServiceConfig desription
@@ -38,6 +37,7 @@ type ServiceConfig struct {
 	LocalBroker   Broker      `json:"localBroker"`
 	NetworkBroker Broker      `json:"networkBroker"`
 	DB            DBConnector `json:"db"`
+	HistoryDB     DBConnector `json:"historyDb"`
 	LogLevel      string      `json:"logLevel"`
 	Certificate   string      `json:"certificate"`
 	Key           string      `json:"key"`
@@ -45,9 +45,8 @@ type ServiceConfig struct {
 
 //DBConnector description
 type DBConnector struct {
-	ClientIP   string  `json:"clientIp"`
-	ClientPort string  `json:"clientPort"`
-	DBCluster  Cluster `json:"dbCluster"`
+	ClientIP   string `json:"clientIp"`
+	ClientPort string `json:"clientPort"`
 }
 
 //Broker description
@@ -58,17 +57,6 @@ type Broker struct {
 	Password string `json:"password"`
 	CaPath   string `json:"caPath"`
 	KeyPath  string `json:"keyPath"`
-}
-
-//Cluster description
-type Cluster struct {
-	Connectors []Connector `json:"connectors"`
-}
-
-//Connector description
-type Connector struct {
-	IP   string `json:"ip"`
-	Port string `json:"port"`
 }
 
 //ServiceStatus description
@@ -221,6 +209,5 @@ func GetPackageVersion(service string) *string {
 			return &version
 		}
 	}
-
 	return nil
 }
