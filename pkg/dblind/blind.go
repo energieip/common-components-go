@@ -33,6 +33,7 @@ type Blind struct {
 	VoltageInput      int     `json:"voltageInput"`
 	DaisyChainEnabled bool    `json:"daisyChainEnabled"`
 	DaisyChainPos     int     `json:"daisyChainPos"`
+	LinePower         int     `json:"linePower"`
 }
 
 //ActionProfile
