@@ -154,3 +154,12 @@ func (d *RethinkbDatabase) ClearTable(dbName, tableName string) error {
 	_, err := r.DB(dbName).Table(tableName).Delete().Run(d.session)
 	return err
 }
+
+//DropTable add new table in database
+func (d *RethinkbDatabase) DropTable(dbName, tableName string) error {
+	if d.session == nil {
+		return NewError("Database Error: session not connected")
+	}
+	_, err := r.DB(dbName).TableDrop(tableName).RunWrite(d.session)
+	return err
+}

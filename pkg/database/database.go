@@ -23,6 +23,7 @@ type DatabaseInterface interface {
 	Initialize(config DatabaseConfig) error
 	CreateDB(dbName string) error
 	CreateTable(dbName, tableName string, model interface{}) error
+	DropTable(dbName, tableName string) error
 	InsertRecord(dbName, tableName string, data interface{}) (string, error)
 	UpdateRecord(dbName, tableName, id string, data interface{}) error
 	GetRecords(dbName, tableName string, criteria interface{}) ([]interface{}, error)
