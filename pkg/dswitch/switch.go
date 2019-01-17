@@ -25,7 +25,7 @@ type Switch struct {
 //SwitchConfig content
 type SwitchConfig struct {
 	Switch
-	ClusterBroker []service.Broker               `json:"clusterBroker"`
+	ClusterBroker map[string]service.Broker      `json:"clusterBroker"`
 	Services      map[string]service.Service     `json:"services"`
 	Groups        map[int]dgroup.GroupConfig     `json:"groups"`
 	LedsSetup     map[string]dled.LedSetup       `json:"ledsSetup"`
@@ -39,12 +39,13 @@ type SwitchConfig struct {
 //SwitchStatus description
 type SwitchStatus struct {
 	Switch
-	ErrorCode *int                             `json:"errorCode"`
-	Services  map[string]service.ServiceStatus `json:"services"`
-	Leds      map[string]dled.Led              `json:"leds"`
-	Sensors   map[string]dsensor.Sensor        `json:"sensors"`
-	Blinds    map[string]dblind.Blind          `json:"blinds"`
-	Groups    map[int]dgroup.GroupStatus       `json:"groups"`
+	ErrorCode     *int                             `json:"errorCode"`
+	Services      map[string]service.ServiceStatus `json:"services"`
+	Leds          map[string]dled.Led              `json:"leds"`
+	Sensors       map[string]dsensor.Sensor        `json:"sensors"`
+	Blinds        map[string]dblind.Blind          `json:"blinds"`
+	Groups        map[int]dgroup.GroupStatus       `json:"groups"`
+	ClusterBroker map[string]service.Broker        `json:"clusterBroker"`
 }
 
 // ToJSON dump status struct
