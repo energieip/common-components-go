@@ -29,6 +29,7 @@ type DatabaseInterface interface {
 	GetRecord(dbName, tableName string, criteria interface{}) (interface{}, error)
 	FetchAllRecords(dbName, tableName string) ([]interface{}, error)
 	DeleteRecord(dbName, tableName string, data interface{}) error
+	ClearTable(dbName, tableName string) error
 	ListenTableChange(dbName, tableName string) (*DBCursor, error)
 	ListenDBChange(dbName string) (*DBCursor, error)
 	ListenFilterTableChange(dbName, tableName string, criteria interface{}) (*DBCursor, error)
