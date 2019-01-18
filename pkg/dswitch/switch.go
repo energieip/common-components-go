@@ -45,7 +45,21 @@ type SwitchStatus struct {
 	Sensors       map[string]dsensor.Sensor        `json:"sensors"`
 	Blinds        map[string]dblind.Blind          `json:"blinds"`
 	Groups        map[int]dgroup.GroupStatus       `json:"groups"`
-	ClusterBroker map[string]service.Broker        `json:"clusterBroker"`
+	ClusterBroker map[string]SwitchCluster         `json:"clusterBroker"`
+}
+
+type SwitchCluster struct {
+	Mac string `json:"mac"`
+	IP  string `json:"ip"`
+}
+
+// ToJSON dump status struct
+func (i SwitchCluster) ToJSON() (string, error) {
+	inrec, err := json.Marshal(i)
+	if err != nil {
+		return "", err
+	}
+	return string(inrec[:]), err
 }
 
 // ToJSON dump status struct
