@@ -25,7 +25,7 @@ type Switch struct {
 //SwitchConfig content
 type SwitchConfig struct {
 	Switch
-	ClusterBroker map[string]service.Broker      `json:"clusterBroker"`
+	ClusterBroker map[string]SwitchCluster       `json:"clusterBroker"`
 	Services      map[string]service.Service     `json:"services"`
 	Groups        map[int]dgroup.GroupConfig     `json:"groups"`
 	LedsSetup     map[string]dled.LedSetup       `json:"ledsSetup"`
