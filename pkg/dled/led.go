@@ -52,42 +52,46 @@ type Led struct {
 
 //LedSetup initial setup send by the server when the driver is authorized
 type LedSetup struct {
-	Mac             string  `json:"mac"`
-	IMax            int     `json:"iMax"`
-	PMax            int     `json:"pMax"`
-	Group           *int    `json:"group,omitempty"`
-	Auto            *bool   `json:"auto,omitempty"`
-	Watchdog        *int    `json:"watchdog,omitempty"`
-	IsBleEnabled    *bool   `json:"isBleEnabled,omitempty"`
-	ThresholdHigh   *int    `json:"thresholdHigh,omitempty"`
-	ThresholdLow    *int    `json:"thresholdLow,omitempty"`
-	FriendlyName    *string `json:"friendlyName,omitempty"`
-	SwitchMac       string  `json:"switchMac"`
-	IsConfigured    *bool   `json:"isConfigured,omitempty"`
-	DumpFrequency   int     `json:"dumpFrequency"`
-	DefaultSetpoint *int    `json:"defaultSetpoint,omitempty"` // when the switch is not responding
-	SetpointManual  *int    `json:"setpointManual,omitempty"`
-	SetpointAuto    *int    `json:"setpointAuto,omitempty"`
-	SlopeStart      *int    `json:"slopeStart,omitempty"`
-	SlopeStop       *int    `json:"slopeStop,omitempty"`
+	Mac              string  `json:"mac"`
+	IMax             int     `json:"iMax"`
+	PMax             int     `json:"pMax"`
+	Group            *int    `json:"group,omitempty"`
+	Auto             *bool   `json:"auto,omitempty"`
+	Watchdog         *int    `json:"watchdog,omitempty"`
+	IsBleEnabled     *bool   `json:"isBleEnabled,omitempty"`
+	ThresholdHigh    *int    `json:"thresholdHigh,omitempty"`
+	ThresholdLow     *int    `json:"thresholdLow,omitempty"`
+	FriendlyName     *string `json:"friendlyName,omitempty"`
+	SwitchMac        string  `json:"switchMac"`
+	IsConfigured     *bool   `json:"isConfigured,omitempty"`
+	DumpFrequency    int     `json:"dumpFrequency"`
+	DefaultSetpoint  *int    `json:"defaultSetpoint,omitempty"` // when the switch is not responding
+	SetpointManual   *int    `json:"setpointManual,omitempty"`
+	SetpointAuto     *int    `json:"setpointAuto,omitempty"`
+	SlopeStartManual *int    `json:"slopeStartManual,omitempty"`
+	SlopeStopManual  *int    `json:"slopeStopManual,omitempty"`
+	SlopeStartAuto   *int    `json:"slopeStartAuto,omitempty"`
+	SlopeStopAuto    *int    `json:"slopeStopAuto,omitempty"`
 }
 
 //LedConf customizable configuration by the server
 type LedConf struct {
-	Mac            string  `json:"mac"`
-	Group          *int    `json:"group,omitempty"`
-	SetpointManual *int    `json:"setpointManual,omitempty"`
-	SetpointAuto   *int    `json:"setpointAuto,omitempty"`
-	Auto           *bool   `json:"auto,omitempty"`
-	Watchdog       *int    `json:"watchdog,omitempty"`
-	IsConfigured   *bool   `json:"isConfigured,omitempty"`
-	IsBleEnabled   *bool   `json:"isBleEnabled,omitempty"`
-	ThresholdHigh  *int    `json:"thresholdHigh,omitempty"`
-	ThresholdLow   *int    `json:"thresholdLow,omitempty"`
-	FriendlyName   *string `json:"friendlyName,omitempty"`
-	DumpFrequency  *int    `json:"dumpFrequency,omitempty"`
-	SlopeStart     *int    `json:"slopeStart,omitempty"`
-	SlopeStop      *int    `json:"slopeStop,omitempty"`
+	Mac              string  `json:"mac"`
+	Group            *int    `json:"group,omitempty"`
+	SetpointManual   *int    `json:"setpointManual,omitempty"`
+	SetpointAuto     *int    `json:"setpointAuto,omitempty"`
+	Auto             *bool   `json:"auto,omitempty"`
+	Watchdog         *int    `json:"watchdog,omitempty"`
+	IsConfigured     *bool   `json:"isConfigured,omitempty"`
+	IsBleEnabled     *bool   `json:"isBleEnabled,omitempty"`
+	ThresholdHigh    *int    `json:"thresholdHigh,omitempty"`
+	ThresholdLow     *int    `json:"thresholdLow,omitempty"`
+	FriendlyName     *string `json:"friendlyName,omitempty"`
+	DumpFrequency    *int    `json:"dumpFrequency,omitempty"`
+	SlopeStartManual *int    `json:"slopeStartManual,omitempty"`
+	SlopeStopManual  *int    `json:"slopeStopManual,omitempty"`
+	SlopeStartAuto   *int    `json:"slopeStartAuto,omitempty"`
+	SlopeStopAuto    *int    `json:"slopeStopAuto,omitempty"`
 }
 
 //ToLed convert map interface to Led object

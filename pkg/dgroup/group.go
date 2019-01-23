@@ -43,8 +43,6 @@ type GroupStatus struct {
 	Group              int      `json:"group"` //groupID
 	SensorRule         string   `json:"sensorRule"`
 	Auto               bool     `json:"auto"`
-	SlopeStart         int      `json:"slopeStart"`
-	SlopeStop          int      `json:"slopeStop"`
 	Watchdog           int      `json:"watchdog"`
 	SlopeStartManual   int      `json:"slopeStartManual,omitempty"`
 	SlopeStopManual    int      `json:"slopeStopManual,omitempty"`
