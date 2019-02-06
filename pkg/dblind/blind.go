@@ -29,8 +29,8 @@ type Blind struct {
 	Error             int     `json:"error"`
 	FriendlyName      string  `json:"friendlyName"`
 	DumpFrequency     int     `json:"dumpFrequency"`
-	WindowsOpen1      bool    `json:"windowOpen1"`
-	WindowsOpen2      bool    `json:"windowOpen2"`
+	WindowsStatus1    bool    `json:"windowStatus1"`
+	WindowsStatus2    bool    `json:"windowStatus2"`
 	VoltageInput      int     `json:"voltageInput"`
 	DaisyChainEnabled bool    `json:"daisyChainEnabled"`
 	DaisyChainPos     int     `json:"daisyChainPos"`
