@@ -26,7 +26,9 @@ func (d *RethinkbDatabase) Initialize(config DatabaseConfig) error {
 //Close Database connexion
 func (d *RethinkbDatabase) Close() error {
 	if d.session != nil {
-		return d.session.Close()
+		err := d.session.Close()
+		d.session = nil
+		return err
 	}
 	return nil
 }
@@ -104,6 +106,7 @@ func (d *RethinkbDatabase) GetRecords(dbName, tableName string, criteria interfa
 	if err != nil {
 		return records, err
 	}
+	defer rows.Close()
 	err = rows.All(&records)
 	return records, err
 }
@@ -118,8 +121,9 @@ func (d *RethinkbDatabase) GetRecord(dbName, tableName string, criteria interfac
 	if err != nil {
 		return nil, err
 	}
+
+	defer cursor.Close()
 	cursor.One(&record)
-	cursor.Close()
 	return record, nil
 }
 
@@ -133,6 +137,7 @@ func (d *RethinkbDatabase) FetchAllRecords(dbName, tableName string) ([]interfac
 	if err != nil {
 		return records, err
 	}
+	defer rows.Close()
 	err = rows.All(&records)
 	return records, err
 }
@@ -142,7 +147,10 @@ func (d *RethinkbDatabase) DeleteRecord(dbName, tableName string, data interface
 	if d.session == nil {
 		return NewError("Database Error: session not connected")
 	}
-	_, err := r.DB(dbName).Table(tableName).Filter(data).Delete().Run(d.session)
+	cursor, err := r.DB(dbName).Table(tableName).Filter(data).Delete().Run(d.session)
+	if err == nil {
+		cursor.Close()
+	}
 	return err
 }
 
@@ -151,7 +159,10 @@ func (d *RethinkbDatabase) ClearTable(dbName, tableName string) error {
 	if d.session == nil {
 		return NewError("Database Error: session not connected")
 	}
-	_, err := r.DB(dbName).Table(tableName).Delete().Run(d.session)
+	cursor, err := r.DB(dbName).Table(tableName).Delete().Run(d.session)
+	if err == nil {
+		cursor.Close()
+	}
 	return err
 }
 
