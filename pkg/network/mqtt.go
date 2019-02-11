@@ -110,7 +110,7 @@ func (p *MQTTNetwork) Initialize(config NetworkConfig) error {
 			}
 		}
 	}
-	opts.SetPingTimeout(1 * time.Second)
+	//opts.SetPingTimeout(1 * time.Second)
 
 	c := mqtt.NewClient(opts)
 	if token := c.Connect(); token.Wait() && token.Error() != nil {
