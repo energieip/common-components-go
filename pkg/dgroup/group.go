@@ -36,30 +36,35 @@ type GroupConfig struct {
 	Leds               []string `json:"leds"`   //Mac address list
 	Blinds             []string `json:"blinds"` //Mac address list
 	Sensors            []string `json:"sensors"`
+	FirstDay           []string `json:"firstDay"` //LED Mac address list in first day position
+	FirstDayOffset     *int     `json:"firstDayOffset"`
 }
 
 //GroupStatus status dump to the server
 type GroupStatus struct {
-	Group              int      `json:"group"` //groupID
-	SensorRule         string   `json:"sensorRule"`
-	Auto               bool     `json:"auto"`
-	Watchdog           int      `json:"watchdog"`
-	SlopeStartManual   int      `json:"slopeStartManual,omitempty"`
-	SlopeStopManual    int      `json:"slopeStopManual,omitempty"`
-	SlopeStartAuto     int      `json:"slopeStartAuto,omitempty"`
-	SlopeStopAuto      int      `json:"slopeStopAuto,omitempty"`
-	CorrectionInterval int      `json:"correctionInterval"`
-	RuleBrightness     *int     `json:"ruleBrightness,omitempty"`
-	RulePresence       *int     `json:"rulePresence,omitempty"`
-	Error              int      `json:"error"`
-	TimeToAuto         int      `json:"timeToAuto"`
-	SetpointLeds       int      `json:"setpointLeds"`
-	Presence           bool     `json:"presence"`
-	TimeToLeave        int      `json:"timeToLeave"`
-	Leds               []string `json:"leds"` //Mac address list
-	Blinds             []string `json:"blinds"`
-	Sensors            []string `json:"sensors"`
-	FriendlyName       string   `json:"friendlyName"`
+	Group                int      `json:"group"` //groupID
+	SensorRule           string   `json:"sensorRule"`
+	Auto                 bool     `json:"auto"`
+	Watchdog             int      `json:"watchdog"`
+	SlopeStartManual     int      `json:"slopeStartManual,omitempty"`
+	SlopeStopManual      int      `json:"slopeStopManual,omitempty"`
+	SlopeStartAuto       int      `json:"slopeStartAuto,omitempty"`
+	SlopeStopAuto        int      `json:"slopeStopAuto,omitempty"`
+	CorrectionInterval   int      `json:"correctionInterval"`
+	RuleBrightness       *int     `json:"ruleBrightness,omitempty"`
+	RulePresence         *int     `json:"rulePresence,omitempty"`
+	Error                int      `json:"error"`
+	TimeToAuto           int      `json:"timeToAuto"`
+	SetpointLeds         int      `json:"setpointLeds"`
+	Presence             bool     `json:"presence"`
+	TimeToLeave          int      `json:"timeToLeave"`
+	Leds                 []string `json:"leds"` //Mac address list
+	Blinds               []string `json:"blinds"`
+	Sensors              []string `json:"sensors"`
+	FriendlyName         string   `json:"friendlyName"`
+	FirstDay             []string `json:"firstDay"` //LED Mac address list in first day position
+	FirstDayOffset       *int     `json:"firstDayOffset"`
+	SetpointLedsFirstDay int      `json:"setpointLedsFirstDay"`
 }
 
 // ToMapInterface convert group struct in Map[string] interface{}
