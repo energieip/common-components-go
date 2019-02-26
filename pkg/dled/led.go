@@ -53,6 +53,7 @@ type Led struct {
 //LedSetup initial setup send by the server when the driver is authorized
 type LedSetup struct {
 	Mac              string  `json:"mac"`
+	FullMac          string  `json:"fullMac"`
 	IMax             int     `json:"iMax"`
 	PMax             int     `json:"pMax"`
 	Group            *int    `json:"group,omitempty"`
