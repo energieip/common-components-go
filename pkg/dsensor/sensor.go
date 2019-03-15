@@ -45,6 +45,7 @@ type Sensor struct {
 //SensorSetup initial setup send by the server when the driver is authorized
 type SensorSetup struct {
 	Mac                        string  `json:"mac"`
+	FullMac                    string  `json:"fullMac"`
 	Group                      *int    `json:"group,omitempty"`
 	BrightnessCorrectionFactor *int    `json:"brightnessCorrectionFactor,omitempty"`
 	ThresholdPresence          *int    `json:"thresholdPresence,omitempty"`

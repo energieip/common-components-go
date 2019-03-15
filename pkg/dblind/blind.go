@@ -55,6 +55,7 @@ type BlindProfile struct {
 //BlindSetup initial setup send by the server when the driver is authorized
 type BlindSetup struct {
 	Mac           string       `json:"mac"`
+	FullMac       string       `json:"fullMac"`
 	Group         *int         `json:"group,omitempty"`
 	IsBleEnabled  *bool        `json:"isBleEnabled,omitempty"`
 	FriendlyName  *string      `json:"friendlyName,omitempty"`
