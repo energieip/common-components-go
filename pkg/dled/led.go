@@ -48,6 +48,11 @@ type Led struct {
 	SlopeStart        int     `json:"slopeStart"`
 	SlopeStop         int     `json:"slopeStop"`
 	DefaultSetpoint   *int    `json:"defaultSetpoint,omitempty"` // when the switch is not responding
+	BleMode           string  `json:"bleMode"`                   //bleMode could be "service" or "iBeacon"
+	IBeaconUUID       string  `json:"iBeaconUUID"`
+	IBeaconMajor      int     `json:"iBeaconMajor"`
+	IBeaconMinor      int     `json:"iBeaconMinor"`
+	IBeaconTxPower    int     `json:"iBeaconTxPower"`
 }
 
 //LedSetup initial setup send by the server when the driver is authorized
@@ -73,6 +78,11 @@ type LedSetup struct {
 	SlopeStopManual  *int    `json:"slopeStopManual,omitempty"`
 	SlopeStartAuto   *int    `json:"slopeStartAuto,omitempty"`
 	SlopeStopAuto    *int    `json:"slopeStopAuto,omitempty"`
+	BleMode          *string `json:"bleMode,omitempty"` //bleMode could be "service" or "iBeacon"
+	IBeaconUUID      *string `json:"iBeaconUUID,omitempty"`
+	IBeaconMajor     *int    `json:"iBeaconMajor,omitempty"`
+	IBeaconMinor     *int    `json:"iBeaconMinor,omitempty"`
+	IBeaconTxPower   *int    `json:"iBeaconTxPower,omitempty"`
 }
 
 //LedConf customizable configuration by the server
@@ -93,6 +103,11 @@ type LedConf struct {
 	SlopeStopManual  *int    `json:"slopeStopManual,omitempty"`
 	SlopeStartAuto   *int    `json:"slopeStartAuto,omitempty"`
 	SlopeStopAuto    *int    `json:"slopeStopAuto,omitempty"`
+	BleMode          *string `json:"bleMode,omitempty"` //bleMode could be "service" or "iBeacon"
+	IBeaconUUID      *string `json:"iBeaconUUID,omitempty"`
+	IBeaconMajor     *int    `json:"iBeaconMajor,omitempty"`
+	IBeaconMinor     *int    `json:"iBeaconMinor,omitempty"`
+	IBeaconTxPower   *int    `json:"iBeaconTxPower,omitempty"`
 }
 
 //ToLed convert map interface to Led object
