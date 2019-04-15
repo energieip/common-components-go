@@ -69,6 +69,7 @@ type HvacConf struct {
 	SetpointHeatStandby    *int    `json:"setpointHeatStandby,omitempty"`    // 1/10°C
 	FriendlyName           *string `json:"friendlyName"`
 	IsConfigured           *bool   `json:"isConfigured,omitempty"`
+	DumpFrequency          *int    `json:"dumpFrequency"`
 }
 
 //ToHvac convert map interface to Hvac object
