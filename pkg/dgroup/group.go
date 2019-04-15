@@ -35,6 +35,7 @@ type GroupConfig struct {
 	FriendlyName       *string  `json:"friendlyName,omitempty"`
 	Leds               []string `json:"leds"`   //Mac address list
 	Blinds             []string `json:"blinds"` //Mac address list
+	Hvacs              []string `json:"hvacs"`  //Mac address list
 	Sensors            []string `json:"sensors"`
 	FirstDay           []string `json:"firstDay"` //LED Mac address list in first day position
 	FirstDayOffset     *int     `json:"firstDayOffset"`
@@ -60,6 +61,7 @@ type GroupStatus struct {
 	TimeToLeave          int      `json:"timeToLeave"`
 	Leds                 []string `json:"leds"` //Mac address list
 	Blinds               []string `json:"blinds"`
+	Hvacs                []string `json:"hvacs"`
 	Sensors              []string `json:"sensors"`
 	FriendlyName         string   `json:"friendlyName"`
 	FirstDay             []string `json:"firstDay"` //LED Mac address list in first day position
