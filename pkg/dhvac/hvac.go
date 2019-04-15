@@ -37,6 +37,7 @@ type Hvac struct {
 //HvacSetup initial setup send by the server when the driver is authorized
 type HvacSetup struct {
 	Mac                    string  `json:"mac"`
+	SwitchMac              string  `json:"switchMac"`
 	FullMac                string  `json:"fullMac"`
 	Group                  *int    `json:"group,omitempty"`
 	DumpFrequency          int     `json:"dumpFrequency"`
