@@ -31,20 +31,23 @@ type Hvac struct {
 	Cold            int     `json:"cold"`   //percentage cold setpoint
 	Damper          int     `json:"damper"` //percentage open
 	DumpFrequency   int     `json:"dumpFrequency"`
+	FriendlyName    string  `json:"friendlyName"`
 }
 
 //HvacSetup initial setup send by the server when the driver is authorized
 type HvacSetup struct {
-	Mac                    string `json:"mac"`
-	FullMac                string `json:"fullMac"`
-	Group                  *int   `json:"group,omitempty"`
-	DumpFrequency          int    `json:"dumpFrequency"`
-	SetpointCoolOccupied   *int   `json:"setpointCoolOccupied,omitempty"`   // 1/10°C
-	SetpointHeatOccupied   *int   `json:"setpointHeatOccupied,omitempty"`   // 1/10°C
-	SetpointCoolInoccupied *int   `json:"setpointCoolInoccupied,omitempty"` // 1/10°C
-	SetpointHeatInoccupied *int   `json:"setpointHeatInoccupied,omitempty"` // 1/10°C
-	SetpointCoolStandby    *int   `json:"setpointCoolStandby,omitempty"`    // 1/10°C
-	SetpointHeatStandby    *int   `json:"setpointHeatStandby,omitempty"`    // 1/10°C
+	Mac                    string  `json:"mac"`
+	FullMac                string  `json:"fullMac"`
+	Group                  *int    `json:"group,omitempty"`
+	DumpFrequency          int     `json:"dumpFrequency"`
+	SetpointCoolOccupied   *int    `json:"setpointCoolOccupied,omitempty"`   // 1/10°C
+	SetpointHeatOccupied   *int    `json:"setpointHeatOccupied,omitempty"`   // 1/10°C
+	SetpointCoolInoccupied *int    `json:"setpointCoolInoccupied,omitempty"` // 1/10°C
+	SetpointHeatInoccupied *int    `json:"setpointHeatInoccupied,omitempty"` // 1/10°C
+	SetpointCoolStandby    *int    `json:"setpointCoolStandby,omitempty"`    // 1/10°C
+	SetpointHeatStandby    *int    `json:"setpointHeatStandby,omitempty"`    // 1/10°C
+	FriendlyName           *string `json:"friendlyName"`
+	IsConfigured           *bool   `json:"isConfigured,omitempty"`
 }
 
 //HvacConf customizable configuration by the server
@@ -64,6 +67,8 @@ type HvacConf struct {
 	SetpointHeatInoccupied *int    `json:"setpointHeatInoccupied,omitempty"` // 1/10°C
 	SetpointCoolStandby    *int    `json:"setpointCoolStandby,omitempty"`    // 1/10°C
 	SetpointHeatStandby    *int    `json:"setpointHeatStandby,omitempty"`    // 1/10°C
+	FriendlyName           *string `json:"friendlyName"`
+	IsConfigured           *bool   `json:"isConfigured,omitempty"`
 }
 
 //ToHvac convert map interface to Hvac object
