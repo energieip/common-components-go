@@ -4,7 +4,6 @@ import (
 	"crypto/tls"
 	"log"
 	"os"
-	"time"
 
 	mqtt "github.com/eclipse/paho.mqtt.golang"
 	"github.com/romana/rlog"
@@ -94,7 +93,7 @@ func (p *MQTTNetwork) Initialize(config NetworkConfig) error {
 	default:
 		break
 	}
-	opts.SetKeepAlive(2 * time.Second)
+	//opts.SetKeepAlive(2 * time.Second)
 	// opts.SetDefaultPublishHandler(f)
 	opts.SetConnectionLostHandler(onConnLostHandler)
 
