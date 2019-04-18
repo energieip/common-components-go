@@ -58,6 +58,9 @@ type GroupStatus struct {
 	TimeToAuto           int      `json:"timeToAuto"`
 	SetpointLeds         int      `json:"setpointLeds"`
 	Presence             bool     `json:"presence"`
+	Temperature          int      `json:"temperature"`
+	Humidity             int      `json:"humidity"`
+	Brightness           int      `json:"brightness"`
 	WindowsOpened        bool     `json:"windowsOpened"` //at least one window is opened
 	TimeToLeave          int      `json:"timeToLeave"`
 	Leds                 []string `json:"leds"` //Mac address list
