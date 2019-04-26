@@ -32,7 +32,7 @@ type Service struct {
 	ConfigPath  string   `json:"configPath"`
 }
 
-//ServiceConfig desription
+//ServiceConfig description
 type ServiceConfig struct {
 	LocalBroker   Broker      `json:"localBroker"`
 	NetworkBroker Broker      `json:"networkBroker"`
@@ -41,6 +41,9 @@ type ServiceConfig struct {
 	LogLevel      string      `json:"logLevel"`
 	Certificate   string      `json:"certificate"`
 	Key           string      `json:"key"`
+	APIPassword   string      `json:"apiPassword"`
+	APIPort       string      `json:"apiPort"`
+	URLToken      string      `json:"urlToken"`
 }
 
 //DBConnector description
