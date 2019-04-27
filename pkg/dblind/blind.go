@@ -35,6 +35,10 @@ type Blind struct {
 	DaisyChainEnabled bool    `json:"daisyChainEnabled"`
 	DaisyChainPos     int     `json:"daisyChainPos"`
 	LinePower         int     `json:"linePower"`
+	Blind1            int     `json:"blind1"`
+	Blind2            int     `json:"blind2"`
+	Slat1             int     `json:"slat1"`
+	Slat2             int     `json:"slat2"`
 }
 
 //ActionProfile
