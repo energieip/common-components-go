@@ -43,6 +43,7 @@ type ServiceConfig struct {
 	Key           string      `json:"key"`
 	APIPassword   string      `json:"apiPassword"`
 	APIPort       string      `json:"apiPort"`
+	APIIp         string      `json:"apiIp"`
 	URLToken      string      `json:"urlToken"`
 }
 
