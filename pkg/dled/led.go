@@ -27,7 +27,6 @@ type Led struct {
 	HardwareVersion   float32 `json:"hardwareVersion"`
 	IsBleEnabled      bool    `json:"isBleEnabled"`
 	Error             int     `json:"error"`
-	IMax              int     `json:"iMax"`
 	PMax              int     `json:"pMax"`
 	Duration          float64 `json:"duration"`
 	Setpoint          int     `json:"setpoint"`
@@ -59,7 +58,6 @@ type Led struct {
 type LedSetup struct {
 	Mac              string  `json:"mac"`
 	FullMac          string  `json:"fullMac"`
-	IMax             int     `json:"iMax"`
 	PMax             int     `json:"pMax"`
 	Group            *int    `json:"group,omitempty"`
 	Auto             *bool   `json:"auto,omitempty"`
