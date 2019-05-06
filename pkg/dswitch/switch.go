@@ -5,6 +5,7 @@ import (
 
 	"github.com/energieip/common-components-go/pkg/dblind"
 	"github.com/energieip/common-components-go/pkg/dhvac"
+	"github.com/energieip/common-components-go/pkg/duser"
 
 	"github.com/energieip/common-components-go/pkg/dgroup"
 	"github.com/energieip/common-components-go/pkg/dled"
@@ -37,6 +38,7 @@ type SwitchConfig struct {
 	SensorsConfig map[string]dsensor.SensorConf  `json:"sensorsConfig"`
 	HvacsSetup    map[string]dhvac.HvacSetup     `json:"hvacsSetup"`
 	HvacsConfig   map[string]dhvac.HvacConf      `json:"hvacsConfig"`
+	Users         map[string]duser.UserAccess    `json:"users"`
 }
 
 //SwitchStatus description
@@ -50,6 +52,7 @@ type SwitchStatus struct {
 	Hvacs         map[string]dhvac.Hvac            `json:"hvacs"`
 	Groups        map[int]dgroup.GroupStatus       `json:"groups"`
 	ClusterBroker map[string]SwitchCluster         `json:"clusterBroker"`
+	Users         map[string]duser.UserAccess      `json:"users"`
 }
 
 type SwitchCluster struct {
