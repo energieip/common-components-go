@@ -36,15 +36,22 @@ type Service struct {
 type ServiceConfig struct {
 	LocalBroker   Broker      `json:"localBroker"`
 	NetworkBroker Broker      `json:"networkBroker"`
+	AuthBroker    Broker      `json:"authBroker"`
 	DB            DBConnector `json:"db"`
 	HistoryDB     DBConnector `json:"historyDb"`
 	LogLevel      string      `json:"logLevel"`
-	Certificate   string      `json:"certificate"`
-	Key           string      `json:"key"`
-	APIPassword   string      `json:"apiPassword"`
-	APIPort       string      `json:"apiPort"`
-	APIIp         string      `json:"apiIp"`
-	URLToken      string      `json:"urlToken"`
+	ExternalAPI   APIInfo     `json:"externalAPI"`
+	InternalAPI   APIInfo     `json:"internalAPI"`
+}
+
+//APIInfo api description
+type APIInfo struct {
+	CaPath   string `json:"caPath"`
+	KeyPath  string `json:"keyPath"`
+	Password string `json:"password"`
+	IP       string `json:"ip"`
+	Port     string `json:"port"`
+	URLToken string `json:"urlToken"`
 }
 
 //DBConnector description
