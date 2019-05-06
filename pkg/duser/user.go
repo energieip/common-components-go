@@ -4,9 +4,9 @@ import "encoding/json"
 
 //UserAcess
 type UserAccess struct {
-	UserHash    string   `json:"userHash"`
-	Priviledges []string `json:"priviledges"`
-	AccessGroup []int    `json:"accessGroups"`
+	UserHash     string   `json:"userHash"`
+	Priviledges  []string `json:"priviledges"`
+	AccessGroups []int    `json:"accessGroups"`
 }
 
 // ToJSON dump User struct

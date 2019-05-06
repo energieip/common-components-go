@@ -41,3 +41,13 @@ func GetMac() (addr string) {
 	}
 	return
 }
+
+//IntInSlice check if integer is present in the list
+func IntInSlice(a int, list []int) bool {
+	for _, b := range list {
+		if b == a {
+			return true
+		}
+	}
+	return false
+}
