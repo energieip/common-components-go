@@ -2,11 +2,17 @@ package duser
 
 import "encoding/json"
 
+const (
+	PriviledgeAdmin      = "admin"
+	PriviledgeMaintainer = "maintainer"
+	PriviledgeUser       = "user"
+)
+
 //UserAcess
 type UserAccess struct {
-	UserHash     string   `json:"userHash"`
-	Priviledges  []string `json:"priviledges"`
-	AccessGroups []int    `json:"accessGroups"`
+	UserHash     string `json:"userHash"`
+	Priviledge   string `json:"priviledge"`
+	AccessGroups []int  `json:"accessGroups"`
 }
 
 // ToJSON dump User struct
