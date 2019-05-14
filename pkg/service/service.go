@@ -46,7 +46,7 @@ type ServiceConfig struct {
 
 //APIInfo api description
 type APIInfo struct {
-	CaPath   string `json:"caPath"`
+	CertPath string `json:"certPath"`
 	KeyPath  string `json:"keyPath"`
 	Password string `json:"password"`
 	IP       string `json:"ip"`
@@ -67,7 +67,6 @@ type Broker struct {
 	Login    string `json:"login"`
 	Password string `json:"password"`
 	CaPath   string `json:"caPath"`
-	KeyPath  string `json:"keyPath"`
 }
 
 //ServiceStatus description
