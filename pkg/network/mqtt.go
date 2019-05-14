@@ -2,6 +2,8 @@ package network
 
 import (
 	"crypto/tls"
+	"crypto/x509"
+	"io/ioutil"
 	"log"
 	"os"
 
@@ -60,22 +62,36 @@ func (p *MQTTNetwork) Initialize(config NetworkConfig) error {
 	rlog.Info("Plug on MQTT " + config.IP + ":" + config.Port)
 	p.callbacks = config.Callbacks
 	var url string
-	if config.ServerCertificat != "" {
-		url = "tcps://" + config.IP + ":" + config.Port
+	if config.CaPath != "" {
+		url = "tls://" + config.IP + ":" + config.Port
 	} else {
 		url = "tcp://" + config.IP + ":" + config.Port
 	}
-	opts := mqtt.NewClientOptions().AddBroker(url).SetClientID(config.ClientName)
+	opts := mqtt.NewClientOptions()
+
+	if config.CaPath != "" {
+		dat, err := ioutil.ReadFile(config.CaPath)
+		if err != nil {
+			rlog.Error("failed " + err.Error())
+			return err
+		}
+		rootCa := x509.NewCertPool()
+		if !rootCa.AppendCertsFromPEM(dat) {
+			return NewError("failed to parse root certificate")
+		}
+
+		tlsConfig := &tls.Config{RootCAs: rootCa, InsecureSkipVerify: true}
+		opts.SetTLSConfig(tlsConfig)
+	}
+	opts.AddBroker(url)
+	opts.SetClientID(config.ClientName)
 	if config.User != "" {
 		opts.SetUsername(config.User)
 	}
 	if config.Password != "" {
 		opts.SetPassword(config.Password)
 	}
-	if config.ServerCertificat != "" && config.ClientKey != "" {
-		cer, _ := tls.LoadX509KeyPair(config.ServerCertificat, config.ClientKey)
-		opts.SetTLSConfig(&tls.Config{Certificates: []tls.Certificate{cer}, InsecureSkipVerify: true})
-	}
+
 	switch config.LogLevel {
 	case LogDebug:
 		mqtt.DEBUG = log.New(os.Stdout, "DBG", 0)

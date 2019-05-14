@@ -36,15 +36,14 @@ type NetworkInterface interface {
 
 //NetworkConfig configuration structure
 type NetworkConfig struct {
-	IP               string
-	Port             string
-	ClientName       string
-	Callbacks        map[string]func(Client, Message)
-	LogLevel         string
-	User             string //for authentification
-	Password         string
-	ServerCertificat string
-	ClientKey        string
+	IP         string
+	Port       string
+	ClientName string
+	Callbacks  map[string]func(Client, Message)
+	LogLevel   string
+	User       string //for authentification
+	Password   string
+	CaPath     string
 }
 
 // NewNetwork instanciate the appropriate networkinterface
