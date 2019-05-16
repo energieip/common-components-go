@@ -46,12 +46,13 @@ type ServiceConfig struct {
 
 //APIInfo api description
 type APIInfo struct {
-	CertPath string `json:"certPath"`
-	KeyPath  string `json:"keyPath"`
-	Password string `json:"password"`
-	IP       string `json:"ip"`
-	Port     string `json:"port"`
-	URLToken string `json:"urlToken"`
+	CertPath       string `json:"certPath"`
+	KeyPath        string `json:"keyPath"`
+	Password       string `json:"password"`
+	IP             string `json:"ip"`
+	Port           string `json:"port"`
+	URLToken       string `json:"urlToken"`
+	BrowsingFolder string `json:"browsingFolder"`
 }
 
 //DBConnector description
