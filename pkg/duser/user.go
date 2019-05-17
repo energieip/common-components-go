@@ -10,9 +10,10 @@ const (
 
 //UserAcess
 type UserAccess struct {
-	UserHash     string `json:"userHash"`
-	Priviledge   string `json:"priviledge"`
-	AccessGroups []int  `json:"accessGroups"`
+	UserHash     string   `json:"userHash"`
+	Priviledge   string   `json:"priviledge"`
+	AccessGroups []int    `json:"accessGroups"`
+	Services     []string `json:"services"`
 }
 
 // ToJSON dump User struct
