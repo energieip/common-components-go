@@ -62,7 +62,7 @@ func (p *MQTTNetwork) Initialize(config NetworkConfig) error {
 	rlog.Info("Plug on MQTT " + config.IP + ":" + config.Port)
 	p.callbacks = config.Callbacks
 	var url string
-	if config.CaPath != "" {
+	if config.Secure {
 		url = "tls://" + config.IP + ":" + config.Port
 	} else {
 		url = "tcp://" + config.IP + ":" + config.Port
@@ -83,6 +83,7 @@ func (p *MQTTNetwork) Initialize(config NetworkConfig) error {
 		tlsConfig := &tls.Config{RootCAs: rootCa, InsecureSkipVerify: true}
 		opts.SetTLSConfig(tlsConfig)
 	}
+
 	opts.AddBroker(url)
 	opts.SetClientID(config.ClientName)
 	if config.User != "" {

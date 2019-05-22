@@ -44,6 +44,7 @@ type NetworkConfig struct {
 	User       string //for authentification
 	Password   string
 	CaPath     string
+	Secure     bool
 }
 
 // NewNetwork instanciate the appropriate networkinterface

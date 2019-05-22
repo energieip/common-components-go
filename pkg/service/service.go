@@ -68,6 +68,7 @@ type Broker struct {
 	Login    string `json:"login"`
 	Password string `json:"password"`
 	CaPath   string `json:"caPath"`
+	Secure   bool   `json:"secure"`
 }
 
 //ServiceStatus description
