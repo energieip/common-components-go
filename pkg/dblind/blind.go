@@ -71,6 +71,7 @@ type BlindSetup struct {
 	Slat1         *int         `json:"slat1,omitempty"`
 	Slat2         *int         `json:"slat2,omitempty"`
 	Profile       BlindProfile `json:"profile,omitempty"`
+	Label         *string      `json:"label,omitempty"`
 }
 
 //BlindConf customizable configuration by the server
@@ -85,6 +86,7 @@ type BlindConf struct {
 	Blind2        *int    `json:"blind2,omitempty"`
 	Slat1         *int    `json:"slat1,omitempty"`
 	Slat2         *int    `json:"slat2,omitempty"`
+	Label         *string `json:"label,omitempty"`
 }
 
 //ToBlind convert interface to Sensor object

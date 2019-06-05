@@ -39,6 +39,7 @@ type SwitchConfig struct {
 	HvacsSetup    map[string]dhvac.HvacSetup     `json:"hvacsSetup"`
 	HvacsConfig   map[string]dhvac.HvacConf      `json:"hvacsConfig"`
 	Users         map[string]duser.UserAccess    `json:"users"`
+	Label         *string                        `json:"label,omitempty"`
 }
 
 //SwitchStatus description

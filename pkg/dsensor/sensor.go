@@ -55,6 +55,7 @@ type SensorSetup struct {
 	SwitchMac                  string  `json:"switchMac"`
 	IsConfigured               *bool   `json:"isConfigured,omitempty"`
 	DumpFrequency              int     `json:"dumpFrequency"`
+	Label                      *string `json:"label,omitempty"`
 }
 
 //SensorConf customizable configuration by the server
@@ -68,6 +69,7 @@ type SensorConf struct {
 	IsBleEnabled               *bool   `json:"isBleEnabled,omitempty"`
 	FriendlyName               *string `json:"friendlyName,omitempty"`
 	DumpFrequency              *int    `json:"dumpFrequency,omitempty"`
+	Label                      *string `json:"label,omitempty"`
 }
 
 //ToSensor convert interface to Sensor object

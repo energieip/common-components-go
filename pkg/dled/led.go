@@ -81,6 +81,7 @@ type LedSetup struct {
 	IBeaconMajor     *int    `json:"iBeaconMajor,omitempty"`
 	IBeaconMinor     *int    `json:"iBeaconMinor,omitempty"`
 	IBeaconTxPower   *int    `json:"iBeaconTxPower,omitempty"`
+	Label            *string `json:"label,omitempty"`
 }
 
 //LedConf customizable configuration by the server
@@ -106,6 +107,7 @@ type LedConf struct {
 	IBeaconMajor     *int    `json:"iBeaconMajor,omitempty"`
 	IBeaconMinor     *int    `json:"iBeaconMinor,omitempty"`
 	IBeaconTxPower   *int    `json:"iBeaconTxPower,omitempty"`
+	Label            *string `json:"label,omitempty"`
 }
 
 //ToLed convert map interface to Led object
