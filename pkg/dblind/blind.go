@@ -39,6 +39,11 @@ type Blind struct {
 	Blind2            int     `json:"blind2"`
 	Slat1             int     `json:"slat1"`
 	Slat2             int     `json:"slat2"`
+	BleMode           string  `json:"bleMode"` //bleMode could be "service" or "iBeacon"
+	IBeaconUUID       string  `json:"iBeaconUUID"`
+	IBeaconMajor      int     `json:"iBeaconMajor"`
+	IBeaconMinor      int     `json:"iBeaconMinor"`
+	IBeaconTxPower    int     `json:"iBeaconTxPower"`
 }
 
 //ActionProfile
@@ -58,35 +63,45 @@ type BlindProfile struct {
 
 //BlindSetup initial setup send by the server when the driver is authorized
 type BlindSetup struct {
-	Mac           string       `json:"mac"`
-	FullMac       string       `json:"fullMac"`
-	Group         *int         `json:"group,omitempty"`
-	IsBleEnabled  *bool        `json:"isBleEnabled,omitempty"`
-	FriendlyName  *string      `json:"friendlyName,omitempty"`
-	SwitchMac     string       `json:"switchMac"`
-	IsConfigured  *bool        `json:"isConfigured,omitempty"`
-	DumpFrequency int          `json:"dumpFrequency"`
-	Blind1        *int         `json:"blind1,omitempty"`
-	Blind2        *int         `json:"blind2,omitempty"`
-	Slat1         *int         `json:"slat1,omitempty"`
-	Slat2         *int         `json:"slat2,omitempty"`
-	Profile       BlindProfile `json:"profile,omitempty"`
-	Label         *string      `json:"label,omitempty"`
+	Mac            string       `json:"mac"`
+	FullMac        string       `json:"fullMac"`
+	Group          *int         `json:"group,omitempty"`
+	IsBleEnabled   *bool        `json:"isBleEnabled,omitempty"`
+	FriendlyName   *string      `json:"friendlyName,omitempty"`
+	SwitchMac      string       `json:"switchMac"`
+	IsConfigured   *bool        `json:"isConfigured,omitempty"`
+	DumpFrequency  int          `json:"dumpFrequency"`
+	Blind1         *int         `json:"blind1,omitempty"`
+	Blind2         *int         `json:"blind2,omitempty"`
+	Slat1          *int         `json:"slat1,omitempty"`
+	Slat2          *int         `json:"slat2,omitempty"`
+	Profile        BlindProfile `json:"profile,omitempty"`
+	Label          *string      `json:"label,omitempty"`
+	BleMode        *string      `json:"bleMode"` //bleMode could be "service" or "iBeacon"
+	IBeaconUUID    *string      `json:"iBeaconUUID"`
+	IBeaconMajor   *int         `json:"iBeaconMajor"`
+	IBeaconMinor   *int         `json:"iBeaconMinor"`
+	IBeaconTxPower *int         `json:"iBeaconTxPower"`
 }
 
 //BlindConf customizable configuration by the server
 type BlindConf struct {
-	Mac           string  `json:"mac"`
-	Group         *int    `json:"group,omitempty"`
-	IsConfigured  *bool   `json:"isConfigured,omitempty"`
-	IsBleEnabled  *bool   `json:"isBleEnabled,omitempty"`
-	FriendlyName  *string `json:"friendlyName,omitempty"`
-	DumpFrequency *int    `json:"dumpFrequency,omitempty"`
-	Blind1        *int    `json:"blind1,omitempty"`
-	Blind2        *int    `json:"blind2,omitempty"`
-	Slat1         *int    `json:"slat1,omitempty"`
-	Slat2         *int    `json:"slat2,omitempty"`
-	Label         *string `json:"label,omitempty"`
+	Mac            string  `json:"mac"`
+	Group          *int    `json:"group,omitempty"`
+	IsConfigured   *bool   `json:"isConfigured,omitempty"`
+	IsBleEnabled   *bool   `json:"isBleEnabled,omitempty"`
+	FriendlyName   *string `json:"friendlyName,omitempty"`
+	DumpFrequency  *int    `json:"dumpFrequency,omitempty"`
+	Blind1         *int    `json:"blind1,omitempty"`
+	Blind2         *int    `json:"blind2,omitempty"`
+	Slat1          *int    `json:"slat1,omitempty"`
+	Slat2          *int    `json:"slat2,omitempty"`
+	Label          *string `json:"label,omitempty"`
+	BleMode        *string `json:"bleMode"` //bleMode could be "service" or "iBeacon"
+	IBeaconUUID    *string `json:"iBeaconUUID"`
+	IBeaconMajor   *int    `json:"iBeaconMajor"`
+	IBeaconMinor   *int    `json:"iBeaconMinor"`
+	IBeaconTxPower *int    `json:"iBeaconTxPower"`
 }
 
 //ToBlind convert interface to Sensor object

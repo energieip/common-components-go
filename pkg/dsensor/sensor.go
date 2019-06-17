@@ -40,6 +40,11 @@ type Sensor struct {
 	TemperatureRaw             int     `json:"temperatureRaw"`
 	FriendlyName               string  `json:"friendlyName"`
 	DumpFrequency              int     `json:"dumpFrequency"`
+	BleMode                    string  `json:"bleMode"` //bleMode could be "service" or "iBeacon"
+	IBeaconUUID                string  `json:"iBeaconUUID"`
+	IBeaconMajor               int     `json:"iBeaconMajor"`
+	IBeaconMinor               int     `json:"iBeaconMinor"`
+	IBeaconTxPower             int     `json:"iBeaconTxPower"`
 }
 
 //SensorSetup initial setup send by the server when the driver is authorized
@@ -56,6 +61,11 @@ type SensorSetup struct {
 	IsConfigured               *bool   `json:"isConfigured,omitempty"`
 	DumpFrequency              int     `json:"dumpFrequency"`
 	Label                      *string `json:"label,omitempty"`
+	BleMode                    *string `json:"bleMode"` //bleMode could be "service" or "iBeacon"
+	IBeaconUUID                *string `json:"iBeaconUUID"`
+	IBeaconMajor               *int    `json:"iBeaconMajor"`
+	IBeaconMinor               *int    `json:"iBeaconMinor"`
+	IBeaconTxPower             *int    `json:"iBeaconTxPower"`
 }
 
 //SensorConf customizable configuration by the server
@@ -70,6 +80,11 @@ type SensorConf struct {
 	FriendlyName               *string `json:"friendlyName,omitempty"`
 	DumpFrequency              *int    `json:"dumpFrequency,omitempty"`
 	Label                      *string `json:"label,omitempty"`
+	BleMode                    *string `json:"bleMode"` //bleMode could be "service" or "iBeacon"
+	IBeaconUUID                *string `json:"iBeaconUUID"`
+	IBeaconMajor               *int    `json:"iBeaconMajor"`
+	IBeaconMinor               *int    `json:"iBeaconMinor"`
+	IBeaconTxPower             *int    `json:"iBeaconTxPower"`
 }
 
 //ToSensor convert interface to Sensor object

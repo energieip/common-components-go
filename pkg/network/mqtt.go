@@ -130,7 +130,7 @@ func (p *MQTTNetwork) Initialize(config NetworkConfig) error {
 
 	c := mqtt.NewClient(opts)
 	if token := c.Connect(); token.Wait() && token.Error() != nil {
-		log.Println(token.Error())
+		rlog.Info("Error during connect: " + token.Error().Error())
 		return token.Error()
 	}
 
