@@ -55,6 +55,7 @@ type SwitchStatus struct {
 	Groups        map[int]dgroup.GroupStatus       `json:"groups"`
 	ClusterBroker map[string]SwitchCluster         `json:"clusterBroker"`
 	Users         map[string]duser.UserAccess      `json:"users"`
+	Label         string                           `json:"label"`
 }
 
 type SwitchCluster struct {
