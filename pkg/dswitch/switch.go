@@ -16,6 +16,7 @@ import (
 // Switch description
 type Switch struct {
 	Mac                   string `json:"mac"`
+	FullMac               string `json:"fullMac"`
 	Protocol              string `json:"protocol"`
 	IP                    string `json:"ip"`
 	LastSystemUpgradeDate string `json:"lastUpgradeDate"`
