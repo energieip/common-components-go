@@ -61,3 +61,23 @@ func StringInSlice(a string, list []string) bool {
 	}
 	return false
 }
+
+//Model2Type convert model in device type
+func Model2Type(model string) string {
+	if strings.HasPrefix(model, "led") {
+		return "LED"
+	}
+	if strings.HasPrefix(model, "bld") {
+		return "BLIND"
+	}
+	if strings.HasPrefix(model, "hvac") {
+		return "HVAC"
+	}
+	if strings.HasPrefix(model, "mca") {
+		return "SENSOR"
+	}
+	if strings.HasPrefix(model, "swh") {
+		return "SWITCH"
+	}
+	return ""
+}
