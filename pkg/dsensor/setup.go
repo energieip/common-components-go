@@ -89,5 +89,13 @@ func UpdateSetup(new SensorSetup, old SensorSetup) SensorSetup {
 	if new.BleMode != nil {
 		setup.BleMode = new.BleMode
 	}
+
+	if new.Mac != "" {
+		setup.Mac = new.Mac
+	}
+
+	if new.FullMac != nil {
+		setup.FullMac = new.FullMac
+	}
 	return setup
 }

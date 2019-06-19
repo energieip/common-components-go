@@ -7,6 +7,7 @@ import (
 //Led led driver representation
 type Led struct {
 	Mac               string  `json:"mac"`
+	FullMac           *string `json:"fullMac,omitempty"`
 	IP                string  `json:"ip"`
 	Group             int     `json:"group"`
 	Protocol          string  `json:"protocol"`
@@ -36,18 +37,18 @@ type Led struct {
 	SlopeStart        int     `json:"slopeStart"`
 	SlopeStop         int     `json:"slopeStop"`
 	DefaultSetpoint   *int    `json:"defaultSetpoint,omitempty"` // when the switch is not responding
-	BleMode           string  `json:"bleMode"`                   //bleMode could be "service" or "iBeacon"
-	IBeaconUUID       string  `json:"iBeaconUUID"`
-	IBeaconMajor      int     `json:"iBeaconMajor"`
-	IBeaconMinor      int     `json:"iBeaconMinor"`
-	IBeaconTxPower    int     `json:"iBeaconTxPower"`
+	BleMode           *string `json:"bleMode,omitempty"`         //bleMode could be "service" or "iBeacon"
+	IBeaconUUID       *string `json:"iBeaconUUID,omitempty"`
+	IBeaconMajor      *int    `json:"iBeaconMajor,omitempty"`
+	IBeaconMinor      *int    `json:"iBeaconMinor,omitempty"`
+	IBeaconTxPower    *int    `json:"iBeaconTxPower,omitempty"`
 	Label             *string `json:"label,omitempty"`
 }
 
 //LedSetup initial setup send by the server when the driver is authorized
 type LedSetup struct {
 	Mac              string  `json:"mac"`
-	FullMac          string  `json:"fullMac"`
+	FullMac          *string `json:"fullMac,omitempty"`
 	PMax             int     `json:"pMax"`
 	Group            *int    `json:"group,omitempty"`
 	Auto             *bool   `json:"auto,omitempty"`
@@ -77,6 +78,7 @@ type LedSetup struct {
 //LedConf customizable configuration by the server
 type LedConf struct {
 	Mac              string  `json:"mac"`
+	FullMac          *string `json:"fullMac,omitempty"`
 	Group            *int    `json:"group,omitempty"`
 	SetpointManual   *int    `json:"setpointManual,omitempty"`
 	SetpointAuto     *int    `json:"setpointAuto,omitempty"`

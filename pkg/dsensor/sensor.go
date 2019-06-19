@@ -8,6 +8,7 @@ import (
 type Sensor struct {
 	IP                         string  `json:"ip"`
 	Mac                        string  `json:"mac"`
+	FullMac                    *string `json:"fullMac,omitempty"`
 	Group                      int     `json:"group"`
 	Protocol                   string  `json:"protocol"`
 	SwitchMac                  string  `json:"switchMac"`
@@ -40,7 +41,7 @@ type Sensor struct {
 //SensorSetup initial setup send by the server when the driver is authorized
 type SensorSetup struct {
 	Mac                        string  `json:"mac"`
-	FullMac                    string  `json:"fullMac"`
+	FullMac                    *string `json:"fullMac,omitempty"`
 	Group                      *int    `json:"group,omitempty"`
 	BrightnessCorrectionFactor *int    `json:"brightnessCorrectionFactor,omitempty"`
 	ThresholdPresence          *int    `json:"thresholdPresence,omitempty"`
@@ -51,16 +52,17 @@ type SensorSetup struct {
 	IsConfigured               *bool   `json:"isConfigured,omitempty"`
 	DumpFrequency              int     `json:"dumpFrequency"`
 	Label                      *string `json:"label,omitempty"`
-	BleMode                    *string `json:"bleMode"` //bleMode could be "service" or "iBeacon"
-	IBeaconUUID                *string `json:"iBeaconUUID"`
-	IBeaconMajor               *int    `json:"iBeaconMajor"`
-	IBeaconMinor               *int    `json:"iBeaconMinor"`
-	IBeaconTxPower             *int    `json:"iBeaconTxPower"`
+	BleMode                    *string `json:"bleMode,omitempty"` //bleMode could be "service" or "iBeacon"
+	IBeaconUUID                *string `json:"iBeaconUUID,omitempty"`
+	IBeaconMajor               *int    `json:"iBeaconMajor,omitempty"`
+	IBeaconMinor               *int    `json:"iBeaconMinor,omitempty"`
+	IBeaconTxPower             *int    `json:"iBeaconTxPower,omitempty"`
 }
 
 //SensorConf customizable configuration by the server
 type SensorConf struct {
 	Mac                        string  `json:"mac"`
+	FullMac                    *string `json:"fullMac,omitempty"`
 	Group                      *int    `json:"group,omitempty"`
 	BrightnessCorrectionFactor *int    `json:"brightnessCorrectionFactor,omitempty"`
 	IsConfigured               *bool   `json:"isConfigured,omitempty"`
@@ -70,11 +72,11 @@ type SensorConf struct {
 	FriendlyName               *string `json:"friendlyName,omitempty"`
 	DumpFrequency              *int    `json:"dumpFrequency,omitempty"`
 	Label                      *string `json:"label,omitempty"`
-	BleMode                    *string `json:"bleMode"` //bleMode could be "service" or "iBeacon"
-	IBeaconUUID                *string `json:"iBeaconUUID"`
-	IBeaconMajor               *int    `json:"iBeaconMajor"`
-	IBeaconMinor               *int    `json:"iBeaconMinor"`
-	IBeaconTxPower             *int    `json:"iBeaconTxPower"`
+	BleMode                    *string `json:"bleMode,omitempty"` //bleMode could be "service" or "iBeacon"
+	IBeaconUUID                *string `json:"iBeaconUUID,omitempty"`
+	IBeaconMajor               *int    `json:"iBeaconMajor,omitempty"`
+	IBeaconMinor               *int    `json:"iBeaconMinor,omitempty"`
+	IBeaconTxPower             *int    `json:"iBeaconTxPower,omitempty"`
 }
 
 //ToSensor convert interface to Sensor object

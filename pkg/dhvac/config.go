@@ -17,5 +17,13 @@ func UpdateConfig(new HvacConf, old HvacSetup) HvacSetup {
 	if new.Label != nil {
 		setup.Label = new.Label
 	}
+
+	if new.Mac != "" {
+		setup.Mac = new.Mac
+	}
+
+	if new.FullMac != nil {
+		setup.FullMac = new.FullMac
+	}
 	return setup
 }
