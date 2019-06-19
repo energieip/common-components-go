@@ -4,20 +4,10 @@ import (
 	"encoding/json"
 )
 
-const (
-	DbStatus  = "status"
-	DbConfig  = "config"
-	TableName = "hvacs"
-
-	UrlHello   = "setup/hello"
-	UrlStatus  = "status/dump"
-	UrlSetup   = "setup/config"
-	UrlSetting = "update/settings"
-)
-
-//HVAC hvac driver representation
+//Hvac hvac driver representation
 type Hvac struct {
 	Mac             string  `json:"mac"`
+	FullMac         string  `json:"fullMac"`
 	IP              string  `json:"ip"`
 	Group           int     `json:"group"`
 	Protocol        string  `json:"protocol"`
@@ -32,6 +22,7 @@ type Hvac struct {
 	Damper          int     `json:"damper"` //percentage open
 	DumpFrequency   int     `json:"dumpFrequency"`
 	FriendlyName    string  `json:"friendlyName"`
+	Label           *string `json:"label,omitempty"`
 }
 
 //HvacSetup initial setup send by the server when the driver is authorized
@@ -55,6 +46,7 @@ type HvacSetup struct {
 //HvacConf customizable configuration by the server
 type HvacConf struct {
 	Mac                    string  `json:"mac"`
+	FullMac                string  `json:"fullMac"`
 	Group                  *int    `json:"group,omitempty"`
 	WindowStatus           *bool   `json:"windowStatus,omitempty"`
 	Temperature            *int    `json:"temperature,omitempty"` // 1/10°C
@@ -114,7 +106,7 @@ func (driver Hvac) ToJSON() (string, error) {
 	if err != nil {
 		return "", err
 	}
-	return string(inrec[:]), err
+	return string(inrec), err
 }
 
 // ToJSON dump hvac setup struct
@@ -123,7 +115,7 @@ func (driver HvacSetup) ToJSON() (string, error) {
 	if err != nil {
 		return "", err
 	}
-	return string(inrec[:]), err
+	return string(inrec), err
 }
 
 //ToJSON dump struct in json
@@ -132,5 +124,5 @@ func (driver HvacConf) ToJSON() (string, error) {
 	if err != nil {
 		return "", err
 	}
-	return string(inrec[:]), err
+	return string(inrec), err
 }

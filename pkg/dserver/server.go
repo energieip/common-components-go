@@ -22,7 +22,7 @@ func (i ServerConfig) ToJSON() (string, error) {
 	if err != nil {
 		return "", err
 	}
-	return string(inrec[:]), err
+	return string(inrec), err
 }
 
 //ToServer convert map interface to ServerConfig object

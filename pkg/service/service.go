@@ -109,7 +109,7 @@ func (config ServiceConfig) ToJSON() (string, error) {
 	if err != nil {
 		return "", err
 	}
-	return string(inrec[:]), err
+	return string(inrec), err
 }
 
 //ToService convert map interface to Service object

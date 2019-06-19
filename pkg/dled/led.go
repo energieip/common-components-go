@@ -4,17 +4,6 @@ import (
 	"encoding/json"
 )
 
-const (
-	DbStatus  = "status"
-	DbConfig  = "config"
-	TableName = "leds"
-
-	UrlHello   = "setup/hello"
-	UrlStatus  = "status/dump"
-	UrlSetup   = "setup/config"
-	UrlSetting = "update/settings"
-)
-
 //Led led driver representation
 type Led struct {
 	Mac               string  `json:"mac"`
@@ -52,6 +41,7 @@ type Led struct {
 	IBeaconMajor      int     `json:"iBeaconMajor"`
 	IBeaconMinor      int     `json:"iBeaconMinor"`
 	IBeaconTxPower    int     `json:"iBeaconTxPower"`
+	Label             *string `json:"label,omitempty"`
 }
 
 //LedSetup initial setup send by the server when the driver is authorized
@@ -149,7 +139,7 @@ func (led Led) ToJSON() (string, error) {
 	if err != nil {
 		return "", err
 	}
-	return string(inrec[:]), err
+	return string(inrec), err
 }
 
 // ToJSON dump led setup struct
@@ -158,7 +148,7 @@ func (led LedSetup) ToJSON() (string, error) {
 	if err != nil {
 		return "", err
 	}
-	return string(inrec[:]), err
+	return string(inrec), err
 }
 
 //ToJSON dump struct in json
@@ -167,5 +157,5 @@ func (led LedConf) ToJSON() (string, error) {
 	if err != nil {
 		return "", err
 	}
-	return string(inrec[:]), err
+	return string(inrec), err
 }

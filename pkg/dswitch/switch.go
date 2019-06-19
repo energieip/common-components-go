@@ -15,14 +15,15 @@ import (
 
 // Switch description
 type Switch struct {
-	Mac                   string `json:"mac"`
-	FullMac               string `json:"fullMac"`
-	Protocol              string `json:"protocol"`
-	IP                    string `json:"ip"`
-	LastSystemUpgradeDate string `json:"lastUpgradeDate"`
-	IsConfigured          *bool  `json:"isConfigured"`
-	FriendlyName          string `json:"friendlyName"`
-	DumpFrequency         int    `json:"dumpFrequency"`
+	Mac                   string  `json:"mac"`
+	FullMac               string  `json:"fullMac"`
+	Protocol              string  `json:"protocol"`
+	IP                    string  `json:"ip"`
+	LastSystemUpgradeDate string  `json:"lastUpgradeDate"`
+	IsConfigured          *bool   `json:"isConfigured"`
+	FriendlyName          string  `json:"friendlyName"`
+	DumpFrequency         int     `json:"dumpFrequency"`
+	Label                 *string `json:"label,omitempty"`
 }
 
 //SwitchConfig content
@@ -55,7 +56,7 @@ type SwitchStatus struct {
 	Groups        map[int]dgroup.GroupStatus       `json:"groups"`
 	ClusterBroker map[string]SwitchCluster         `json:"clusterBroker"`
 	Users         map[string]duser.UserAccess      `json:"users"`
-	Label         string                           `json:"label"`
+	Label         *string                          `json:"label,omitempty"`
 }
 
 type SwitchCluster struct {
@@ -69,7 +70,7 @@ func (i SwitchCluster) ToJSON() (string, error) {
 	if err != nil {
 		return "", err
 	}
-	return string(inrec[:]), err
+	return string(inrec), err
 }
 
 //ToSwitchCluster convert map interface to SwitchCluster object
@@ -89,7 +90,7 @@ func (status SwitchStatus) ToJSON() (string, error) {
 	if err != nil {
 		return "", err
 	}
-	return string(inrec[:]), err
+	return string(inrec), err
 }
 
 // ToJSON dump switch struct
@@ -98,7 +99,7 @@ func (status Switch) ToJSON() (string, error) {
 	if err != nil {
 		return "", err
 	}
-	return string(inrec[:]), err
+	return string(inrec), err
 }
 
 // ToJSON dump switch config struct
@@ -107,5 +108,5 @@ func (config SwitchConfig) ToJSON() (string, error) {
 	if err != nil {
 		return "", err
 	}
-	return string(inrec[:]), err
+	return string(inrec), err
 }

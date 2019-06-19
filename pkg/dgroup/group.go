@@ -9,11 +9,6 @@ const (
 	SensorAverage = "average"
 	SensorMin     = "min"
 	SensorMax     = "max"
-
-	DbStatusName    = "status"
-	TableStatusName = "groups"
-
-	GroupConfigUrl = "update/settings"
 )
 
 //GroupConfig representation
@@ -87,7 +82,7 @@ func (group GroupConfig) ToJSON() (string, error) {
 	if err != nil {
 		return "", err
 	}
-	return string(inrec[:]), err
+	return string(inrec), err
 }
 
 //ToGroupConfig convert interface to group config object
@@ -115,7 +110,7 @@ func (group GroupStatus) ToJSON() (string, error) {
 	if err != nil {
 		return "", err
 	}
-	return string(inrec[:]), err
+	return string(inrec), err
 }
 
 //ToGroupStatus convert interface to status object

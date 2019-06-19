@@ -4,20 +4,10 @@ import (
 	"encoding/json"
 )
 
-const (
-	DbStatus  = "status"
-	DbConfig  = "config"
-	TableName = "blinds"
-
-	UrlHello   = "setup/hello"
-	UrlStatus  = "status/dump"
-	UrlSetup   = "setup/config"
-	UrlSetting = "update/settings"
-)
-
 //Blind driver representation
 type Blind struct {
 	IP                string  `json:"ip"`
+	FullMac           string  `json:"fullMac"`
 	Mac               string  `json:"mac"`
 	Group             int     `json:"group"`
 	Protocol          string  `json:"protocol"`
@@ -44,6 +34,7 @@ type Blind struct {
 	IBeaconMajor      int     `json:"iBeaconMajor"`
 	IBeaconMinor      int     `json:"iBeaconMinor"`
 	IBeaconTxPower    int     `json:"iBeaconTxPower"`
+	Label             *string `json:"label,omitempty"`
 }
 
 //ActionProfile
@@ -87,6 +78,7 @@ type BlindSetup struct {
 //BlindConf customizable configuration by the server
 type BlindConf struct {
 	Mac            string  `json:"mac"`
+	FullMac        string  `json:"fullMac"`
 	Group          *int    `json:"group,omitempty"`
 	IsConfigured   *bool   `json:"isConfigured,omitempty"`
 	IsBleEnabled   *bool   `json:"isBleEnabled,omitempty"`
@@ -143,7 +135,7 @@ func (driver Blind) ToJSON() (string, error) {
 	if err != nil {
 		return "", err
 	}
-	return string(inrec[:]), err
+	return string(inrec), err
 }
 
 // ToJSON dump blindSetup struct
@@ -152,7 +144,7 @@ func (blind BlindSetup) ToJSON() (string, error) {
 	if err != nil {
 		return "", err
 	}
-	return string(inrec[:]), err
+	return string(inrec), err
 }
 
 //ToJSON dump struct in json
@@ -161,5 +153,5 @@ func (driver BlindConf) ToJSON() (string, error) {
 	if err != nil {
 		return "", err
 	}
-	return string(inrec[:]), err
+	return string(inrec), err
 }

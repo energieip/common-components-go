@@ -4,17 +4,6 @@ import (
 	"encoding/json"
 )
 
-const (
-	DbStatus  = "status"
-	DbConfig  = "config"
-	TableName = "sensors"
-
-	UrlHello   = "setup/hello"
-	UrlStatus  = "status/dump"
-	UrlSetup   = "setup/config"
-	UrlSetting = "update/settings"
-)
-
 //Sensor driver representation
 type Sensor struct {
 	IP                         string  `json:"ip"`
@@ -45,6 +34,7 @@ type Sensor struct {
 	IBeaconMajor               int     `json:"iBeaconMajor"`
 	IBeaconMinor               int     `json:"iBeaconMinor"`
 	IBeaconTxPower             int     `json:"iBeaconTxPower"`
+	Label                      *string `json:"label,omitempty"`
 }
 
 //SensorSetup initial setup send by the server when the driver is authorized
@@ -126,7 +116,7 @@ func (sensor Sensor) ToJSON() (string, error) {
 	if err != nil {
 		return "", err
 	}
-	return string(inrec[:]), err
+	return string(inrec), err
 }
 
 // ToJSON dump sensor struct
@@ -135,7 +125,7 @@ func (sensor SensorSetup) ToJSON() (string, error) {
 	if err != nil {
 		return "", err
 	}
-	return string(inrec[:]), err
+	return string(inrec), err
 }
 
 //ToJSON dump struct in json
@@ -144,5 +134,5 @@ func (sensor SensorConf) ToJSON() (string, error) {
 	if err != nil {
 		return "", err
 	}
-	return string(inrec[:]), err
+	return string(inrec), err
 }

@@ -2,8 +2,11 @@ package tools
 
 import (
 	"bytes"
+	"encoding/json"
 	"net"
 	"strings"
+
+	"github.com/energieip/common-components-go/pkg/pconst"
 )
 
 //GetNetworkInfo return current ip and mac address
@@ -65,19 +68,28 @@ func StringInSlice(a string, list []string) bool {
 //Model2Type convert model in device type
 func Model2Type(model string) string {
 	if strings.HasPrefix(model, "led") {
-		return "LED"
+		return pconst.LED
 	}
 	if strings.HasPrefix(model, "bld") {
-		return "BLIND"
+		return pconst.BLIND
 	}
 	if strings.HasPrefix(model, "hvac") {
-		return "HVAC"
+		return pconst.HVAC
 	}
 	if strings.HasPrefix(model, "mca") {
-		return "SENSOR"
+		return pconst.SENSOR
 	}
 	if strings.HasPrefix(model, "swh") {
-		return "SWITCH"
+		return pconst.SWITCH
 	}
 	return ""
+}
+
+//ToJSON dump struct in json
+func ToJSON(elt interface{}) (string, error) {
+	inrec, err := json.Marshal(elt)
+	if err != nil {
+		return "", err
+	}
+	return string(inrec), err
 }
