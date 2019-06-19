@@ -18,14 +18,16 @@ func FillDefaultValue(cfg SensorSetup) SensorSetup {
 		name := *cfg.Label
 		cfg.FriendlyName = &name
 	}
-	defaultValue := 0
+
 	if cfg.BrightnessCorrectionFactor == nil {
+		defaultValue := 1
 		cfg.BrightnessCorrectionFactor = &defaultValue
 	}
 	if cfg.DumpFrequency == 0 {
 		cfg.DumpFrequency = 1000
 	}
 	if cfg.TemperatureOffset == nil {
+		defaultValue := 0
 		cfg.TemperatureOffset = &defaultValue
 	}
 	if cfg.ThresholdPresence == nil {
