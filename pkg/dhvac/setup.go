@@ -6,7 +6,7 @@ func FillDefaultValue(cfg HvacSetup) HvacSetup {
 		name := *cfg.Label
 		cfg.FriendlyName = &name
 	}
-	if cfg.Group != nil {
+	if cfg.Group == nil {
 		group := 0
 		cfg.Group = &group
 	}
