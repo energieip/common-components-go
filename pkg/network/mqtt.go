@@ -85,7 +85,6 @@ func (p *MQTTNetwork) Initialize(config NetworkConfig) error {
 	}
 
 	opts.AddBroker(url)
-	opts.SetClientID(config.ClientName)
 	if config.User != "" {
 		opts.SetUsername(config.User)
 	}
