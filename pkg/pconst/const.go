@@ -1,8 +1,9 @@
 package pconst
 
 const (
-	DbStatus   = "status"
-	DbConfig   = "config"
+	DbStatus = "status"
+	DbConfig = "config"
+
 	TbBlinds   = "blinds"
 	TbHvacs    = "hvacs"
 	TbLeds     = "leds"
@@ -13,6 +14,8 @@ const (
 	TbModels   = "models"
 	TbProjects = "projects"
 	TbAccess   = "access"
+	TbFrames   = "frames"
+	TbWagos    = "wagos"
 
 	UrlHello   = "setup/hello"
 	UrlStatus  = "status/dump"
@@ -24,4 +27,6 @@ const (
 	SENSOR = "SENSOR"
 	HVAC   = "HVAC"
 	BLIND  = "BLIND"
+	FRAME  = "FRAME"
+	WAGO   = "WAGO"
 )

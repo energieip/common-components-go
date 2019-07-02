@@ -82,6 +82,12 @@ func Model2Type(model string) string {
 	if strings.HasPrefix(model, "swh") {
 		return pconst.SWITCH
 	}
+	if strings.HasPrefix(model, "wago") {
+		return pconst.WAGO
+	}
+	if strings.HasPrefix(model, "frame") {
+		return pconst.FRAME
+	}
 	return ""
 }
 
