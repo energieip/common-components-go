@@ -10,7 +10,7 @@ type Wago struct {
 	FullMac         *string `json:"fullMac,omitempty"`
 	IP              string  `json:"ip"`
 	Protocol        string  `json:"protocol"`
-	SwitchMac       string  `json:"switchMac"`
+	Cluster         int     `json:"cluster"`
 	IsConfigured    bool    `json:"isConfigured"`
 	SoftwareVersion float32 `json:"softwareVersion"`
 	HardwareVersion float32 `json:"hardwareVersion"`
@@ -22,7 +22,7 @@ type Wago struct {
 //WagoSetup initial setup send by the server when the driver is authorized
 type WagoSetup struct {
 	Mac          string  `json:"mac"`
-	SwitchMac    string  `json:"switchMac"`
+	Cluster      int     `json:"cluster"`
 	FullMac      *string `json:"fullMac,omitempty"`
 	FriendlyName *string `json:"friendlyName"`
 	IsConfigured *bool   `json:"isConfigured,omitempty"`
