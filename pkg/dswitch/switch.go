@@ -6,6 +6,7 @@ import (
 	"github.com/energieip/common-components-go/pkg/dblind"
 	"github.com/energieip/common-components-go/pkg/dhvac"
 	"github.com/energieip/common-components-go/pkg/duser"
+	"github.com/energieip/common-components-go/pkg/dwago"
 
 	"github.com/energieip/common-components-go/pkg/dgroup"
 	"github.com/energieip/common-components-go/pkg/dled"
@@ -40,6 +41,8 @@ type SwitchConfig struct {
 	SensorsConfig map[string]dsensor.SensorConf  `json:"sensorsConfig"`
 	HvacsSetup    map[string]dhvac.HvacSetup     `json:"hvacsSetup"`
 	HvacsConfig   map[string]dhvac.HvacConf      `json:"hvacsConfig"`
+	WagosSetup    map[string]dwago.WagoSetup     `json:"wagosSetup"`
+	WagosConfig   map[string]dwago.WagoConf      `json:"wagosConfig"`
 	Users         map[string]duser.UserAccess    `json:"users"`
 	Label         *string                        `json:"label,omitempty"`
 }
@@ -53,6 +56,7 @@ type SwitchStatus struct {
 	Sensors       map[string]dsensor.Sensor        `json:"sensors"`
 	Blinds        map[string]dblind.Blind          `json:"blinds"`
 	Hvacs         map[string]dhvac.Hvac            `json:"hvacs"`
+	Wagos         map[string]dwago.Wago            `json:"wagos"`
 	Groups        map[int]dgroup.GroupStatus       `json:"groups"`
 	ClusterBroker map[string]SwitchCluster         `json:"clusterBroker"`
 	Users         map[string]duser.UserAccess      `json:"users"`
