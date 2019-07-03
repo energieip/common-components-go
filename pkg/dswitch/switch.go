@@ -30,6 +30,7 @@ type Switch struct {
 //SwitchConfig content
 type SwitchConfig struct {
 	Switch
+	Cluster       *int                           `json:"cluster"`
 	ClusterBroker map[string]SwitchCluster       `json:"clusterBroker"`
 	Services      map[string]service.Service     `json:"services"`
 	Groups        map[int]dgroup.GroupConfig     `json:"groups"`
@@ -50,6 +51,7 @@ type SwitchConfig struct {
 //SwitchStatus description
 type SwitchStatus struct {
 	Switch
+	Cluster       int                              `json:"cluster"`
 	ErrorCode     *int                             `json:"errorCode"`
 	Services      map[string]service.ServiceStatus `json:"services"`
 	Leds          map[string]dled.Led              `json:"leds"`
