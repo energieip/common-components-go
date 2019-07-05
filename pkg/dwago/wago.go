@@ -21,12 +21,13 @@ type Wago struct {
 
 //WagoSetup initial setup send by the server when the driver is authorized
 type WagoSetup struct {
-	Mac          string  `json:"mac"`
-	Cluster      int     `json:"cluster"`
-	FullMac      *string `json:"fullMac,omitempty"`
-	FriendlyName *string `json:"friendlyName"`
-	IsConfigured *bool   `json:"isConfigured,omitempty"`
-	Label        *string `json:"label,omitempty"`
+	Mac          string            `json:"mac"`
+	Cluster      int               `json:"cluster"`
+	FullMac      *string           `json:"fullMac,omitempty"`
+	FriendlyName *string           `json:"friendlyName"`
+	IsConfigured *bool             `json:"isConfigured,omitempty"`
+	Label        *string           `json:"label,omitempty"`
+	API          map[string]string `json:"api"`
 }
 
 //WagoConf customizable configuration by the server

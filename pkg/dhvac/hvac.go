@@ -16,9 +16,9 @@ type Hvac struct {
 	SoftwareVersion float32 `json:"softwareVersion"`
 	HardwareVersion float32 `json:"hardwareVersion"`
 	Error           int     `json:"error"`
-	Setpoint        int     `json:"setpoint"`
-	Heat            int     `json:"heat"`   //percentage heat setpoint
-	Cold            int     `json:"cold"`   //percentage cold setpoint
+	HoldOff1        int     `json:"holdOff1"`
+	SpaceTemp1      int     `json:"spaceTemp1"`
+	Shift           int     `json:"shift"`  //temperature shift
 	Damper          int     `json:"damper"` //percentage open
 	DumpFrequency   int     `json:"dumpFrequency"`
 	FriendlyName    string  `json:"friendlyName"`
@@ -48,6 +48,7 @@ type HvacConf struct {
 	Mac                    string  `json:"mac"`
 	FullMac                *string `json:"fullMac,omitempty"`
 	Group                  *int    `json:"group,omitempty"`
+	Shift                  int     `json:"shift"` //temperature shift
 	WindowStatus           *bool   `json:"windowStatus,omitempty"`
 	Temperature            *int    `json:"temperature,omitempty"` // 1/10°C
 	Presence               *bool   `json:"presence,omitempty"`
