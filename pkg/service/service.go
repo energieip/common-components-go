@@ -42,6 +42,7 @@ type ServiceConfig struct {
 	LogLevel      string      `json:"logLevel"`
 	ExternalAPI   APIInfo     `json:"externalAPI"`
 	InternalAPI   APIInfo     `json:"internalAPI"`
+	ClientAPI     APIInfo     `json:"clientAPI"`
 	DataPath      string      `json:"dataPath"`
 }
 
