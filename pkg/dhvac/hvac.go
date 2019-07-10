@@ -13,8 +13,7 @@ type Hvac struct {
 	Protocol                    string  `json:"protocol"`
 	SwitchMac                   string  `json:"switchMac"`
 	IsConfigured                bool    `json:"isConfigured"`
-	SoftwareVersion             float32 `json:"softwareVersion"`
-	HardwareVersion             float32 `json:"hardwareVersion"`
+	SoftwareVersion             string  `json:"softwareVersion"`
 	Error                       int     `json:"error"`
 	HoldOff1                    int     `json:"holdOff1"`   //window open in the group
 	SpaceTemp1                  int     `json:"spaceTemp1"` //nanosense temperature
