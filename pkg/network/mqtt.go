@@ -31,7 +31,7 @@ func (p *MQTTNetwork) SendCommand(topic, payload string) error {
 		return NewError("mqtt client not instanciate")
 	}
 	if token := (*p.mqttClient).Publish(topic, 0, false, payload); token.Wait() && token.Error() != nil {
-		rlog.Error("Cannot send a command" + token.Error().Error())
+		rlog.Error("Cannot send a command: " + token.Error().Error())
 		return token.Error()
 	}
 	return nil
@@ -50,7 +50,7 @@ func (p *MQTTNetwork) Disconnect() {
 		for topic := range p.callbacks {
 			rlog.Info("Unsubscribe to topic " + topic)
 			if token := (*p.mqttClient).Unsubscribe(topic); token.Wait() && token.Error() != nil {
-				rlog.Error("Cannot Unsubscribe to topic" + token.Error().Error())
+				rlog.Error("Cannot Unsubscribe to topic: " + token.Error().Error())
 			}
 		}
 		(*p.mqttClient).Disconnect(500)
