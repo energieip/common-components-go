@@ -15,6 +15,7 @@ type Hvac struct {
 	IsConfigured            bool    `json:"isConfigured"`
 	SoftwareVersion         string  `json:"softwareVersion"`
 	Error                   int     `json:"error"`
+	DevicePower             int     `json:"devicePower"`
 	HoldOff1                int     `json:"holdOff1"`   //window open in the group
 	SpaceTemp1              int     `json:"spaceTemp1"` //nanosense temperature
 	OccManCmd1              int     `json:"occManCmd1"` //occupied/inoccupied from sensor
