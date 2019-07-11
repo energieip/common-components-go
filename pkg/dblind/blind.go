@@ -19,7 +19,6 @@ type Blind struct {
 	Error             int     `json:"error"`
 	FriendlyName      string  `json:"friendlyName"`
 	DumpFrequency     int     `json:"dumpFrequency"`
-	DevicePower       int     `json:"devicePower"`
 	WindowStatus1     bool    `json:"windowStatus1"`
 	WindowStatus2     bool    `json:"windowStatus2"`
 	VoltageInput      int     `json:"voltageInput"`
