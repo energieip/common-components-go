@@ -6,37 +6,37 @@ import (
 
 //Hvac hvac driver representation
 type Hvac struct {
-	Mac                         string  `json:"mac"`
-	FullMac                     *string `json:"fullMac,omitempty"`
-	IP                          string  `json:"ip"`
-	Group                       int     `json:"group"`
-	Protocol                    string  `json:"protocol"`
-	SwitchMac                   string  `json:"switchMac"`
-	IsConfigured                bool    `json:"isConfigured"`
-	SoftwareVersion             string  `json:"softwareVersion"`
-	Error                       int     `json:"error"`
-	HoldOff1                    int     `json:"holdOff1"`   //window open in the group
-	SpaceTemp1                  int     `json:"spaceTemp1"` //nanosense temperature
-	OccManCmd1                  int     `json:"occManCmd1"` //occupied/inoccupied from sensor
-	Shift                       int     `json:"shift"`      //temperature shift
-	HeatCool1                   int     `json:"heatCool1"`  //pcVue control for heat/cool mode
-	DewSensor1                  int     `json:"dewSensor1"` //humidity contact
-	SpaceCO2                    int     `json:"spaceCO2"`
-	TemperatureSelect           int     `json:"temperatureSelect"`           //target temperature
-	SetpointOccupiedCool1       int     `json:"setpointOccupiedCool1"`       // 1/10°C
-	SetpointOccupiedHeat1       int     `json:"setpointOccupiedHeat1"`       // 1/10°C
-	SetpointInoccupiedCool1     int     `json:"setpointInoccupiedCool1"`     // 1/10°C
-	SetpointHeatInoccupiedHeat1 int     `json:"setpointHeatInoccupiedHeat1"` // 1/10°C
-	SetpointStandbyCool1        int     `json:"setpointStandbyCool1"`        // 1/10°C
-	SetpointStandbyHeat1        int     `json:"setpointStandbyHeat1"`        // 1/10°C
-	EffectSetPoint1             int     `json:"effectSetPoint1"`             //opening valve percentage
-	HeatOutput1                 int     `json:"heatOutput1"`                 //?
-	CoolOutput1                 int     `json:"coolOutput1"`                 //?
-	OADamper                    int     `json:"oaDamper"`                    //opening damper percentage
-	DumpFrequency               int     `json:"dumpFrequency"`
-	SpaceCOV                    int     `json:"spaceCOV"`
-	FriendlyName                string  `json:"friendlyName"`
-	Label                       *string `json:"label,omitempty"`
+	Mac                     string  `json:"mac"`
+	FullMac                 *string `json:"fullMac,omitempty"`
+	IP                      string  `json:"ip"`
+	Group                   int     `json:"group"`
+	Protocol                string  `json:"protocol"`
+	SwitchMac               string  `json:"switchMac"`
+	IsConfigured            bool    `json:"isConfigured"`
+	SoftwareVersion         string  `json:"softwareVersion"`
+	Error                   int     `json:"error"`
+	HoldOff1                int     `json:"holdOff1"`   //window open in the group
+	SpaceTemp1              int     `json:"spaceTemp1"` //nanosense temperature
+	OccManCmd1              int     `json:"occManCmd1"` //occupied/inoccupied from sensor
+	Shift                   int     `json:"shift"`      //temperature shift
+	HeatCool1               int     `json:"heatCool1"`  //pcVue control for heat/cool mode
+	DewSensor1              int     `json:"dewSensor1"` //humidity contact
+	SpaceCO2                int     `json:"spaceCO2"`
+	TemperatureSelect       int     `json:"temperatureSelect"`       //target temperature
+	SetpointOccupiedCool1   int     `json:"setpointOccupiedCool1"`   // 1/10°C
+	SetpointOccupiedHeat1   int     `json:"setpointOccupiedHeat1"`   // 1/10°C
+	SetpointUnoccupiedCool1 int     `json:"setpointUnoccupiedCool1"` // 1/10°C
+	SetpointUnoccupiedHeat1 int     `json:"setpointUnoccupiedHeat1"` // 1/10°C
+	SetpointStandbyCool1    int     `json:"setpointStandbyCool1"`    // 1/10°C
+	SetpointStandbyHeat1    int     `json:"setpointStandbyHeat1"`    // 1/10°C
+	EffectSetPoint1         int     `json:"effectSetPoint1"`         //opening valve percentage
+	HeatOutput1             int     `json:"heatOutput1"`             //?
+	CoolOutput1             int     `json:"coolOutput1"`             //?
+	OADamper                int     `json:"oaDamper"`                //opening damper percentage
+	DumpFrequency           int     `json:"dumpFrequency"`
+	SpaceCOV                int     `json:"spaceCOV"`
+	FriendlyName            string  `json:"friendlyName"`
+	Label                   *string `json:"label,omitempty"`
 }
 
 //HvacSetup initial setup send by the server when the driver is authorized
