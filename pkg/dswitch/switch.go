@@ -103,6 +103,17 @@ func ToSwitchCluster(val interface{}) (*SwitchCluster, error) {
 	return &cluster, err
 }
 
+//ToSwitch convert map interface to Switch object
+func ToSwitch(val interface{}) (*Switch, error) {
+	var sw Switch
+	inrec, err := json.Marshal(val)
+	if err != nil {
+		return nil, err
+	}
+	err = json.Unmarshal(inrec, &sw)
+	return &sw, err
+}
+
 // ToJSON dump status struct
 func (status SwitchStatus) ToJSON() (string, error) {
 	inrec, err := json.Marshal(status)
