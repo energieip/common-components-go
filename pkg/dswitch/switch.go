@@ -83,6 +83,40 @@ type SwitchCluster struct {
 	IP  string `json:"ip"`
 }
 
+// SwitchDefinition description
+type SwitchDefinition struct {
+	IP                    string  `json:"ip"`
+	LastSystemUpgradeDate string  `json:"lastUpgradeDate"`
+	FriendlyName          string  `json:"friendlyName"`
+	DumpFrequency         int     `json:"dumpFrequency"`
+	Profil                string  `json:"profil"` //I/O card configuration none/puls
+	Cluster               int     `json:"cluster"`
+	Label                 *string `json:"label,omitempty"`
+	EnergyLeds            int64   `json:"energyLeds"`
+	EnergyBlinds          int64   `json:"energyBlinds"`
+	EnergyHvacs           int64   `json:"energyHvacs"`
+}
+
+//ToSwitchDefinition convert map interface to Switch object
+func ToSwitchDefinition(val interface{}) (*SwitchDefinition, error) {
+	var sw SwitchDefinition
+	inrec, err := json.Marshal(val)
+	if err != nil {
+		return nil, err
+	}
+	err = json.Unmarshal(inrec, &sw)
+	return &sw, err
+}
+
+// ToJSON dump status struct
+func (i SwitchDefinition) ToJSON() (string, error) {
+	inrec, err := json.Marshal(i)
+	if err != nil {
+		return "", err
+	}
+	return string(inrec), err
+}
+
 // ToJSON dump status struct
 func (i SwitchCluster) ToJSON() (string, error) {
 	inrec, err := json.Marshal(i)
