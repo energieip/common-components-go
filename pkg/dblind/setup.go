@@ -10,7 +10,7 @@ func FillDefaultValue(cfg BlindSetup) BlindSetup {
 		cfg.DumpFrequency = 1000
 	}
 	if cfg.BleMode == nil {
-		ble := "service"
+		ble := "remote"
 		cfg.BleMode = &ble
 	}
 	if cfg.IsBleEnabled == nil {

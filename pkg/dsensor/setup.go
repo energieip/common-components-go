@@ -3,7 +3,7 @@ package dsensor
 //FillDefaultValue fill default parameter for setup
 func FillDefaultValue(cfg SensorSetup) SensorSetup {
 	if cfg.BleMode == nil {
-		ble := "service"
+		ble := "remote"
 		cfg.BleMode = &ble
 	}
 	if cfg.IsBleEnabled == nil {

@@ -29,7 +29,7 @@ type Blind struct {
 	Blind2            int     `json:"blind2"`
 	Slat1             int     `json:"slat1"`
 	Slat2             int     `json:"slat2"`
-	BleMode           *string `json:"bleMode,omitempty"` //bleMode could be "service" or "iBeacon"
+	BleMode           *string `json:"bleMode,omitempty"` //bleMode could be: remote/iBeacon/ptm
 	IBeaconUUID       *string `json:"iBeaconUUID,omitempty"`
 	IBeaconMajor      *int    `json:"iBeaconMajor,omitempty"`
 	IBeaconMinor      *int    `json:"iBeaconMinor,omitempty"`
@@ -68,7 +68,7 @@ type BlindSetup struct {
 	Slat2          *int         `json:"slat2,omitempty"`
 	Profile        BlindProfile `json:"profile,omitempty"`
 	Label          *string      `json:"label,omitempty"`
-	BleMode        *string      `json:"bleMode,omitempty"` //bleMode could be "service" or "iBeacon"
+	BleMode        *string      `json:"bleMode,omitempty"` //bleMode could be: remote/iBeacon/ptm
 	IBeaconUUID    *string      `json:"iBeaconUUID,omitempty"`
 	IBeaconMajor   *int         `json:"iBeaconMajor,omitempty"`
 	IBeaconMinor   *int         `json:"iBeaconMinor,omitempty"`
@@ -89,7 +89,7 @@ type BlindConf struct {
 	Slat1          *int    `json:"slat1,omitempty"`
 	Slat2          *int    `json:"slat2,omitempty"`
 	Label          *string `json:"label,omitempty"`
-	BleMode        *string `json:"bleMode,omitempty"` //bleMode could be "service" or "iBeacon"
+	BleMode        *string `json:"bleMode,omitempty"` //bleMode could be: remote/iBeacon/ptm
 	IBeaconUUID    *string `json:"iBeaconUUID,omitempty"`
 	IBeaconMajor   *int    `json:"iBeaconMajor,omitempty"`
 	IBeaconMinor   *int    `json:"iBeaconMinor,omitempty"`

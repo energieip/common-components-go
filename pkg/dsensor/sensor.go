@@ -30,7 +30,7 @@ type Sensor struct {
 	TemperatureRaw             int     `json:"temperatureRaw"`
 	FriendlyName               string  `json:"friendlyName"`
 	DumpFrequency              int     `json:"dumpFrequency"`
-	BleMode                    string  `json:"bleMode"` //bleMode could be "service" or "iBeacon"
+	BleMode                    string  `json:"bleMode"` //bleMode could be: remote/iBeacon/ptm
 	IBeaconUUID                string  `json:"iBeaconUUID"`
 	IBeaconMajor               int     `json:"iBeaconMajor"`
 	IBeaconMinor               int     `json:"iBeaconMinor"`
@@ -52,7 +52,7 @@ type SensorSetup struct {
 	IsConfigured               *bool   `json:"isConfigured,omitempty"`
 	DumpFrequency              int     `json:"dumpFrequency"`
 	Label                      *string `json:"label,omitempty"`
-	BleMode                    *string `json:"bleMode,omitempty"` //bleMode could be "service" or "iBeacon"
+	BleMode                    *string `json:"bleMode,omitempty"` //bleMode could be: remote/iBeacon/ptm
 	IBeaconUUID                *string `json:"iBeaconUUID,omitempty"`
 	IBeaconMajor               *int    `json:"iBeaconMajor,omitempty"`
 	IBeaconMinor               *int    `json:"iBeaconMinor,omitempty"`
@@ -72,7 +72,7 @@ type SensorConf struct {
 	FriendlyName               *string `json:"friendlyName,omitempty"`
 	DumpFrequency              *int    `json:"dumpFrequency,omitempty"`
 	Label                      *string `json:"label,omitempty"`
-	BleMode                    *string `json:"bleMode,omitempty"` //bleMode could be "service" or "iBeacon"
+	BleMode                    *string `json:"bleMode,omitempty"` //bleMode could be: remote/iBeacon/ptm
 	IBeaconUUID                *string `json:"iBeaconUUID,omitempty"`
 	IBeaconMajor               *int    `json:"iBeaconMajor,omitempty"`
 	IBeaconMinor               *int    `json:"iBeaconMinor,omitempty"`

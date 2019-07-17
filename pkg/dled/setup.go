@@ -41,7 +41,7 @@ func FillDefaultValue(config LedSetup) LedSetup {
 		config.DefaultSetpoint = &defaultValue
 	}
 	if config.BleMode == nil {
-		defaultMode := "service"
+		defaultMode := "remote"
 		config.BleMode = &defaultMode
 	}
 	if config.PMax == 0 {
