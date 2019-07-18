@@ -13,6 +13,10 @@ func FillDefaultValue(cfg HvacSetup) HvacSetup {
 	if cfg.DumpFrequency == 0 {
 		cfg.DumpFrequency = 1000
 	}
+	if cfg.TemperatureOffsetStep != nil {
+		defaultStep := 5 //It corresponds to 0.5°C
+		cfg.TemperatureOffsetStep = &defaultStep
+	}
 	return cfg
 }
 
@@ -40,6 +44,9 @@ func UpdateSetup(new HvacSetup, old HvacSetup) HvacSetup {
 
 	if new.FullMac != nil {
 		setup.FullMac = new.FullMac
+	}
+	if new.TemperatureOffsetStep != nil {
+		setup.TemperatureOffsetStep = new.TemperatureOffsetStep
 	}
 	return setup
 }

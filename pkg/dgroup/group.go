@@ -26,7 +26,7 @@ type GroupConfig struct {
 	RulePresence       *int     `json:"rulePresence,omitempty"`
 	SetpointLeds       *int     `json:"setpointLeds,omitempty"`
 	SetpointBlinds     *int     `json:"setpointBlinds,omitempty"`
-	SetpointTempOffset *int     `json:"setpointTempOffset,omitempty"` //temperature offset in 1/10 °C
+	SetpointTempOffset *int     `json:"setpointTempOffset,omitempty"` //temperature offset (in 1/10°C)
 	SetpointSlatBlinds *int     `json:"setpointSlatBlinds,omitempty"`
 	FriendlyName       *string  `json:"friendlyName,omitempty"`
 	Leds               []string `json:"leds"`   //Mac address list
@@ -53,7 +53,7 @@ type GroupStatus struct {
 	Error                int      `json:"error"`
 	TimeToAuto           int      `json:"timeToAuto"`
 	SetpointLeds         int      `json:"setpointLeds"`
-	SetpointTempOffset   int      `json:"setpointTempOffset"` //temperature offset in 1/10 °C
+	SetpointTempOffset   int      `json:"setpointTempOffset"` //temperature offset (in 1/10°C)
 	Presence             bool     `json:"presence"`
 	Temperature          int      `json:"temperature"`
 	Humidity             int      `json:"humidity"`

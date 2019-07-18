@@ -34,6 +34,7 @@ type Hvac struct {
 	HeatOutput1             int     `json:"heatOutput1"`             //?
 	CoolOutput1             int     `json:"coolOutput1"`             //?
 	OADamper                int     `json:"oaDamper"`                //opening damper percentage
+	TemperatureOffsetStep   int     `json:"temperatureOffsetStep,omitempty"`
 	DumpFrequency           int     `json:"dumpFrequency"`
 	SpaceCOV                int     `json:"spaceCOV"`
 	FriendlyName            string  `json:"friendlyName"`
@@ -53,6 +54,7 @@ type HvacSetup struct {
 	SetpointHeatInoccupied *int    `json:"setpointHeatInoccupied,omitempty"` // 1/10°C
 	SetpointCoolStandby    *int    `json:"setpointCoolStandby,omitempty"`    // 1/10°C
 	SetpointHeatStandby    *int    `json:"setpointHeatStandby,omitempty"`    // 1/10°C
+	TemperatureOffsetStep  *int    `json:"temperatureOffsetStep,omitempty"`
 	FriendlyName           *string `json:"friendlyName"`
 	IsConfigured           *bool   `json:"isConfigured,omitempty"`
 	Label                  *string `json:"label,omitempty"`
@@ -76,6 +78,7 @@ type HvacConf struct {
 	SetpointHeatInoccupied *int    `json:"setpointHeatInoccupied,omitempty"` // 1/10°C
 	SetpointCoolStandby    *int    `json:"setpointCoolStandby,omitempty"`    // 1/10°C
 	SetpointHeatStandby    *int    `json:"setpointHeatStandby,omitempty"`    // 1/10°C
+	TemperatureOffsetStep  *int    `json:"temperatureOffsetStep,omitempty"`
 	FriendlyName           *string `json:"friendlyName"`
 	IsConfigured           *bool   `json:"isConfigured,omitempty"`
 	DumpFrequency          *int    `json:"dumpFrequency"`
