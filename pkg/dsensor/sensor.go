@@ -8,7 +8,6 @@ import (
 type Sensor struct {
 	IP                         string  `json:"ip"`
 	Mac                        string  `json:"mac"`
-	FullMac                    *string `json:"fullMac,omitempty"`
 	Group                      int     `json:"group"`
 	Protocol                   string  `json:"protocol"`
 	SwitchMac                  string  `json:"switchMac"`
@@ -41,7 +40,6 @@ type Sensor struct {
 //SensorSetup initial setup send by the server when the driver is authorized
 type SensorSetup struct {
 	Mac                        string  `json:"mac"`
-	FullMac                    *string `json:"fullMac,omitempty"`
 	Group                      *int    `json:"group,omitempty"`
 	BrightnessCorrectionFactor *int    `json:"brightnessCorrectionFactor,omitempty"`
 	ThresholdPresence          *int    `json:"thresholdPresence,omitempty"`
@@ -62,7 +60,6 @@ type SensorSetup struct {
 //SensorConf customizable configuration by the server
 type SensorConf struct {
 	Mac                        string  `json:"mac"`
-	FullMac                    *string `json:"fullMac,omitempty"`
 	Group                      *int    `json:"group,omitempty"`
 	BrightnessCorrectionFactor *int    `json:"brightnessCorrectionFactor,omitempty"`
 	IsConfigured               *bool   `json:"isConfigured,omitempty"`

@@ -7,7 +7,6 @@ import (
 //Wago wago driver representation
 type Wago struct {
 	Mac             string  `json:"mac"`
-	FullMac         *string `json:"fullMac,omitempty"`
 	IP              string  `json:"ip"`
 	Protocol        string  `json:"protocol"`
 	Cluster         int     `json:"cluster"`
@@ -23,7 +22,6 @@ type Wago struct {
 type WagoSetup struct {
 	Mac          string            `json:"mac"`
 	Cluster      int               `json:"cluster"`
-	FullMac      *string           `json:"fullMac,omitempty"`
 	FriendlyName *string           `json:"friendlyName"`
 	IsConfigured *bool             `json:"isConfigured,omitempty"`
 	Label        *string           `json:"label,omitempty"`
@@ -33,7 +31,6 @@ type WagoSetup struct {
 //WagoConf customizable configuration by the server
 type WagoConf struct {
 	Mac          string  `json:"mac"`
-	FullMac      *string `json:"fullMac,omitempty"`
 	Group        *int    `json:"group,omitempty"`
 	IsConfigured *bool   `json:"isConfigured,omitempty"`
 	FriendlyName *string `json:"friendlyName"`

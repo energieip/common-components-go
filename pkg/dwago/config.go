@@ -14,8 +14,5 @@ func UpdateConfig(new WagoConf, old WagoSetup) WagoSetup {
 		setup.Mac = new.Mac
 	}
 
-	if new.FullMac != nil {
-		setup.FullMac = new.FullMac
-	}
 	return setup
 }

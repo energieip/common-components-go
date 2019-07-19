@@ -74,8 +74,5 @@ func UpdateConfig(new LedConf, old LedSetup) LedSetup {
 		setup.Mac = new.Mac
 	}
 
-	if new.FullMac != nil {
-		setup.FullMac = new.FullMac
-	}
 	return setup
 }

@@ -24,9 +24,6 @@ func UpdateSetup(new WagoSetup, old WagoSetup) WagoSetup {
 		setup.Mac = new.Mac
 	}
 
-	if new.FullMac != nil {
-		setup.FullMac = new.FullMac
-	}
 	if len(new.API) == 0 {
 		setup.API = new.API
 	}

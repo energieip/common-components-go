@@ -7,7 +7,6 @@ import (
 //Blind driver representation
 type Blind struct {
 	IP                string  `json:"ip"`
-	FullMac           *string `json:"fullMac,omitempty"`
 	Mac               string  `json:"mac"`
 	Group             int     `json:"group"`
 	Protocol          string  `json:"protocol"`
@@ -55,7 +54,6 @@ type BlindProfile struct {
 //BlindSetup initial setup send by the server when the driver is authorized
 type BlindSetup struct {
 	Mac            string       `json:"mac"`
-	FullMac        *string      `json:"fullMac,omitempty"`
 	Group          *int         `json:"group,omitempty"`
 	IsBleEnabled   *bool        `json:"isBleEnabled,omitempty"`
 	FriendlyName   *string      `json:"friendlyName,omitempty"`
@@ -78,7 +76,6 @@ type BlindSetup struct {
 //BlindConf customizable configuration by the server
 type BlindConf struct {
 	Mac            string  `json:"mac"`
-	FullMac        *string `json:"fullMac,omitempty"`
 	Group          *int    `json:"group,omitempty"`
 	IsConfigured   *bool   `json:"isConfigured,omitempty"`
 	IsBleEnabled   *bool   `json:"isBleEnabled,omitempty"`

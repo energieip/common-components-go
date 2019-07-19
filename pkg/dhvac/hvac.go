@@ -7,7 +7,6 @@ import (
 //Hvac hvac driver representation
 type Hvac struct {
 	Mac                     string  `json:"mac"`
-	FullMac                 *string `json:"fullMac,omitempty"`
 	IP                      string  `json:"ip"`
 	Group                   int     `json:"group"`
 	Protocol                string  `json:"protocol"`
@@ -45,7 +44,6 @@ type Hvac struct {
 type HvacSetup struct {
 	Mac                    string  `json:"mac"`
 	SwitchMac              string  `json:"switchMac"`
-	FullMac                *string `json:"fullMac,omitempty"`
 	Group                  *int    `json:"group,omitempty"`
 	DumpFrequency          int     `json:"dumpFrequency"`
 	SetpointCoolOccupied   *int    `json:"setpointCoolOccupied,omitempty"`   // 1/10°C
@@ -63,7 +61,6 @@ type HvacSetup struct {
 //HvacConf customizable configuration by the server
 type HvacConf struct {
 	Mac                    string  `json:"mac"`
-	FullMac                *string `json:"fullMac,omitempty"`
 	Group                  *int    `json:"group,omitempty"`
 	Shift                  *int    `json:"shift,omitempty"`                  //temperature shift (+6/-6) in (1/10°C)
 	WindowStatus           *bool   `json:"windowStatus,omitempty"`           //corresponds to holdOff1

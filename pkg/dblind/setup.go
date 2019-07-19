@@ -71,8 +71,5 @@ func UpdateSetup(new BlindSetup, old BlindSetup) BlindSetup {
 		setup.Mac = new.Mac
 	}
 
-	if new.FullMac != nil {
-		setup.FullMac = new.FullMac
-	}
 	return setup
 }

@@ -7,7 +7,6 @@ import (
 //Led led driver representation
 type Led struct {
 	Mac               string  `json:"mac"`
-	FullMac           *string `json:"fullMac,omitempty"`
 	IP                string  `json:"ip"`
 	Group             int     `json:"group"`
 	Protocol          string  `json:"protocol"`
@@ -48,7 +47,6 @@ type Led struct {
 //LedSetup initial setup send by the server when the driver is authorized
 type LedSetup struct {
 	Mac              string  `json:"mac"`
-	FullMac          *string `json:"fullMac,omitempty"`
 	PMax             int     `json:"pMax"`
 	Group            *int    `json:"group,omitempty"`
 	Auto             *bool   `json:"auto,omitempty"`
@@ -78,7 +76,6 @@ type LedSetup struct {
 //LedConf customizable configuration by the server
 type LedConf struct {
 	Mac              string  `json:"mac"`
-	FullMac          *string `json:"fullMac,omitempty"`
 	Group            *int    `json:"group,omitempty"`
 	SetpointManual   *int    `json:"setpointManual,omitempty"`
 	SetpointAuto     *int    `json:"setpointAuto,omitempty"`

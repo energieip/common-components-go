@@ -133,8 +133,5 @@ func UpdateSetup(new LedSetup, old LedSetup) LedSetup {
 		setup.Mac = new.Mac
 	}
 
-	if new.FullMac != nil {
-		setup.FullMac = new.FullMac
-	}
 	return setup
 }

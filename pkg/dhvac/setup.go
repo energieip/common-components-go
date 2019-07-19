@@ -42,9 +42,6 @@ func UpdateSetup(new HvacSetup, old HvacSetup) HvacSetup {
 		setup.Mac = new.Mac
 	}
 
-	if new.FullMac != nil {
-		setup.FullMac = new.FullMac
-	}
 	if new.TemperatureOffsetStep != nil {
 		setup.TemperatureOffsetStep = new.TemperatureOffsetStep
 	}

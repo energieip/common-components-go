@@ -96,8 +96,5 @@ func UpdateSetup(new SensorSetup, old SensorSetup) SensorSetup {
 		setup.Mac = new.Mac
 	}
 
-	if new.FullMac != nil {
-		setup.FullMac = new.FullMac
-	}
 	return setup
 }
