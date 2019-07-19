@@ -13,7 +13,7 @@ func FillDefaultValue(cfg HvacSetup) HvacSetup {
 	if cfg.DumpFrequency == 0 {
 		cfg.DumpFrequency = 1000
 	}
-	if cfg.TemperatureOffsetStep != nil {
+	if cfg.TemperatureOffsetStep == nil {
 		defaultStep := 5 //It corresponds to 0.5°C
 		cfg.TemperatureOffsetStep = &defaultStep
 	}
