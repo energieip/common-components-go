@@ -19,7 +19,7 @@ type Hvac struct {
 	HoldOff1                int     `json:"holdOff1"`   //window open in the group
 	SpaceTemp1              int     `json:"spaceTemp1"` //nanosense temperature
 	OccManCmd1              int     `json:"occManCmd1"` //occupied/inoccupied from sensor
-	Shift                   int     `json:"shift"`      //temperature shift
+	Shift                   int     `json:"shift"`      //temperature shift (in 1/10°C)
 	HeatCool1               int     `json:"heatCool1"`  //pcVue control for heat/cool mode
 	DewSensor1              int     `json:"dewSensor1"` //humidity contact
 	SpaceCO2                int     `json:"spaceCO2"`
@@ -65,7 +65,7 @@ type HvacConf struct {
 	Mac                    string  `json:"mac"`
 	FullMac                *string `json:"fullMac,omitempty"`
 	Group                  *int    `json:"group,omitempty"`
-	Shift                  int     `json:"shift"`                            //temperature shift (+6/-6)
+	Shift                  *int    `json:"shift,omitempty"`                  //temperature shift (+6/-6) in (1/10°C)
 	WindowStatus           *bool   `json:"windowStatus,omitempty"`           //corresponds to holdOff1
 	Temperature            *int    `json:"temperature,omitempty"`            // 1/10°C from nanosense device
 	Presence               *bool   `json:"presence,omitempty"`               //corresponds to oCCManCmd1
