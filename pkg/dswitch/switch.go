@@ -5,6 +5,7 @@ import (
 
 	"github.com/energieip/common-components-go/pkg/dblind"
 	"github.com/energieip/common-components-go/pkg/dhvac"
+	"github.com/energieip/common-components-go/pkg/dnanosense"
 	"github.com/energieip/common-components-go/pkg/duser"
 	"github.com/energieip/common-components-go/pkg/dwago"
 
@@ -30,21 +31,23 @@ type Switch struct {
 //SwitchConfig content
 type SwitchConfig struct {
 	Switch
-	Cluster       *int                           `json:"cluster"`
-	ClusterBroker map[string]SwitchCluster       `json:"clusterBroker"`
-	Services      map[string]service.Service     `json:"services"`
-	Groups        map[int]dgroup.GroupConfig     `json:"groups"`
-	LedsSetup     map[string]dled.LedSetup       `json:"ledsSetup"`
-	LedsConfig    map[string]dled.LedConf        `json:"ledsConfig"`
-	BlindsSetup   map[string]dblind.BlindSetup   `json:"blindsSetup"`
-	BlindsConfig  map[string]dblind.BlindConf    `json:"blindsConfig"`
-	SensorsSetup  map[string]dsensor.SensorSetup `json:"sensorsSetup"`
-	SensorsConfig map[string]dsensor.SensorConf  `json:"sensorsConfig"`
-	HvacsSetup    map[string]dhvac.HvacSetup     `json:"hvacsSetup"`
-	HvacsConfig   map[string]dhvac.HvacConf      `json:"hvacsConfig"`
-	WagosSetup    map[string]dwago.WagoSetup     `json:"wagosSetup"`
-	WagosConfig   map[string]dwago.WagoConf      `json:"wagosConfig"`
-	Users         map[string]duser.UserAccess    `json:"users"`
+	Cluster       *int                                 `json:"cluster"`
+	ClusterBroker map[string]SwitchCluster             `json:"clusterBroker"`
+	Services      map[string]service.Service           `json:"services"`
+	Groups        map[int]dgroup.GroupConfig           `json:"groups"`
+	LedsSetup     map[string]dled.LedSetup             `json:"ledsSetup"`
+	LedsConfig    map[string]dled.LedConf              `json:"ledsConfig"`
+	BlindsSetup   map[string]dblind.BlindSetup         `json:"blindsSetup"`
+	BlindsConfig  map[string]dblind.BlindConf          `json:"blindsConfig"`
+	SensorsSetup  map[string]dsensor.SensorSetup       `json:"sensorsSetup"`
+	SensorsConfig map[string]dsensor.SensorConf        `json:"sensorsConfig"`
+	HvacsSetup    map[string]dhvac.HvacSetup           `json:"hvacsSetup"`
+	HvacsConfig   map[string]dhvac.HvacConf            `json:"hvacsConfig"`
+	WagosSetup    map[string]dwago.WagoSetup           `json:"wagosSetup"`
+	WagosConfig   map[string]dwago.WagoConf            `json:"wagosConfig"`
+	NanosSetup    map[string]dnanosense.NanosenseSetup `json:"nanoosSetup"`
+	NanosConfig   map[string]dnanosense.NanosenseConf  `json:"nanosConfig"`
+	Users         map[string]duser.UserAccess          `json:"users"`
 }
 
 //SwitchStatus description
@@ -58,6 +61,7 @@ type SwitchStatus struct {
 	Blinds        map[string]dblind.Blind          `json:"blinds"`
 	Hvacs         map[string]dhvac.Hvac            `json:"hvacs"`
 	Wagos         map[string]dwago.Wago            `json:"wagos"`
+	Nanos         map[string]dnanosense.Nanosense  `json:"nanos"`
 	Groups        map[int]dgroup.GroupStatus       `json:"groups"`
 	ClusterBroker map[string]SwitchCluster         `json:"clusterBroker"`
 	Users         map[string]duser.UserAccess      `json:"users"`
