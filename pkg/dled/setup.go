@@ -51,6 +51,11 @@ func FillDefaultValue(config LedSetup) LedSetup {
 		name := *config.Label
 		config.FriendlyName = &name
 	}
+
+	if config.FirstDay == nil {
+		firstDay := false
+		config.FirstDay = &firstDay
+	}
 	return config
 }
 
@@ -133,5 +138,8 @@ func UpdateSetup(new LedSetup, old LedSetup) LedSetup {
 		setup.Mac = new.Mac
 	}
 
+	if new.FirstDay != nil {
+		setup.FirstDay = new.FirstDay
+	}
 	return setup
 }

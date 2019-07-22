@@ -74,5 +74,9 @@ func UpdateConfig(new LedConf, old LedSetup) LedSetup {
 		setup.Mac = new.Mac
 	}
 
+	if new.FirstDay != nil {
+		setup.FirstDay = new.FirstDay
+	}
+
 	return setup
 }

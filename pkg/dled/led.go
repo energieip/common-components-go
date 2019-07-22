@@ -52,6 +52,7 @@ type LedSetup struct {
 	Auto             *bool   `json:"auto,omitempty"`
 	Watchdog         *int    `json:"watchdog,omitempty"`
 	IsBleEnabled     *bool   `json:"isBleEnabled,omitempty"`
+	FirstDay         *bool   `json:"firstDay,omitempty"`
 	ThresholdHigh    *int    `json:"thresholdHigh,omitempty"`
 	ThresholdLow     *int    `json:"thresholdLow,omitempty"`
 	FriendlyName     *string `json:"friendlyName,omitempty"`
@@ -96,6 +97,7 @@ type LedConf struct {
 	IBeaconMajor     *int    `json:"iBeaconMajor,omitempty"`
 	IBeaconMinor     *int    `json:"iBeaconMinor,omitempty"`
 	IBeaconTxPower   *int    `json:"iBeaconTxPower,omitempty"`
+	FirstDay         *bool   `json:"firstDay,omitempty"`
 	Label            *string `json:"label,omitempty"`
 }
 
