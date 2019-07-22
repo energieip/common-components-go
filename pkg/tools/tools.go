@@ -67,6 +67,7 @@ func StringInSlice(a string, list []string) bool {
 
 //Model2Type convert model in device type
 func Model2Type(model string) string {
+	model = strings.ToLower(model)
 	if strings.HasPrefix(model, "led") {
 		return pconst.LED
 	}
