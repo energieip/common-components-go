@@ -1,7 +1,7 @@
-package dwago
+package dnanosense
 
 //FillDefaultValue fill default parameter for setup
-func FillDefaultValue(cfg WagoSetup) WagoSetup {
+func FillDefaultValue(cfg NanosenseSetup) NanosenseSetup {
 	if cfg.FriendlyName == nil && cfg.Label != nil {
 		name := *cfg.Label
 		cfg.FriendlyName = &name
@@ -10,7 +10,7 @@ func FillDefaultValue(cfg WagoSetup) WagoSetup {
 }
 
 //UpdateSetup update blind struct
-func UpdateSetup(new WagoSetup, old WagoSetup) WagoSetup {
+func UpdateSetup(new NanosenseSetup, old NanosenseSetup) NanosenseSetup {
 	setup := old
 	if new.FriendlyName != nil {
 		setup.FriendlyName = new.FriendlyName
@@ -27,6 +27,8 @@ func UpdateSetup(new WagoSetup, old WagoSetup) WagoSetup {
 	if len(new.API) == 0 {
 		setup.API = new.API
 	}
-	setup.Cluster = new.Cluster
+	if new.IsConfigured != nil {
+		setup.IsConfigured = new.IsConfigured
+	}
 	return setup
 }

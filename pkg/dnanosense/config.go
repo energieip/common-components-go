@@ -1,6 +1,6 @@
-package dwago
+package dnanosense
 
-func UpdateConfig(new WagoConf, old WagoSetup) WagoSetup {
+func UpdateConfig(new NanosenseConf, old NanosenseSetup) NanosenseSetup {
 	setup := old
 	if new.FriendlyName != nil {
 		setup.FriendlyName = new.FriendlyName
@@ -18,8 +18,16 @@ func UpdateConfig(new WagoConf, old WagoSetup) WagoSetup {
 		setup.Cluster = *new.Cluster
 	}
 
+	if new.Group != nil {
+		setup.Group = *new.Group
+	}
+
+	if new.ModbusOffset != nil {
+		setup.ModbusOffset = *new.ModbusOffset
+	}
 	if new.IsConfigured != nil {
 		setup.IsConfigured = new.IsConfigured
 	}
+
 	return setup
 }

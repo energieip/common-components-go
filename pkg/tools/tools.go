@@ -74,7 +74,7 @@ func Model2Type(model string) string {
 	if strings.HasPrefix(model, "bld") {
 		return pconst.BLIND
 	}
-	if strings.HasPrefix(model, "hvac") {
+	if strings.HasPrefix(model, "eip-cvc") {
 		return pconst.HVAC
 	}
 	if strings.HasPrefix(model, "mca") {
@@ -83,11 +83,14 @@ func Model2Type(model string) string {
 	if strings.HasPrefix(model, "swh") {
 		return pconst.SWITCH
 	}
-	if strings.HasPrefix(model, "wago") {
+	if strings.HasPrefix(model, "750-831/000-002") {
 		return pconst.WAGO
 	}
-	if strings.HasPrefix(model, "frame") {
+	if strings.HasPrefix(model, "efirack") {
 		return pconst.FRAME
+	}
+	if strings.HasPrefix(model, "e4000") {
+		return pconst.NANOSENSE
 	}
 	return ""
 }

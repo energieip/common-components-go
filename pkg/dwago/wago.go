@@ -31,9 +31,9 @@ type WagoSetup struct {
 //WagoConf customizable configuration by the server
 type WagoConf struct {
 	Mac          string  `json:"mac"`
-	Group        *int    `json:"group,omitempty"`
+	Cluster      *int    `json:"cluster,omitempty"`
 	IsConfigured *bool   `json:"isConfigured,omitempty"`
-	FriendlyName *string `json:"friendlyName"`
+	FriendlyName *string `json:"friendlyName,omitempty"`
 	Label        *string `json:"label,omitempty"`
 }
 
