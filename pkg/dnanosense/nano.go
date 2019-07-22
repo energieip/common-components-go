@@ -32,7 +32,7 @@ type NanosenseSetup struct {
 	APIType      string            `json:"apiType"`
 	API          map[string]string `json:"api"`
 	Protocol     string            `json:"protocol"`
-	ModbusOffset string            `json:"modbusOffset"`
+	ModbusOffset int               `json:"modbusOffset"`
 }
 
 //NanosenseConf customizable configuration by the server
@@ -43,7 +43,7 @@ type NanosenseConf struct {
 	IsConfigured *bool   `json:"isConfigured,omitempty"`
 	FriendlyName *string `json:"friendlyName,omitempty"`
 	Label        *string `json:"label,omitempty"`
-	ModbusOffset *string `json:"modbusOffset,omitempty"`
+	ModbusOffset *int    `json:"modbusOffset,omitempty"`
 }
 
 //ToNanosense convert map interface to driver object
