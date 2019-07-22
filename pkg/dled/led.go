@@ -32,6 +32,7 @@ type Led struct {
 	Auto              bool    `json:"auto"`
 	Watchdog          int     `json:"watchdog"`
 	FriendlyName      string  `json:"friendlyName"`
+	FirstDay          bool    `json:"firstDay"`
 	DumpFrequency     int     `json:"dumpFrequency"`
 	SlopeStart        int     `json:"slopeStart"`
 	SlopeStop         int     `json:"slopeStop"`
