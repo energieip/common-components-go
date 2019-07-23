@@ -6,43 +6,35 @@ import (
 
 //Nanosense driver representation
 type Nanosense struct {
-	Mac           string  `json:"mac"`
-	IP            string  `json:"ip"`
-	Protocol      string  `json:"protocol"`
-	Group         int     `json:"group"`
-	Cluster       int     `json:"cluster"`
-	IsConfigured  bool    `json:"isConfigured"`
-	Temperature   int     `json:"temperature"` //in 1/10°C
-	CO2           int     `json:"c02"`
-	CoV           int     `json:"cov"`
-	Error         int     `json:"error"`
-	DumpFrequency int     `json:"dumpFrequency"`
-	FriendlyName  string  `json:"friendlyName"`
-	Label         *string `json:"label,omitempty"`
+	IP            string `json:"ip"`
+	Group         int    `json:"group"`
+	Cluster       int    `json:"cluster"`
+	Temperature   int    `json:"temperature"` //in 1/10°C
+	CO2           int    `json:"c02"`
+	CoV           int    `json:"cov"`
+	Error         int    `json:"error"`
+	DumpFrequency int    `json:"dumpFrequency"`
+	FriendlyName  string `json:"friendlyName"`
+	Label         string `json:"label"`
 }
 
 //NanosenseSetup initial setup send by the server when the driver is authorized
 type NanosenseSetup struct {
-	Mac          string            `json:"mac"`
 	Cluster      int               `json:"cluster"`
 	Group        int               `json:"group"`
 	FriendlyName *string           `json:"friendlyName"`
-	IsConfigured *bool             `json:"isConfigured,omitempty"`
-	Label        *string           `json:"label,omitempty"`
+	Label        string            `json:"label"`
 	APIType      string            `json:"apiType"`
 	API          map[string]string `json:"api"`
-	Protocol     string            `json:"protocol"`
 	ModbusOffset int               `json:"modbusOffset"`
 }
 
 //NanosenseConf customizable configuration by the server
 type NanosenseConf struct {
-	Mac          string  `json:"mac"`
 	Cluster      *int    `json:"cluster,omitempty"`
 	Group        *int    `json:"group,omitempty"`
-	IsConfigured *bool   `json:"isConfigured,omitempty"`
 	FriendlyName *string `json:"friendlyName,omitempty"`
-	Label        *string `json:"label,omitempty"`
+	Label        string  `json:"label"`
 	ModbusOffset *int    `json:"modbusOffset,omitempty"`
 }
 

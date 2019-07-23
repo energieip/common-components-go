@@ -2,8 +2,8 @@ package dnanosense
 
 //FillDefaultValue fill default parameter for setup
 func FillDefaultValue(cfg NanosenseSetup) NanosenseSetup {
-	if cfg.FriendlyName == nil && cfg.Label != nil {
-		name := *cfg.Label
+	if cfg.FriendlyName == nil && cfg.Label != "" {
+		name := cfg.Label
 		cfg.FriendlyName = &name
 	}
 	return cfg
@@ -16,19 +16,8 @@ func UpdateSetup(new NanosenseSetup, old NanosenseSetup) NanosenseSetup {
 		setup.FriendlyName = new.FriendlyName
 	}
 
-	if new.Label != nil {
-		setup.Label = new.Label
-	}
-
-	if new.Mac != "" {
-		setup.Mac = new.Mac
-	}
-
 	if len(new.API) == 0 {
 		setup.API = new.API
-	}
-	if new.IsConfigured != nil {
-		setup.IsConfigured = new.IsConfigured
 	}
 	return setup
 }
