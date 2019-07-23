@@ -65,6 +65,7 @@ type HvacConf struct {
 	Shift                  *int    `json:"shift,omitempty"`                  //temperature shift (+6/-6) in (1/10°C)
 	WindowStatus           *bool   `json:"windowStatus,omitempty"`           //corresponds to holdOff1
 	Temperature            *int    `json:"temperature,omitempty"`            // 1/10°C from nanosense device
+	Hygrometry             *int    `json:"hygrometry,omitempty"`             // % from nanosense device
 	Presence               *bool   `json:"presence,omitempty"`               //corresponds to oCCManCmd1
 	Mode                   *string `json:"mode,omitempty"`                   //heat/cold corresponds to HeatCool1
 	CO2                    *int    `json:"co2,omitempty"`                    //CO2 from nanosense
