@@ -29,9 +29,10 @@ type GroupConfig struct {
 	SetpointTempOffset *int     `json:"setpointTempOffset,omitempty"` //temperature offset (in 1/10°C)
 	SetpointSlatBlinds *int     `json:"setpointSlatBlinds,omitempty"`
 	FriendlyName       *string  `json:"friendlyName,omitempty"`
-	Leds               []string `json:"leds"`   //Mac address list
-	Blinds             []string `json:"blinds"` //Mac address list
-	Hvacs              []string `json:"hvacs"`  //Mac address list
+	Leds               []string `json:"leds"`       //Mac address list
+	Blinds             []string `json:"blinds"`     //Mac address list
+	Hvacs              []string `json:"hvacs"`      //Mac address list
+	Nanosenses         []string `json:"nanosenses"` //MAC + offset
 	Sensors            []string `json:"sensors"`
 	FirstDay           []string `json:"firstDay"` //LED Mac address list in first day position
 	FirstDayOffset     *int     `json:"firstDayOffset"`
@@ -55,15 +56,20 @@ type GroupStatus struct {
 	SetpointLeds         int      `json:"setpointLeds"`
 	SetpointTempOffset   int      `json:"setpointTempOffset"` //temperature offset (in 1/10°C)
 	Presence             bool     `json:"presence"`
-	Temperature          int      `json:"temperature"`
-	Humidity             int      `json:"humidity"`
-	Brightness           int      `json:"brightness"`
-	WindowsOpened        bool     `json:"windowsOpened"` //at least one window is opened
+	Temperature          int      `json:"temperature"`        //from nanosense used by HVAC (in 1/10°C)
+	Hygrometry           int      `json:"hygrometry"`         //from nanosense used by HVAC (in %)
+	CO2                  int      `json:"co2"`                //from nanosense used by HVAC (in ppm)
+	COV                  int      `json:"cov"`                //from nanosense used by HVAC (in ppm)
+	CeilingTemperature   int      `json:"ceilingTemperature"` //from sensor (in 1/10°C)
+	CeilingHumidity      int      `json:"ceilingHumidity"`    //from sensor (in 1/10°C)
+	Brightness           int      `json:"brightness"`         // from sensor (in Lux)
+	WindowsOpened        bool     `json:"windowsOpened"`      //at least one window is opened
 	TimeToLeave          int      `json:"timeToLeave"`
 	Leds                 []string `json:"leds"` //Mac address list
 	Blinds               []string `json:"blinds"`
 	Hvacs                []string `json:"hvacs"`
 	Sensors              []string `json:"sensors"`
+	Nanosenses           []string `json:"nanosenses"` //MAC + offset
 	FriendlyName         string   `json:"friendlyName"`
 	FirstDay             []string `json:"firstDay"` //LED Mac address list in first day position
 	FirstDayOffset       *int     `json:"firstDayOffset"`
