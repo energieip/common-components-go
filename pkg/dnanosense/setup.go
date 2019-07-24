@@ -16,7 +16,7 @@ func UpdateSetup(new NanosenseSetup, old NanosenseSetup) NanosenseSetup {
 		setup.FriendlyName = new.FriendlyName
 	}
 
-	if len(new.API) == 0 {
+	if len(new.API) != 0 {
 		setup.API = new.API
 	}
 	return setup

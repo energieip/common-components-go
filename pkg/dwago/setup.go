@@ -24,7 +24,7 @@ func UpdateSetup(new WagoSetup, old WagoSetup) WagoSetup {
 		setup.Mac = new.Mac
 	}
 
-	if len(new.API) == 0 {
+	if len(new.API) != 0 {
 		setup.API = new.API
 	}
 	setup.Cluster = new.Cluster
