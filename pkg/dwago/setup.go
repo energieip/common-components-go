@@ -10,6 +10,10 @@ func FillDefaultValue(cfg WagoSetup) WagoSetup {
 		freq := 1000 //1s
 		cfg.DumpFrequency = &freq
 	}
+	if cfg.ModbusOffset == nil {
+		offset := 0
+		cfg.ModbusOffset = &offset
+	}
 	return cfg
 }
 
@@ -34,6 +38,9 @@ func UpdateSetup(new WagoSetup, old WagoSetup) WagoSetup {
 
 	if new.IP != nil {
 		setup.IP = new.IP
+	}
+	if new.ModbusOffset != nil {
+		setup.ModbusOffset = new.ModbusOffset
 	}
 	setup.Cluster = new.Cluster
 	return setup

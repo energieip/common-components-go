@@ -30,6 +30,7 @@ type WagoSetup struct {
 	Label         *string           `json:"label,omitempty"`
 	DumpFrequency *int              `json:"dumpFrequency,omitempty"`
 	API           map[string]string `json:"api"`
+	ModbusOffset  *int              `json:"modbusOffset,omitempty"`
 }
 
 //WagoConf customizable configuration by the server

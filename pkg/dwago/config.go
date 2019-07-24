@@ -21,6 +21,7 @@ func UpdateConfig(new WagoConf, old WagoSetup) WagoSetup {
 	if new.IsConfigured != nil {
 		setup.IsConfigured = new.IsConfigured
 	}
+
 	if new.IP != nil {
 		setup.IP = new.IP
 	}
