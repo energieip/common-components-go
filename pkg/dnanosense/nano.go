@@ -6,7 +6,6 @@ import (
 
 //Nanosense driver representation
 type Nanosense struct {
-	IP            string `json:"ip"`
 	Group         int    `json:"group"`
 	Cluster       int    `json:"cluster"`
 	Temperature   int    `json:"temperature"` //in 1/10°C

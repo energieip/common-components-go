@@ -27,6 +27,10 @@ func UpdateSetup(new WagoSetup, old WagoSetup) WagoSetup {
 	if len(new.API) != 0 {
 		setup.API = new.API
 	}
+
+	if new.IP != nil {
+		setup.IP = new.IP
+	}
 	setup.Cluster = new.Cluster
 	return setup
 }

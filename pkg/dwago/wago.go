@@ -23,8 +23,9 @@ type Wago struct {
 //WagoSetup initial setup send by the server when the driver is authorized
 type WagoSetup struct {
 	Mac           string            `json:"mac"`
+	IP            *string           `json:"ip,omitempty"`
 	Cluster       int               `json:"cluster"`
-	FriendlyName  *string           `json:"friendlyName"`
+	FriendlyName  *string           `json:"friendlyName,omitempty"`
 	IsConfigured  *bool             `json:"isConfigured,omitempty"`
 	Label         *string           `json:"label,omitempty"`
 	DumpFrequency *int              `json:"dumpFrequency,omitempty"`
@@ -34,6 +35,7 @@ type WagoSetup struct {
 //WagoConf customizable configuration by the server
 type WagoConf struct {
 	Mac           string  `json:"mac"`
+	IP            *string `json:"ip,omitempty"`
 	Cluster       *int    `json:"cluster,omitempty"`
 	IsConfigured  *bool   `json:"isConfigured,omitempty"`
 	FriendlyName  *string `json:"friendlyName,omitempty"`
@@ -47,7 +49,7 @@ type WagoDef struct {
 	Cluster       *int                      `json:"cluster,omitempty"`
 	IsConfigured  *bool                     `json:"isConfigured,omitempty"`
 	FriendlyName  *string                   `json:"friendlyName,omitempty"`
-	IP            *string                   `json:"ip"`
+	IP            *string                   `json:"ip,omitempty"`
 	Nanosenses    []dnanosense.NanosenseDef `json:"nanosenses"`
 	CronJobs      []CronJobDef              `json:"cronJobs"`
 	DumpFrequency *int                      `json:"dumpFrequency,omitempty"`
