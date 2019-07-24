@@ -45,7 +45,7 @@ type SwitchConfig struct {
 	HvacsConfig   map[string]dhvac.HvacConf            `json:"hvacsConfig"`
 	WagosSetup    map[string]dwago.WagoSetup           `json:"wagosSetup"`
 	WagosConfig   map[string]dwago.WagoConf            `json:"wagosConfig"`
-	NanosSetup    map[string]dnanosense.NanosenseSetup `json:"nanoosSetup"`
+	NanosSetup    map[string]dnanosense.NanosenseSetup `json:"nanosSetup"`
 	NanosConfig   map[string]dnanosense.NanosenseConf  `json:"nanosConfig"`
 	Users         map[string]duser.UserAccess          `json:"users"`
 }
