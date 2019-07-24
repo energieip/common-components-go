@@ -39,6 +39,17 @@ type NanosenseConf struct {
 	ModbusOffset *int    `json:"modbusOffset,omitempty"`
 }
 
+//NanosenseDef customizable configuration by the server
+type NanosenseDef struct {
+	Group        *int    `json:"group,omitempty"`
+	FriendlyName *string `json:"friendlyName,omitempty"`
+	Label        string  `json:"label"`
+	Hygrometry   int     `json:"hygrometry"`  //modbusID
+	Temperature  int     `json:"temperature"` //modbusID
+	CO2          int     `json:"co2"`         //modbusID
+	COV          int     `json:"cov"`         //modbusID
+}
+
 //ToNanosense convert map interface to driver object
 func ToNanosense(val interface{}) (*Nanosense, error) {
 	var driver Nanosense
