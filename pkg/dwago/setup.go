@@ -6,6 +6,10 @@ func FillDefaultValue(cfg WagoSetup) WagoSetup {
 		name := *cfg.Label
 		cfg.FriendlyName = &name
 	}
+	if cfg.DumpFrequency == nil {
+		freq := 1000 //1s
+		cfg.DumpFrequency = &freq
+	}
 	return cfg
 }
 
