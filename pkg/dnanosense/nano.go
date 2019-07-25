@@ -9,9 +9,9 @@ type Nanosense struct {
 	Group         int    `json:"group"`
 	Cluster       int    `json:"cluster"`
 	Temperature   int    `json:"temperature"` //in 1/10°C
-	CO2           int    `json:"c02"`
-	Hygrometry    int    `json:"hygrometry"`
-	COV           int    `json:"cov"`
+	CO2           int    `json:"co2"`         //in 1/10
+	Hygrometry    int    `json:"hygrometry"`  //in 1/10
+	COV           int    `json:"cov"`         //in 1/10
 	Error         int    `json:"error"`
 	DumpFrequency int    `json:"dumpFrequency"`
 	FriendlyName  string `json:"friendlyName"`
