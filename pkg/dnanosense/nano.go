@@ -40,13 +40,14 @@ type NanosenseConf struct {
 
 //NanosenseDef customizable configuration by the server
 type NanosenseDef struct {
-	Group        *int    `json:"group,omitempty"`
-	FriendlyName *string `json:"friendlyName,omitempty"`
-	Label        string  `json:"label"`
-	Hygrometry   int     `json:"hygrometry"`  //modbusID
-	Temperature  int     `json:"temperature"` //modbusID
-	CO2          int     `json:"co2"`         //modbusID
-	COV          int     `json:"cov"`         //modbusID
+	Group        int    `json:"group"`
+	Cluster      int    `json:"cluster"`
+	FriendlyName string `json:"friendlyName"`
+	Label        string `json:"label"`
+	Hygrometry   int    `json:"hygrometry"`  //modbusID
+	Temperature  int    `json:"temperature"` //modbusID
+	CO2          int    `json:"co2"`         //modbusID
+	COV          int    `json:"cov"`         //modbusID
 }
 
 //ToNanosense convert map interface to driver object
