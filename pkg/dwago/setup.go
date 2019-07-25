@@ -36,6 +36,10 @@ func UpdateSetup(new WagoSetup, old WagoSetup) WagoSetup {
 		setup.API = new.API
 	}
 
+	if new.DumpFrequency != nil {
+		setup.DumpFrequency = new.DumpFrequency
+	}
+
 	if new.IP != nil {
 		setup.IP = new.IP
 	}

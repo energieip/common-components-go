@@ -22,6 +22,10 @@ func UpdateConfig(new WagoConf, old WagoSetup) WagoSetup {
 		setup.IsConfigured = new.IsConfigured
 	}
 
+	if new.DumpFrequency != nil {
+		setup.DumpFrequency = new.DumpFrequency
+	}
+
 	if new.IP != nil {
 		setup.IP = new.IP
 	}
