@@ -16,6 +16,7 @@ type Wago struct {
 	SoftwareVersion float32 `json:"softwareVersion"`
 	HardwareVersion float32 `json:"hardwareVersion"`
 	Error           int     `json:"error"`
+	DumpFrequency   int     `json:"dumpFrequency"`
 	FriendlyName    string  `json:"friendlyName"`
 	Label           *string `json:"label,omitempty"`
 }
