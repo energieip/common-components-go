@@ -84,6 +84,7 @@ type HvacConf struct {
 	Temperature            *int    `json:"temperature,omitempty"`            // 1/10°C from nanosense device
 	Hygrometry             *int    `json:"hygrometry,omitempty"`             // % from nanosense device
 	Presence               *bool   `json:"presence,omitempty"`               //corresponds to oCCManCmd1
+	HeatCool               *int    `json:"heatCool,omitempty"`               //Regulation Mode (heatCool)
 	Mode                   *string `json:"mode,omitempty"`                   //heat/cold corresponds to HeatCool1
 	CO2                    *int    `json:"co2,omitempty"`                    //CO2 from nanosense
 	COV                    *int    `json:"cov,omitempty"`                    //COV from nanosense
