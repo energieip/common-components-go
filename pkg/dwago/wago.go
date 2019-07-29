@@ -8,17 +8,18 @@ import (
 
 //Wago wago driver representation
 type Wago struct {
-	Mac             string  `json:"mac"`
-	IP              string  `json:"ip"`
-	Protocol        string  `json:"protocol"`
-	Cluster         int     `json:"cluster"`
-	IsConfigured    bool    `json:"isConfigured"`
-	SoftwareVersion float32 `json:"softwareVersion"`
-	HardwareVersion float32 `json:"hardwareVersion"`
-	Error           int     `json:"error"`
-	DumpFrequency   int     `json:"dumpFrequency"`
-	FriendlyName    string  `json:"friendlyName"`
-	Label           *string `json:"label,omitempty"`
+	Mac             string          `json:"mac"`
+	IP              string          `json:"ip"`
+	Protocol        string          `json:"protocol"`
+	Cluster         int             `json:"cluster"`
+	IsConfigured    bool            `json:"isConfigured"`
+	SoftwareVersion float32         `json:"softwareVersion"`
+	HardwareVersion float32         `json:"hardwareVersion"`
+	Error           int             `json:"error"`
+	DumpFrequency   int             `json:"dumpFrequency"`
+	FriendlyName    string          `json:"friendlyName"`
+	CronJobs        []CronJobStatus `json:"cronJobs"`
+	Label           *string         `json:"label,omitempty"`
 }
 
 //WagoSetup initial setup send by the server when the driver is authorized
@@ -56,12 +57,19 @@ type WagoDef struct {
 	CronJobs      []CronJobDef              `json:"cronJobs"`
 	DumpFrequency *int                      `json:"dumpFrequency,omitempty"`
 	Label         *string                   `json:"label,omitempty"`
+	ModbusOffset  *int                      `json:"modbusOffset,omitempty"`
 }
 
 type CronJobDef struct {
 	Group    int    `json:"group"`
 	ModbusID int    `json:"modbusID"`
 	Action   string `json:"action"`
+}
+
+type CronJobStatus struct {
+	Group  int    `json:"group"`
+	Action string `json:"action"`
+	Status int    `json:"status"`
 }
 
 //ToWago convert map interface to wago object
