@@ -74,6 +74,12 @@ func Model2Type(model string) string {
 	if strings.HasPrefix(model, "bld") {
 		return pconst.BLIND
 	}
+	if strings.HasPrefix(model, "blind") {
+		return pconst.BLIND
+	}
+	if strings.HasPrefix(model, "blnd") {
+		return pconst.BLIND
+	}
 	if strings.HasPrefix(model, "eip-cvc") {
 		return pconst.HVAC
 	}
