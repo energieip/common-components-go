@@ -4,6 +4,23 @@ import (
 	"encoding/json"
 )
 
+const (
+	//Regulation Mode (heatCool)
+	HVAC_MODE_AUTO           = 0
+	HVAC_MODE_HEAT           = 1
+	HVAC_MODE_COOL           = 3
+	HVAC_MODE_OFF            = 6
+	HVAC_MODE_TEST           = 7
+	HVAC_MODE_EMERGENCY_HEAT = 8
+
+	//CVC Occupation mode
+	OCCUPANCY_AUTO                = 0
+	OCCUPANCY_COMFORT             = 1
+	OCCUPANCY_STANDBY             = 2
+	OCCUPANCY_ECONOMY             = 3
+	OCCUPANCY_BUILDING_PROTECTION = 4
+)
+
 //Hvac hvac driver representation
 type Hvac struct {
 	Mac                     string  `json:"mac"`
