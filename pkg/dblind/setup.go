@@ -2,7 +2,7 @@ package dblind
 
 //FillDefaultValue fill default parameter for setup
 func FillDefaultValue(cfg BlindSetup) BlindSetup {
-	if cfg.FriendlyName != nil && cfg.Label != nil {
+	if cfg.FriendlyName == nil && cfg.Label != nil {
 		name := *cfg.Label
 		cfg.FriendlyName = &name
 	}
