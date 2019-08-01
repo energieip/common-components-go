@@ -53,6 +53,7 @@ type Hvac struct {
 	TemperatureOffsetStep   int     `json:"temperatureOffsetStep,omitempty"`
 	DumpFrequency           int     `json:"dumpFrequency"`
 	SpaceCOV                int     `json:"spaceCOV"`
+	SpaceHygro              int     `json:"spaceHygro"`
 	FriendlyName            string  `json:"friendlyName"`
 	Label                   *string `json:"label,omitempty"`
 }
