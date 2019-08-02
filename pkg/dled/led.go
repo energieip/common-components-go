@@ -42,7 +42,7 @@ type Led struct {
 	IBeaconMajor      *int    `json:"iBeaconMajor,omitempty"`
 	IBeaconMinor      *int    `json:"iBeaconMinor,omitempty"`
 	IBeaconTxPower    *int    `json:"iBeaconTxPower,omitempty"`
-	PtmMac            string  `json:"ptm_mac"` //In ptm mode it corresponds to the enOcean switch
+	PtmMac            string  `json:"mac_ptm"` //In ptm mode it corresponds to the enOcean switch
 	Label             *string `json:"label,omitempty"`
 }
 
@@ -73,7 +73,7 @@ type LedSetup struct {
 	IBeaconMajor     *int    `json:"iBeaconMajor,omitempty"`
 	IBeaconMinor     *int    `json:"iBeaconMinor,omitempty"`
 	IBeaconTxPower   *int    `json:"iBeaconTxPower,omitempty"`
-	PtmMac           *string `json:"ptm_mac,omitempty"` //In ptm mode it corresponds to the enOcean switch
+	PtmMac           *string `json:"mac_ptm,omitempty"` //In ptm mode it corresponds to the enOcean switch
 	Label            *string `json:"label,omitempty"`
 }
 
@@ -96,7 +96,7 @@ type LedConf struct {
 	SlopeStartAuto   *int    `json:"slopeStartAuto,omitempty"`
 	SlopeStopAuto    *int    `json:"slopeStopAuto,omitempty"`
 	BleMode          *string `json:"bleMode,omitempty"` //bleMode could be: remote/iBeacon/ptm
-	PtmMac           *string `json:"ptm_mac,omitempty"` //In ptm mode it corresponds to the enOcean switch
+	PtmMac           *string `json:"mac_ptm,omitempty"` //In ptm mode it corresponds to the enOcean switch
 	IBeaconUUID      *string `json:"iBeaconUUID,omitempty"`
 	IBeaconMajor     *int    `json:"iBeaconMajor,omitempty"`
 	IBeaconMinor     *int    `json:"iBeaconMinor,omitempty"`
