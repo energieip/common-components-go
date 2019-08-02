@@ -76,6 +76,7 @@ type SensorConf struct {
 	IBeaconMajor               *int    `json:"iBeaconMajor,omitempty"`
 	IBeaconMinor               *int    `json:"iBeaconMinor,omitempty"`
 	IBeaconTxPower             *int    `json:"iBeaconTxPower,omitempty"`
+	PtmMac                     *string `json:"ptmMac,omitempty"` //In ptm mode it corresponds to the enOcean switch
 }
 
 //ToSensor convert interface to Sensor object

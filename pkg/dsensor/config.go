@@ -50,6 +50,10 @@ func UpdateConfig(new SensorConf, old SensorSetup) SensorSetup {
 		setup.BleMode = new.BleMode
 	}
 
+	if new.PtmMac != nil {
+		setup.PtmMac = new.PtmMac
+	}
+
 	if new.Mac != "" {
 		setup.Mac = new.Mac
 	}
