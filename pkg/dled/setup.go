@@ -117,6 +117,9 @@ func UpdateSetup(new LedSetup, old LedSetup) LedSetup {
 	if new.IBeaconUUID != nil {
 		setup.IBeaconUUID = new.IBeaconUUID
 	}
+	if new.PtmMac != nil {
+		setup.PtmMac = new.PtmMac
+	}
 
 	if new.DumpFrequency != 0 {
 		setup.DumpFrequency = new.DumpFrequency

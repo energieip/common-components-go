@@ -66,6 +66,9 @@ func UpdateSetup(new BlindSetup, old BlindSetup) BlindSetup {
 	if new.BleMode != nil {
 		setup.BleMode = new.BleMode
 	}
+	if new.PtmMac != nil {
+		setup.PtmMac = new.PtmMac
+	}
 
 	if new.Mac != "" {
 		setup.Mac = new.Mac
