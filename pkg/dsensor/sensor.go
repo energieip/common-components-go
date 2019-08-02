@@ -30,6 +30,7 @@ type Sensor struct {
 	FriendlyName               string  `json:"friendlyName"`
 	DumpFrequency              int     `json:"dumpFrequency"`
 	BleMode                    string  `json:"bleMode"` //bleMode could be: remote/iBeacon/ptm
+	PtmMac                     string  `json:"ptmMac"`  //In ptm mode it corresponds to the enOcean switch
 	IBeaconUUID                string  `json:"iBeaconUUID"`
 	IBeaconMajor               int     `json:"iBeaconMajor"`
 	IBeaconMinor               int     `json:"iBeaconMinor"`
@@ -51,6 +52,7 @@ type SensorSetup struct {
 	DumpFrequency              int     `json:"dumpFrequency"`
 	Label                      *string `json:"label,omitempty"`
 	BleMode                    *string `json:"bleMode,omitempty"` //bleMode could be: remote/iBeacon/ptm
+	PtmMac                     *string `json:"ptmMac,omitempty"`  //In ptm mode it corresponds to the enOcean switch
 	IBeaconUUID                *string `json:"iBeaconUUID,omitempty"`
 	IBeaconMajor               *int    `json:"iBeaconMajor,omitempty"`
 	IBeaconMinor               *int    `json:"iBeaconMinor,omitempty"`
