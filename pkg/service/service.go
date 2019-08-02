@@ -34,16 +34,17 @@ type Service struct {
 
 //ServiceConfig description
 type ServiceConfig struct {
-	LocalBroker   Broker      `json:"localBroker"`
-	NetworkBroker Broker      `json:"networkBroker"`
-	AuthBroker    Broker      `json:"authBroker"`
-	DB            DBConnector `json:"db"`
-	HistoryDB     DBConnector `json:"historyDb"`
-	LogLevel      string      `json:"logLevel"`
-	ExternalAPI   APIInfo     `json:"externalAPI"`
-	InternalAPI   APIInfo     `json:"internalAPI"`
-	ClientAPI     APIInfo     `json:"clientAPI"`
-	DataPath      string      `json:"dataPath"`
+	LocalBroker     Broker      `json:"localBroker"`
+	NetworkBroker   Broker      `json:"networkBroker"`
+	AuthBroker      Broker      `json:"authBroker"`
+	DB              DBConnector `json:"db"`
+	HistoryDB       DBConnector `json:"historyDb"`
+	LogLevel        string      `json:"logLevel"`
+	ExternalAPI     APIInfo     `json:"externalAPI"`
+	InternalAPI     APIInfo     `json:"internalAPI"`
+	ClientAPI       APIInfo     `json:"clientAPI"`
+	DataPath        string      `json:"dataPath"`
+	ServiceDataPath string      `json:"serviceDataPath"`
 }
 
 //APIInfo api description
