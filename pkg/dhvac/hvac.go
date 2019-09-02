@@ -71,6 +71,21 @@ type HvacSetup struct {
 	SetpointCoolStandby    *int    `json:"setpointCoolStandby,omitempty"`    // 1/10°C
 	SetpointHeatStandby    *int    `json:"setpointHeatStandby,omitempty"`    // 1/10°C
 	TemperatureOffsetStep  *int    `json:"temperatureOffsetStep,omitempty"`
+	TemperatureSelection   *int    `json:"temperatureSelection,omitempty"` //reception mode of the temperature: sensor/network
+	RegulationType         *int    `json:"regulationType,omitempty"`       //regulation type
+	LoopUsed               *int    `json:"loopUsed,omitempty"`             //loop used
+	FanOffDelay            *int    `json:"fanOffDelay,omitempty"`          //ventilation delay on battery after stop
+	FanConfig              *int    `json:"fanConfig,omitempty"`            // Ventilation mode
+	FanMode                *int    `json:"fanMode,omitempty"`              //ventilation speed
+	FanOverride            *int    `json:"fanOverride,omitempty"`          //blowing when regulation is 0
+	OaDamperMode           *int    `json:"oaDamperMode,omitempty"`         // 0-10V register detection
+	CO2Mode                *int    `json:"co2Mode,omitempty"`              //reception mode of the co2: sensor/network
+	CO2Max                 *int    `json:"co2Max,omitempty"`               //max limit in ppm
+	Valve6WayCoolMin       *int    `json:"valve6WayCoolMin,omitempty"`
+	Valve6WayCoolMax       *int    `json:"valve6WayCoolMax,omitempty"`
+	Valve6WayHeatMin       *int    `json:"valve6WayHeatMin,omitempty"`
+	Valve6WayHeatMax       *int    `json:"valve6WayHeatMax,omitempty"`
+	Valve6WayRefPoint      *int    `json:"valve6WayRefPoint,omitempty"`
 	FriendlyName           *string `json:"friendlyName"`
 	IsConfigured           *bool   `json:"isConfigured,omitempty"`
 	Label                  *string `json:"label,omitempty"`
@@ -96,6 +111,21 @@ type HvacConf struct {
 	SetpointCoolStandby    *int    `json:"setpointCoolStandby,omitempty"`    // 1/10°C
 	SetpointHeatStandby    *int    `json:"setpointHeatStandby,omitempty"`    // 1/10°C
 	TemperatureOffsetStep  *int    `json:"temperatureOffsetStep,omitempty"`
+	TemperatureSelection   *int    `json:"temperatureSelection,omitempty"` //reception mode of the temperature: sensor/network
+	RegulationType         *int    `json:"regulationType,omitempty"`       //regulation type
+	LoopUsed               *int    `json:"loopUsed,omitempty"`             //loop used
+	FanOffDelay            *int    `json:"fanOffDelay,omitempty"`          //ventilation delay on battery after stop
+	FanConfig              *int    `json:"fanConfig,omitempty"`            // Ventilation mode
+	FanMode                *int    `json:"fanMode,omitempty"`              //ventilation speed
+	FanOverride            *int    `json:"fanOverride,omitempty"`          //blowing when regulation is 0
+	OaDamperMode           *int    `json:"oaDamperMode,omitempty"`         // 0-10V register detection
+	CO2Mode                *int    `json:"co2Mode,omitempty"`              //reception mode of the co2: sensor/network
+	CO2Max                 *int    `json:"co2Max,omitempty"`               //max limit in ppm
+	Valve6WayCoolMin       *int    `json:"valve6WayCoolMin,omitempty"`
+	Valve6WayCoolMax       *int    `json:"valve6WayCoolMax,omitempty"`
+	Valve6WayHeatMin       *int    `json:"valve6WayHeatMin,omitempty"`
+	Valve6WayHeatMax       *int    `json:"valve6WayHeatMax,omitempty"`
+	Valve6WayRefPoint      *int    `json:"valve6WayRefPoint,omitempty"`
 	FriendlyName           *string `json:"friendlyName"`
 	IsConfigured           *bool   `json:"isConfigured,omitempty"`
 	DumpFrequency          *int    `json:"dumpFrequency"`
