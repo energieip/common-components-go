@@ -25,5 +25,23 @@ func UpdateConfig(new HvacConf, old HvacSetup) HvacSetup {
 	if new.TemperatureOffsetStep != nil {
 		setup.TemperatureOffsetStep = new.TemperatureOffsetStep
 	}
+	if new.SetpointHeatInoccupied != nil {
+		setup.SetpointHeatInoccupied = new.SetpointHeatInoccupied
+	}
+	if new.SetpointHeatOccupied != nil {
+		setup.SetpointHeatOccupied = new.SetpointHeatOccupied
+	}
+	if new.SetpointCoolOccupied != nil {
+		setup.SetpointCoolOccupied = new.SetpointCoolOccupied
+	}
+	if new.SetpointCoolInoccupied != nil {
+		setup.SetpointCoolInoccupied = new.SetpointCoolInoccupied
+	}
+	if new.SetpointCoolStandby != nil {
+		setup.SetpointCoolStandby = new.SetpointCoolStandby
+	}
+	if new.SetpointHeatStandby != nil {
+		setup.SetpointHeatStandby = new.SetpointHeatStandby
+	}
 	return setup
 }

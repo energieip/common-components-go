@@ -17,6 +17,36 @@ func FillDefaultValue(cfg HvacSetup) HvacSetup {
 		defaultStep := 5 //It corresponds to 0.5°C
 		cfg.TemperatureOffsetStep = &defaultStep
 	}
+	if cfg.SetpointCoolInoccupied == nil {
+		defaultCI := 300
+		cfg.SetpointCoolInoccupied = &defaultCI
+	}
+
+	if cfg.SetpointCoolOccupied != nil {
+		defaultCO := 190
+		cfg.SetpointCoolOccupied = &defaultCO
+	}
+
+	if cfg.SetpointCoolStandby == nil {
+		defaultCS := 280
+		cfg.SetpointCoolStandby = &defaultCS
+	}
+
+	if cfg.SetpointHeatStandby == nil {
+		defaultHS := 170
+		cfg.SetpointHeatStandby = &defaultHS
+	}
+
+	if cfg.SetpointHeatInoccupied == nil {
+		defaultHI := 150
+		cfg.SetpointHeatInoccupied = &defaultHI
+	}
+
+	if cfg.SetpointHeatOccupied == nil {
+		defaultHO := 260
+		cfg.SetpointHeatOccupied = &defaultHO
+	}
+
 	return cfg
 }
 
@@ -40,6 +70,30 @@ func UpdateSetup(new HvacSetup, old HvacSetup) HvacSetup {
 
 	if new.Mac != "" {
 		setup.Mac = new.Mac
+	}
+
+	if new.SetpointCoolInoccupied != nil {
+		setup.SetpointCoolInoccupied = new.SetpointCoolInoccupied
+	}
+
+	if new.SetpointCoolOccupied != nil {
+		setup.SetpointCoolOccupied = new.SetpointCoolOccupied
+	}
+
+	if new.SetpointCoolStandby != nil {
+		setup.SetpointCoolStandby = new.SetpointCoolStandby
+	}
+
+	if new.SetpointHeatStandby != nil {
+		setup.SetpointHeatStandby = new.SetpointHeatStandby
+	}
+
+	if new.SetpointHeatInoccupied != nil {
+		setup.SetpointHeatInoccupied = new.SetpointHeatInoccupied
+	}
+
+	if new.SetpointHeatOccupied != nil {
+		setup.SetpointHeatOccupied = new.SetpointHeatOccupied
 	}
 
 	if new.TemperatureOffsetStep != nil {
