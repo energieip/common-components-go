@@ -100,6 +100,13 @@ type SwitchDefinition struct {
 	EnergyHvacs           int64   `json:"energyHvacs"`
 }
 
+type SwitchConsumptions struct {
+	TotalPower    int `json:"totalPower"`
+	LightingPower int `json:"lightningPower"`
+	BlindPower    int `json:"blindPower"`
+	HvacPower     int `json:"hvacPower"`
+}
+
 //ToSwitchDefinition convert map interface to Switch object
 func ToSwitchDefinition(val interface{}) (*SwitchDefinition, error) {
 	var sw SwitchDefinition
