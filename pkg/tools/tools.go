@@ -83,6 +83,12 @@ func Model2Type(model string) string {
 	if strings.HasPrefix(model, "eip-cvc") {
 		return pconst.HVAC
 	}
+	if strings.HasPrefix(model, "cvc") {
+		return pconst.HVAC
+	}
+	if strings.HasPrefix(model, "hvac") {
+		return pconst.HVAC
+	}
 	if strings.HasPrefix(model, "mca") {
 		return pconst.SENSOR
 	}

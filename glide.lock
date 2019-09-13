@@ -1,46 +1,45 @@
 hash: 89054e5a24f1f42e911f9fb9b6f85ea7af55ee5c90c00662b2962f9b7df49257
-updated: 2019-01-14T17:08:07.610470441+01:00
+updated: 2019-09-04T09:48:11.630271948+02:00
 imports:
 - name: github.com/cenkalti/backoff
-  version: 1e4cf3da559842a91afcb6ea6141451e6c30c618
+  version: 2146c93394225c3732078705043ce9f26584d334
 - name: github.com/eclipse/paho.mqtt.golang
-  version: 379fd9f99ba5b1f02c9fffb5e5952416ef9301dc
+  version: 2e9e43b5d02b38840f73bf795ddc8a266a10bf53
   subpackages:
   - packets
 - name: github.com/golang/protobuf
-  version: 347cf4a86c1cb8d262994d8ef5924d4576c5b331
+  version: 822fe56949f5d56c9e2f02367c657e0e9b4d27d1
   subpackages:
   - proto
+- name: github.com/gorilla/websocket
+  version: c3e18be99d19e6b3e8f1559eea2c161a665c4b6b
 - name: github.com/hailocab/go-hostpool
   version: e80d13ce29ede4452c43dea11e79b9bc8a15b478
 - name: github.com/konsorten/go-windows-terminal-sequences
-  version: 5c8c8bd35d3832f5d134ae1e1e375b69a4d25242
+  version: f55edac94c9bbba5d6182a4be46d86a2c9b5b50e
 - name: github.com/opentracing/opentracing-go
-  version: 8b5a441dc60e8d9bb9bf9d22060b6d94fa599983
+  version: 94e0bdd2b1d9c6803a9729f999cdaed72f5a361d
   subpackages:
   - ext
   - log
 - name: github.com/romana/rlog
   version: f018bc92e7d71f27c04e04cbf008860416c21d01
 - name: github.com/sirupsen/logrus
-  version: 78fb3852d92683dc28da6cc3d5f965100677c27d
+  version: de736cf91b921d56253b4010270681d33fdf7cb5
 - name: golang.org/x/crypto
-  version: ff983b9c42bc9fbf91556e191cc8efb585c16908
+  version: 9756ffdc24725223350eb3266ffb92590d28f278
   subpackages:
   - pbkdf2
-  - ssh/terminal
 - name: golang.org/x/net
-  version: 915654e7eabcea33ae277abbecf52f0d8b7a9fdc
+  version: ba9fcec4b297b415637633c5a6e8fa592e4a16c3
   subpackages:
   - context
   - internal/socks
   - proxy
-  - websocket
 - name: golang.org/x/sys
-  version: 2be51725563103c17124a318f1745b66f2347acb
+  version: 43c01164e93111c754a278ab423ba01063c44917
   subpackages:
   - unix
-  - windows
 - name: gopkg.in/fatih/pool.v2
   version: 010e0b745d12eaf8426c95f9c3924d81dd0b668f
 - name: gopkg.in/rethinkdb/rethinkdb-go.v5
