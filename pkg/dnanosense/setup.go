@@ -19,5 +19,11 @@ func UpdateSetup(new NanosenseSetup, old NanosenseSetup) NanosenseSetup {
 	if len(new.API) != 0 {
 		setup.API = new.API
 	}
+	setup.Group = new.Group
+	setup.Cluster = new.Cluster
+	setup.ModbusOffset = new.ModbusOffset
+	if new.IP != nil {
+		setup.IP = new.IP
+	}
 	return setup
 }
