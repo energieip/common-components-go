@@ -23,6 +23,12 @@ func FillDefaultValue(cfg SensorSetup) SensorSetup {
 		defaultValue := 1
 		cfg.BrightnessCorrectionFactor = &defaultValue
 	}
+
+	if cfg.BrightnessCorrectionOffset == nil {
+		defaultValue := 0
+		cfg.BrightnessCorrectionOffset = &defaultValue
+	}
+
 	if cfg.DumpFrequency == 0 {
 		cfg.DumpFrequency = 1000
 	}
@@ -42,6 +48,10 @@ func UpdateSetup(new SensorSetup, old SensorSetup) SensorSetup {
 	setup := old
 	if new.BrightnessCorrectionFactor != nil {
 		setup.BrightnessCorrectionFactor = new.BrightnessCorrectionFactor
+	}
+
+	if new.BrightnessCorrectionOffset != nil {
+		setup.BrightnessCorrectionOffset = new.BrightnessCorrectionOffset
 	}
 
 	if new.FriendlyName != nil {

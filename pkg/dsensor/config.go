@@ -6,6 +6,10 @@ func UpdateConfig(new SensorConf, old SensorSetup) SensorSetup {
 		setup.BrightnessCorrectionFactor = new.BrightnessCorrectionFactor
 	}
 
+	if new.BrightnessCorrectionOffset != nil {
+		setup.BrightnessCorrectionOffset = new.BrightnessCorrectionOffset
+	}
+
 	if new.FriendlyName != nil {
 		setup.FriendlyName = new.FriendlyName
 	}
