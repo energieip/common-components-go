@@ -86,7 +86,7 @@ type HvacSetup struct {
 	Valve6WayHeatMin       *int    `json:"valve6WayHeatMin,omitempty"`
 	Valve6WayHeatMax       *int    `json:"valve6WayHeatMax,omitempty"`
 	Valve6WayRefPoint      *int    `json:"valve6WayRefPoint,omitempty"`
-	FriendlyName           *string `json:"friendlyName"`
+	FriendlyName           *string `json:"friendlyName,omitempty"`
 	IsConfigured           *bool   `json:"isConfigured,omitempty"`
 	Label                  *string `json:"label,omitempty"`
 }
@@ -101,7 +101,7 @@ type HvacConf struct {
 	Hygrometry             *int    `json:"hygrometry,omitempty"`             // % from nanosense device
 	Presence               *bool   `json:"presence,omitempty"`               //corresponds to oCCManCmd1
 	HeatCool               *int    `json:"heatCool,omitempty"`               //Regulation Mode (heatCool)
-	Mode                   *string `json:"mode,omitempty"`                   //heat/cold corresponds to HeatCool1
+	TargetMode             *int    `json:"targetMode,omitempty"`             //TargetMode
 	CO2                    *int    `json:"co2,omitempty"`                    //CO2 from nanosense
 	COV                    *int    `json:"cov,omitempty"`                    //COV from nanosense
 	SetpointCoolOccupied   *int    `json:"setpointCoolOccupied,omitempty"`   // 1/10°C
