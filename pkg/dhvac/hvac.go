@@ -32,12 +32,13 @@ type Hvac struct {
 	SoftwareVersion         string  `json:"softwareVersion"`
 	Error                   int     `json:"error"`
 	LinePower               int     `json:"linePower"`
-	HoldOff1                int     `json:"holdOff1"`   //window open in the group
-	SpaceTemp1              int     `json:"spaceTemp1"` //nanosense temperature
-	OccManCmd1              int     `json:"occManCmd1"` //occupied/inoccupied from sensor
-	Shift                   int     `json:"shift"`      //temperature shift (in 1/10°C)
-	HeatCool1               int     `json:"heatCool1"`  //pcVue control for heat/cool mode
-	DewSensor1              int     `json:"dewSensor1"` //humidity contact
+	HoldOff1                int     `json:"holdOff1"`             //window open in the group
+	SpaceTemp1              int     `json:"spaceTemp1"`           //nanosense temperature
+	OccManCmd1              int     `json:"occManCmd1"`           //occupied/inoccupied from sensor
+	Shift                   int     `json:"shift"`                //temperature shift (in 1/10°C)
+	HeatCool1               int     `json:"heatCool1"`            //pcVue control for heat/cool mode
+	TargetMode              int     `json:"targetMode,omitempty"` //TargetMode
+	DewSensor1              int     `json:"dewSensor1"`           //humidity contact
 	SpaceCO2                int     `json:"spaceCO2"`
 	TemperatureSelect       int     `json:"temperatureSelect"`       //target temperature
 	SetpointOccupiedCool1   int     `json:"setpointOccupiedCool1"`   // 1/10°C
@@ -81,6 +82,7 @@ type HvacSetup struct {
 	OaDamperMode           *int    `json:"oaDamperMode,omitempty"`         // 0-10V register detection
 	CO2Mode                *int    `json:"co2Mode,omitempty"`              //reception mode of the co2: sensor/network
 	CO2Max                 *int    `json:"co2Max,omitempty"`               //max limit in ppm
+	TargetMode             *int    `json:"targetMode,omitempty"`           //TargetMode
 	Valve6WayCoolMin       *int    `json:"valve6WayCoolMin,omitempty"`
 	Valve6WayCoolMax       *int    `json:"valve6WayCoolMax,omitempty"`
 	Valve6WayHeatMin       *int    `json:"valve6WayHeatMin,omitempty"`
