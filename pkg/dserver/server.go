@@ -57,9 +57,9 @@ type DumpBlind struct {
 
 //DumpHvac
 type DumpHvac struct {
-	Ifc    IfcInfo        `json:"ifc"`
-	Status dhvac.Hvac     `json:"status"`
-	Config dhvac.HvacConf `json:"config"`
+	Ifc    IfcInfo         `json:"ifc"`
+	Status dhvac.Hvac      `json:"status"`
+	Config dhvac.HvacSetup `json:"config"`
 }
 
 //DumpLed
