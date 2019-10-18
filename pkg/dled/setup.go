@@ -142,7 +142,7 @@ func UpdateSetup(new LedSetup, old LedSetup) LedSetup {
 	}
 
 	if new.SwitchMac != "" {
-		setup.SwitchMac = new.Mac
+		setup.SwitchMac = new.SwitchMac
 	}
 
 	if new.FirstDay != nil {
