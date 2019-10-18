@@ -21,7 +21,7 @@ func UpdateSetup(new NanosenseSetup, old NanosenseSetup) NanosenseSetup {
 	}
 	setup.Group = new.Group
 	setup.Cluster = new.Cluster
-	setup.ModbusOffset = new.ModbusOffset
+	setup.ModbusID = new.ModbusID
 	if new.IP != nil {
 		setup.IP = new.IP
 	}

@@ -13,8 +13,8 @@ func UpdateConfig(new NanosenseConf, old NanosenseSetup) NanosenseSetup {
 		setup.Group = *new.Group
 	}
 
-	if new.ModbusOffset != nil {
-		setup.ModbusOffset = *new.ModbusOffset
+	if new.ModbusID != nil {
+		setup.ModbusID = *new.ModbusID
 	}
 	return setup
 }

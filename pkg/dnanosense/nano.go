@@ -6,7 +6,7 @@ import (
 
 //Nanosense driver representation
 type Nanosense struct {
-	Mac           string `json:"mac"` // Wago.MAC + "." + modbusOffset
+	Mac           string `json:"mac"` // Wago.MAC + "." + modbusID
 	IP            string `json:"ip"`
 	Group         int    `json:"group"`
 	Cluster       int    `json:"cluster"`
@@ -22,7 +22,7 @@ type Nanosense struct {
 
 //NanosenseSetup initial setup send by the server when the driver is authorized
 type NanosenseSetup struct {
-	Mac          string            `json:"mac"` // Wago.MAC + "." + modbusOffset
+	Mac          string            `json:"mac"` // Wago.MAC + "." + modbusID
 	IP           *string           `json:"ip,omitempty"`
 	Cluster      int               `json:"cluster"`
 	Group        int               `json:"group"`
@@ -30,23 +30,23 @@ type NanosenseSetup struct {
 	Label        string            `json:"label"`
 	APIType      string            `json:"apiType"`
 	API          map[string]string `json:"api"`
-	ModbusOffset int               `json:"modbusOffset"`
+	ModbusID     int               `json:"modbusID"`
 }
 
 //NanosenseConf customizable configuration by the server
 type NanosenseConf struct {
-	Mac          string  `json:"mac"` // Wago.MAC + "." + modbusOffset
+	Mac          string  `json:"mac"` // Wago.MAC + "." + modbusID
 	IP           *string `json:"ip,omitempty"`
 	Cluster      *int    `json:"cluster,omitempty"`
 	Group        *int    `json:"group,omitempty"`
 	FriendlyName *string `json:"friendlyName,omitempty"`
 	Label        string  `json:"label"`
-	ModbusOffset *int    `json:"modbusOffset,omitempty"`
+	ModbusID     *int    `json:"modbusID,omitempty"`
 }
 
 //NanosenseDef customizable configuration by the server
 type NanosenseDef struct {
-	Mac          string `json:"mac"` // Wago.MAC + "." + modbusOffset
+	Mac          string `json:"mac"` // Wago.MAC + "." + modbusID
 	Group        int    `json:"group"`
 	Cluster      int    `json:"cluster"`
 	FriendlyName string `json:"friendlyName"`
