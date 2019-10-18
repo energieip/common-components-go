@@ -208,5 +208,9 @@ func UpdateSetup(new HvacSetup, old HvacSetup) HvacSetup {
 		setup.Valve6WayRefPoint = new.Valve6WayRefPoint
 	}
 
+	if new.SwitchMac != "" {
+		setup.SwitchMac = new.SwitchMac
+	}
+
 	return setup
 }

@@ -74,5 +74,9 @@ func UpdateSetup(new BlindSetup, old BlindSetup) BlindSetup {
 		setup.Mac = new.Mac
 	}
 
+	if new.SwitchMac != "" {
+		setup.SwitchMac = new.SwitchMac
+	}
+
 	return setup
 }

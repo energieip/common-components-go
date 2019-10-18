@@ -110,5 +110,8 @@ func UpdateSetup(new SensorSetup, old SensorSetup) SensorSetup {
 		setup.Mac = new.Mac
 	}
 
+	if new.SwitchMac != "" {
+		setup.SwitchMac = new.SwitchMac
+	}
 	return setup
 }
