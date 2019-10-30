@@ -32,13 +32,13 @@ type Hvac struct {
 	SoftwareVersion         string  `json:"softwareVersion"`
 	Error                   int     `json:"error"`
 	LinePower               int     `json:"linePower"`
-	HoldOff1                int     `json:"holdOff1"`             //window open in the group
-	SpaceTemp1              int     `json:"spaceTemp1"`           //nanosense temperature
-	OccManCmd1              int     `json:"occManCmd1"`           //occupied/inoccupied from sensor
-	Shift                   int     `json:"shift"`                //temperature shift (in 1/10°C)
-	HeatCool1               int     `json:"heatCool1"`            //pcVue control for heat/cool mode
-	TargetMode              int     `json:"targetMode,omitempty"` //TargetMode
-	DewSensor1              int     `json:"dewSensor1"`           //humidity contact
+	HoldOff1                int     `json:"holdOff1"`   //window open in the group
+	SpaceTemp1              int     `json:"spaceTemp1"` //nanosense temperature
+	OccManCmd1              int     `json:"occManCmd1"` //occupied/inoccupied from sensor
+	Shift                   int     `json:"shift"`      //temperature shift (in 1/10°C)
+	HeatCool1               int     `json:"heatCool1"`  //pcVue control for heat/cool mode
+	TargetMode              int     `json:"targetMode"` //TargetMode
+	DewSensor1              int     `json:"dewSensor1"` //humidity contact
 	SpaceCO2                int     `json:"spaceCO2"`
 	TemperatureSelect       int     `json:"temperatureSelect"`       //target temperature
 	SetpointOccupiedCool1   int     `json:"setpointOccupiedCool1"`   // 1/10°C
@@ -51,7 +51,21 @@ type Hvac struct {
 	HeatOutput1             int     `json:"heatOutput1"`             //?
 	CoolOutput1             int     `json:"coolOutput1"`             //?
 	OADamper                int     `json:"oaDamper"`                //opening damper percentage
-	TemperatureOffsetStep   int     `json:"temperatureOffsetStep,omitempty"`
+	InputE1                 int     `json:"inputE1"`
+	InputE2                 int     `json:"inputE2"`
+	InputE3                 int     `json:"inputE3"`
+	InputE4                 int     `json:"inputE4"`
+	InputE5                 int     `json:"inputE5"`
+	InputE6                 int     `json:"inputE6"`
+	InputC1                 int     `json:"inputC1"`
+	InputC2                 int     `json:"inputC2"`
+	OutputY5                int     `json:"outputY5"`
+	OutputY6                int     `json:"outputY6"`
+	OutputY7                int     `json:"outputY7"`
+	OutputY8                int     `json:"outputY8"`
+	OutputYa                int     `json:"outputYa"`
+	OutputYb                int     `json:"outputYb"`
+	TemperatureOffsetStep   int     `json:"temperatureOffsetStep"`
 	DumpFrequency           int     `json:"dumpFrequency"`
 	SpaceCOV                int     `json:"spaceCOV"`
 	SpaceHygro              int     `json:"spaceHygro"`
@@ -71,6 +85,20 @@ type HvacSetup struct {
 	SetpointHeatInoccupied *int    `json:"setpointHeatInoccupied,omitempty"` // 1/10°C
 	SetpointCoolStandby    *int    `json:"setpointCoolStandby,omitempty"`    // 1/10°C
 	SetpointHeatStandby    *int    `json:"setpointHeatStandby,omitempty"`    // 1/10°C
+	InputE1                *int    `json:"inputE1,omitempty"`
+	InputE2                *int    `json:"inputE2,omitempty"`
+	InputE3                *int    `json:"inputE3,omitempty"`
+	InputE4                *int    `json:"inputE4,omitempty"`
+	InputE5                *int    `json:"inputE5,omitempty"`
+	InputE6                *int    `json:"inputE6,omitempty"`
+	InputC1                *int    `json:"inputC1,omitempty"`
+	InputC2                *int    `json:"inputC2,omitempty"`
+	OutputY5               *int    `json:"outputY5,omitempty"`
+	OutputY6               *int    `json:"outputY6,omitempty"`
+	OutputY7               *int    `json:"outputY7,omitempty"`
+	OutputY8               *int    `json:"outputY8,omitempty"`
+	OutputYa               *int    `json:"outputYa,omitempty"`
+	OutputYb               *int    `json:"outputYb,omitempty"`
 	TemperatureOffsetStep  *int    `json:"temperatureOffsetStep,omitempty"`
 	TemperatureSelection   *int    `json:"temperatureSelection,omitempty"` //reception mode of the temperature: sensor/network
 	RegulationType         *int    `json:"regulationType,omitempty"`       //regulation type
@@ -112,6 +140,20 @@ type HvacConf struct {
 	SetpointHeatInoccupied *int    `json:"setpointHeatInoccupied,omitempty"` // 1/10°C
 	SetpointCoolStandby    *int    `json:"setpointCoolStandby,omitempty"`    // 1/10°C
 	SetpointHeatStandby    *int    `json:"setpointHeatStandby,omitempty"`    // 1/10°C
+	InputE1                *int    `json:"inputE1,omitempty"`
+	InputE2                *int    `json:"inputE2,omitempty"`
+	InputE3                *int    `json:"inputE3,omitempty"`
+	InputE4                *int    `json:"inputE4,omitempty"`
+	InputE5                *int    `json:"inputE5,omitempty"`
+	InputE6                *int    `json:"inputE6,omitempty"`
+	InputC1                *int    `json:"inputC1,omitempty"`
+	InputC2                *int    `json:"inputC2,omitempty"`
+	OutputY5               *int    `json:"outputY5,omitempty"`
+	OutputY6               *int    `json:"outputY6,omitempty"`
+	OutputY7               *int    `json:"outputY7,omitempty"`
+	OutputY8               *int    `json:"outputY8,omitempty"`
+	OutputYa               *int    `json:"outputYa,omitempty"`
+	OutputYb               *int    `json:"outputYb,omitempty"`
 	TemperatureOffsetStep  *int    `json:"temperatureOffsetStep,omitempty"`
 	TemperatureSelection   *int    `json:"temperatureSelection,omitempty"` //reception mode of the temperature: sensor/network
 	RegulationType         *int    `json:"regulationType,omitempty"`       //regulation type

@@ -43,6 +43,48 @@ func UpdateConfig(new HvacConf, old HvacSetup) HvacSetup {
 	if new.SetpointHeatStandby != nil {
 		setup.SetpointHeatStandby = new.SetpointHeatStandby
 	}
+	if new.InputE1 != nil {
+		setup.InputE1 = new.InputE1
+	}
+	if new.InputE2 != nil {
+		setup.InputE2 = new.InputE2
+	}
+	if new.InputE3 != nil {
+		setup.InputE3 = new.InputE3
+	}
+	if new.InputE4 != nil {
+		setup.InputE4 = new.InputE4
+	}
+	if new.InputE5 != nil {
+		setup.InputE5 = new.InputE5
+	}
+	if new.InputE6 != nil {
+		setup.InputE6 = new.InputE6
+	}
+	if new.InputC1 != nil {
+		setup.InputC1 = new.InputC1
+	}
+	if new.InputC2 != nil {
+		setup.InputC2 = new.InputC2
+	}
+	if new.OutputY5 != nil {
+		setup.OutputY5 = new.OutputY5
+	}
+	if new.OutputY6 != nil {
+		setup.OutputY6 = new.OutputY6
+	}
+	if new.OutputY7 != nil {
+		setup.OutputY7 = new.OutputY7
+	}
+	if new.OutputY8 != nil {
+		setup.OutputY8 = new.OutputY8
+	}
+	if new.OutputYa != nil {
+		setup.OutputYa = new.OutputYa
+	}
+	if new.OutputYb != nil {
+		setup.OutputYb = new.OutputYb
+	}
 
 	if new.TemperatureSelection != nil {
 		setup.TemperatureSelection = new.TemperatureSelection
