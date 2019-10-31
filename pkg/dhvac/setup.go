@@ -22,7 +22,7 @@ func FillDefaultValue(cfg HvacSetup) HvacSetup {
 		cfg.SetpointCoolInoccupied = &defaultCI
 	}
 
-	if cfg.SetpointCoolOccupied != nil {
+	if cfg.SetpointCoolOccupied == nil {
 		defaultCO := 190
 		cfg.SetpointCoolOccupied = &defaultCO
 	}
