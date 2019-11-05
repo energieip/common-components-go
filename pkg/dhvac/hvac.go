@@ -111,11 +111,6 @@ type HvacSetup struct {
 	CO2Mode                *int    `json:"co2Mode,omitempty"`              //reception mode of the co2: sensor/network
 	CO2Max                 *int    `json:"co2Max,omitempty"`               //max limit in ppm
 	TargetMode             *int    `json:"targetMode,omitempty"`           //TargetMode
-	Valve6WayCoolMin       *int    `json:"valve6WayCoolMin,omitempty"`
-	Valve6WayCoolMax       *int    `json:"valve6WayCoolMax,omitempty"`
-	Valve6WayHeatMin       *int    `json:"valve6WayHeatMin,omitempty"`
-	Valve6WayHeatMax       *int    `json:"valve6WayHeatMax,omitempty"`
-	Valve6WayRefPoint      *int    `json:"valve6WayRefPoint,omitempty"`
 	FriendlyName           *string `json:"friendlyName,omitempty"`
 	IsConfigured           *bool   `json:"isConfigured,omitempty"`
 	Label                  *string `json:"label,omitempty"`
@@ -165,11 +160,6 @@ type HvacConf struct {
 	OaDamperMode           *int    `json:"oaDamperMode,omitempty"`         // 0-10V register detection
 	CO2Mode                *int    `json:"co2Mode,omitempty"`              //reception mode of the co2: sensor/network
 	CO2Max                 *int    `json:"co2Max,omitempty"`               //max limit in ppm
-	Valve6WayCoolMin       *int    `json:"valve6WayCoolMin,omitempty"`
-	Valve6WayCoolMax       *int    `json:"valve6WayCoolMax,omitempty"`
-	Valve6WayHeatMin       *int    `json:"valve6WayHeatMin,omitempty"`
-	Valve6WayHeatMax       *int    `json:"valve6WayHeatMax,omitempty"`
-	Valve6WayRefPoint      *int    `json:"valve6WayRefPoint,omitempty"`
 	FriendlyName           *string `json:"friendlyName"`
 	IsConfigured           *bool   `json:"isConfigured,omitempty"`
 	DumpFrequency          *int    `json:"dumpFrequency"`

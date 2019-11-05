@@ -119,21 +119,6 @@ func UpdateConfig(new HvacConf, old HvacSetup) HvacSetup {
 	if new.CO2Max != nil {
 		setup.CO2Max = new.CO2Max
 	}
-	if new.Valve6WayCoolMin != nil {
-		setup.Valve6WayCoolMin = new.Valve6WayCoolMin
-	}
-	if new.Valve6WayCoolMax != nil {
-		setup.Valve6WayCoolMax = new.Valve6WayCoolMax
-	}
-	if new.Valve6WayHeatMin != nil {
-		setup.Valve6WayHeatMin = new.Valve6WayHeatMin
-	}
-	if new.Valve6WayHeatMax != nil {
-		setup.Valve6WayHeatMax = new.Valve6WayHeatMax
-	}
-	if new.Valve6WayRefPoint != nil {
-		setup.Valve6WayRefPoint = new.Valve6WayRefPoint
-	}
 
 	return setup
 }

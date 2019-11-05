@@ -90,22 +90,6 @@ func FillDefaultValue(cfg HvacSetup) HvacSetup {
 		co2Max := 5000
 		cfg.CO2Max = &co2Max
 	}
-	defaultV := 0
-	if cfg.Valve6WayCoolMin == nil {
-		cfg.Valve6WayCoolMin = &defaultV
-	}
-	if cfg.Valve6WayCoolMax == nil {
-		cfg.Valve6WayCoolMax = &defaultV
-	}
-	if cfg.Valve6WayHeatMin == nil {
-		cfg.Valve6WayHeatMin = &defaultV
-	}
-	if cfg.Valve6WayHeatMax == nil {
-		cfg.Valve6WayHeatMax = &defaultV
-	}
-	if cfg.Valve6WayRefPoint == nil {
-		cfg.Valve6WayRefPoint = &defaultV
-	}
 
 	return cfg
 }
@@ -191,21 +175,6 @@ func UpdateSetup(new HvacSetup, old HvacSetup) HvacSetup {
 
 	if new.CO2Max != nil {
 		setup.CO2Max = new.CO2Max
-	}
-	if new.Valve6WayCoolMin != nil {
-		setup.Valve6WayCoolMin = new.Valve6WayCoolMin
-	}
-	if new.Valve6WayCoolMax != nil {
-		setup.Valve6WayCoolMax = new.Valve6WayCoolMax
-	}
-	if new.Valve6WayHeatMin != nil {
-		setup.Valve6WayHeatMin = new.Valve6WayHeatMin
-	}
-	if new.Valve6WayHeatMax != nil {
-		setup.Valve6WayHeatMax = new.Valve6WayHeatMax
-	}
-	if new.Valve6WayRefPoint != nil {
-		setup.Valve6WayRefPoint = new.Valve6WayRefPoint
 	}
 
 	if new.InputE1 != nil {
