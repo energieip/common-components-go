@@ -20,12 +20,12 @@ func FillDefaultValue(cfg SensorSetup) SensorSetup {
 	}
 
 	if cfg.BrightnessCorrectionFactor == nil {
-		defaultValue := 1
+		defaultValue := float32(1)
 		cfg.BrightnessCorrectionFactor = &defaultValue
 	}
 
 	if cfg.BrightnessCorrectionOffset == nil {
-		defaultValue := 0
+		defaultValue := float32(0)
 		cfg.BrightnessCorrectionOffset = &defaultValue
 	}
 

@@ -62,5 +62,13 @@ func UpdateConfig(new SensorConf, old SensorSetup) SensorSetup {
 		setup.Mac = new.Mac
 	}
 
+	if new.BrightnessCorrectionFactor != nil {
+		setup.BrightnessCorrectionFactor = new.BrightnessCorrectionFactor
+	}
+
+	if new.BrightnessCorrectionOffset != nil {
+		setup.BrightnessCorrectionOffset = new.BrightnessCorrectionOffset
+	}
+
 	return setup
 }

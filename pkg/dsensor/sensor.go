@@ -20,8 +20,8 @@ type Sensor struct {
 	Error                      int     `json:"error"`
 	Brightness                 int     `json:"brightness"`
 	Presence                   bool    `json:"presence"`
-	BrightnessCorrectionFactor int     `json:"brightnessCorrectionFactor"`
-	BrightnessCorrectionOffset int     `json:"brightnessCorrectionOffset"`
+	BrightnessCorrectionFactor float32 `json:"brightnessCorrectionFactor"`
+	BrightnessCorrectionOffset float32 `json:"brightnessCorrectionOffset"`
 	ThresholdPresence          int     `json:"thresholdPresence"`
 	TemperatureOffset          int     `json:"temperatureOffset"`
 	BrightnessRaw              int     `json:"brightnessRaw"`
@@ -41,45 +41,45 @@ type Sensor struct {
 
 //SensorSetup initial setup send by the server when the driver is authorized
 type SensorSetup struct {
-	Mac                        string  `json:"mac"`
-	Group                      *int    `json:"group,omitempty"`
-	BrightnessCorrectionFactor *int    `json:"brightnessCorrectionFactor,omitempty"`
-	BrightnessCorrectionOffset *int    `json:"brightnessCorrectionOffset,omitempty"`
-	ThresholdPresence          *int    `json:"thresholdPresence,omitempty"`
-	TemperatureOffset          *int    `json:"temperatureOffset,omitempty"`
-	IsBleEnabled               *bool   `json:"isBleEnabled,omitempty"`
-	FriendlyName               *string `json:"friendlyName,omitempty"`
-	SwitchMac                  string  `json:"switchMac"`
-	IsConfigured               *bool   `json:"isConfigured,omitempty"`
-	DumpFrequency              int     `json:"dumpFrequency"`
-	Label                      *string `json:"label,omitempty"`
-	BleMode                    *string `json:"bleMode,omitempty"` //bleMode could be: remote/iBeacon/ptm
-	PtmMac                     *string `json:"mac_ptm,omitempty"` //In ptm mode it corresponds to the enOcean switch
-	IBeaconUUID                *string `json:"iBeaconUUID,omitempty"`
-	IBeaconMajor               *int    `json:"iBeaconMajor,omitempty"`
-	IBeaconMinor               *int    `json:"iBeaconMinor,omitempty"`
-	IBeaconTxPower             *int    `json:"iBeaconTxPower,omitempty"`
+	Mac                        string   `json:"mac"`
+	Group                      *int     `json:"group,omitempty"`
+	BrightnessCorrectionFactor *float32 `json:"brightnessCorrectionFactor,omitempty"`
+	BrightnessCorrectionOffset *float32 `json:"brightnessCorrectionOffset,omitempty"`
+	ThresholdPresence          *int     `json:"thresholdPresence,omitempty"`
+	TemperatureOffset          *int     `json:"temperatureOffset,omitempty"`
+	IsBleEnabled               *bool    `json:"isBleEnabled,omitempty"`
+	FriendlyName               *string  `json:"friendlyName,omitempty"`
+	SwitchMac                  string   `json:"switchMac"`
+	IsConfigured               *bool    `json:"isConfigured,omitempty"`
+	DumpFrequency              int      `json:"dumpFrequency"`
+	Label                      *string  `json:"label,omitempty"`
+	BleMode                    *string  `json:"bleMode,omitempty"` //bleMode could be: remote/iBeacon/ptm
+	PtmMac                     *string  `json:"mac_ptm,omitempty"` //In ptm mode it corresponds to the enOcean switch
+	IBeaconUUID                *string  `json:"iBeaconUUID,omitempty"`
+	IBeaconMajor               *int     `json:"iBeaconMajor,omitempty"`
+	IBeaconMinor               *int     `json:"iBeaconMinor,omitempty"`
+	IBeaconTxPower             *int     `json:"iBeaconTxPower,omitempty"`
 }
 
 //SensorConf customizable configuration by the server
 type SensorConf struct {
-	Mac                        string  `json:"mac"`
-	Group                      *int    `json:"group,omitempty"`
-	BrightnessCorrectionFactor *int    `json:"brightnessCorrectionFactor,omitempty"`
-	BrightnessCorrectionOffset *int    `json:"brightnessCorrectionOffset,omitempty"`
-	IsConfigured               *bool   `json:"isConfigured,omitempty"`
-	ThresholdPresence          *int    `json:"thresholdPresence,omitempty"`
-	TemperatureOffset          *int    `json:"temperatureOffset,omitempty"`
-	IsBleEnabled               *bool   `json:"isBleEnabled,omitempty"`
-	FriendlyName               *string `json:"friendlyName,omitempty"`
-	DumpFrequency              *int    `json:"dumpFrequency,omitempty"`
-	Label                      *string `json:"label,omitempty"`
-	BleMode                    *string `json:"bleMode,omitempty"` //bleMode could be: remote/iBeacon/ptm
-	IBeaconUUID                *string `json:"iBeaconUUID,omitempty"`
-	IBeaconMajor               *int    `json:"iBeaconMajor,omitempty"`
-	IBeaconMinor               *int    `json:"iBeaconMinor,omitempty"`
-	IBeaconTxPower             *int    `json:"iBeaconTxPower,omitempty"`
-	PtmMac                     *string `json:"mac_ptm,omitempty"` //In ptm mode it corresponds to the enOcean switch
+	Mac                        string   `json:"mac"`
+	Group                      *int     `json:"group,omitempty"`
+	BrightnessCorrectionFactor *float32 `json:"brightnessCorrectionFactor,omitempty"`
+	BrightnessCorrectionOffset *float32 `json:"brightnessCorrectionOffset,omitempty"`
+	IsConfigured               *bool    `json:"isConfigured,omitempty"`
+	ThresholdPresence          *int     `json:"thresholdPresence,omitempty"`
+	TemperatureOffset          *int     `json:"temperatureOffset,omitempty"`
+	IsBleEnabled               *bool    `json:"isBleEnabled,omitempty"`
+	FriendlyName               *string  `json:"friendlyName,omitempty"`
+	DumpFrequency              *int     `json:"dumpFrequency,omitempty"`
+	Label                      *string  `json:"label,omitempty"`
+	BleMode                    *string  `json:"bleMode,omitempty"` //bleMode could be: remote/iBeacon/ptm
+	IBeaconUUID                *string  `json:"iBeaconUUID,omitempty"`
+	IBeaconMajor               *int     `json:"iBeaconMajor,omitempty"`
+	IBeaconMinor               *int     `json:"iBeaconMinor,omitempty"`
+	IBeaconTxPower             *int     `json:"iBeaconTxPower,omitempty"`
+	PtmMac                     *string  `json:"mac_ptm,omitempty"` //In ptm mode it corresponds to the enOcean switch
 }
 
 //ToSensor convert interface to Sensor object
