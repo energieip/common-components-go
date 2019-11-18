@@ -45,6 +45,9 @@ type GroupConfig struct {
 	HvacsTargetMode         *int     `json:"hvacsTargetMode,omitempty"`
 	EipDriversReset         *bool    `json:"eipDriversReset,omitempty"` // reset all eip drivers
 	HvacsHeatCool           *int     `json:"hvacsHeatCoolt,omitempty"`
+	HvacsForcing6waysValve  *int     `json:"hvacsForcing6WaysValve,omitempty"`
+	HvacsForcingDamper      *int     `json:"hvacsForcingDamper,omitempty"`
+	HvacsForcingAutoBack    *int     `json:"hvacsForcingAutoBack,omitempty"`
 }
 
 //GroupStatus status dump to the server
@@ -92,6 +95,9 @@ type GroupStatus struct {
 	HvacsTargetMode         int      `json:"hvacsTargetMode"`
 	HvacsEffectMode         int      `json:"hvacsEffectMode"`
 	HvacsHeatCool           int      `json:"hvacsHeatCool"`
+	HvacsForcing6waysValve  int      `json:"hvacsForcing6WaysValve,omitempty"`
+	HvacsForcingDamper      int      `json:"hvacsForcingDamper,omitempty"`
+	HvacsForcingAutoBack    int      `json:"hvacsForcingAutoBack,omitempty"`
 }
 
 // ToMapInterface convert group struct in Map[string] interface{}

@@ -71,6 +71,9 @@ type Hvac struct {
 	SpaceHygro              int     `json:"spaceHygro"`
 	FriendlyName            string  `json:"friendlyName"`
 	Label                   *string `json:"label,omitempty"`
+	Forcing6WaysValve       int     `json:"forcing6WaysValve"`
+	ForcingDamper           int     `json:"forcingDamper"`
+	ForcingAutoBack         int     `json:"forcingAutoBack"`
 }
 
 //HvacSetup initial setup send by the server when the driver is authorized
@@ -164,6 +167,9 @@ type HvacConf struct {
 	IsConfigured           *bool   `json:"isConfigured,omitempty"`
 	DumpFrequency          *int    `json:"dumpFrequency"`
 	Label                  *string `json:"label,omitempty"`
+	Forcing6waysValve      *int    `json:"forcing6WaysValve,omitempty"`
+	ForcingDamper          *int    `json:"forcingDamper,omitempty"`
+	ForcingAutoBack        *int    `json:"forcingAutoBack,omitempty"`
 }
 
 //ToHvac convert map interface to Hvac object
