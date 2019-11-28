@@ -56,6 +56,7 @@ type APIInfo struct {
 	Port           string `json:"port"`
 	URLToken       string `json:"urlToken"`
 	BrowsingFolder string `json:"browsingFolder"`
+	APIVersion     string `json:"apiVersion"`
 }
 
 //DBConnector description
